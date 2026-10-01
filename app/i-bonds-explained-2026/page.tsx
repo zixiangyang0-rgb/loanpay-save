@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "I Bonds Explained 2026: Limits, Rates & Locks | LoanPay Save",
   description:
     "Series I savings bonds in 2026: the $10,000 annual limit, inflation-adjusted composite rate, 12-month lockup, and when I bonds fit your plan.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/i-bonds-explained-2026",
+  },
 };
 
 export default function IBondsExplainedPage() {
@@ -16,6 +21,9 @@ export default function IBondsExplainedPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         I Bonds Explained 2026: Inflation Protection With Strings Attached
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Series I savings bonds are US government bonds designed to protect purchasing power: their
         interest rate combines a fixed rate (locked for the bond&apos;s 30-year life) with an
@@ -41,6 +49,8 @@ export default function IBondsExplainedPage() {
         TreasuryDirect. Because the fixed portion never changes for your bond, buying when the
         fixed rate is relatively generous locks in a durable real return for up to 30 years.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Taxes are friendlier than bank interest but deferred in an unusual way. Federal tax applies
         to I bond interest as ordinary income, but you generally owe nothing until you redeem (or
@@ -110,6 +120,8 @@ export default function IBondsExplainedPage() {
           maximum nominal yield. Couples can double capacity ($10,000 each), and trusts and
           businesses have separate limits worth exploring at TreasuryDirect.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Where I bonds fit — and where they don&apos;t</h2>
@@ -124,44 +136,38 @@ export default function IBondsExplainedPage() {
         the inflation-proof basement of your savings — rarely visited, always solid.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I buy more than $10,000 per year?</h3>
-          <p className="mt-2">
-            Electronic purchases cap at $10,000 per person per calendar year. Spouses buy
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I buy more than $10,000 per year?</summary>
+          <p className="mt-2">Electronic purchases cap at $10,000 per person per calendar year. Spouses buy
             separately ($20,000 per couple), and entities like trusts have their own limits. Paper
             I bonds bought with a tax refund were historically allowed beyond the electronic cap
             under separate rules — confirm whether that program is currently available before
-            relying on it.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What happens at 30 years?</h3>
-          <p className="mt-2">
-            I bonds mature and stop earning interest at 30 years. Redeem matured bonds promptly —
+            relying on it.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What happens at 30 years?</summary>
+          <p className="mt-2">I bonds mature and stop earning interest at 30 years. Redeem matured bonds promptly —
             money sitting past maturity earns nothing, and the deferred federal tax bill comes due
-            whether you redeem or not.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Are I bonds better than TIPS?</h3>
-          <p className="mt-2">
-            Different tools: I bonds never lose nominal value and defer federal tax, but cap
+            whether you redeem or not.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Are I bonds better than TIPS?</summary>
+          <p className="mt-2">Different tools: I bonds never lose nominal value and defer federal tax, but cap
             purchases and lock money for a year. TIPS trade freely in any size with market-price
             risk before maturity. Small savers prioritizing safety usually prefer I bonds; large
-            portfolios often use both.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">How do I redeem I bonds?</h3>
-          <p className="mt-2">
-            Log in to TreasuryDirect, select redeem, and direct proceeds to your linked bank
+            portfolios often use both.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">How do I redeem I bonds?</summary>
+          <p className="mt-2">Log in to TreasuryDirect, select redeem, and direct proceeds to your linked bank
             account — typically arriving in a few business days. Redemptions are final, partial
             redemptions have minimums, and the 3-month penalty before year five is applied
-            automatically.
-          </p>
-        </div>
+            automatically.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -172,6 +178,21 @@ export default function IBondsExplainedPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/i-bonds-explained-2026"
+        title="I Bonds Explained 2026: Limits, Rates & Locks | LoanPay Save"
+        description="Series I savings bonds in 2026: the $10,000 annual limit, inflation-adjusted composite rate, 12-month lockup, and when I bonds fit your plan."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Can I buy more than $10,000 per year?", answer: "Electronic purchases cap at $10,000 per person per calendar year. Spouses buy separately ($20,000 per couple), and entities like trusts have their own limits. Paper I bonds bought with a tax refund were historically allowed beyond the electronic cap under separate rules — confirm whether that program is currently available before relying on it." },
+          { question: "What happens at 30 years?", answer: "I bonds mature and stop earning interest at 30 years. Redeem matured bonds promptly — money sitting past maturity earns nothing, and the deferred federal tax bill comes due whether you redeem or not." },
+          { question: "Are I bonds better than TIPS?", answer: "Different tools: I bonds never lose nominal value and defer federal tax, but cap purchases and lock money for a year. TIPS trade freely in any size with market-price risk before maturity. Small savers prioritizing safety usually prefer I bonds; large portfolios often use both." },
+          { question: "How do I redeem I bonds?", answer: "Log in to TreasuryDirect, select redeem, and direct proceeds to your linked bank account — typically arriving in a few business days. Redemptions are final, partial redemptions have minimums, and the 3-month penalty before year five is applied automatically." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/i-bonds-explained-2026" title="I Bonds Explained 2026: Limits, Rates & Locks" />
+
     </div>
   );
 }

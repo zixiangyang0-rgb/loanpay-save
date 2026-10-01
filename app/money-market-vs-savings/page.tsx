@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Money Market vs. Savings Account | LoanPay Save",
   description:
     "Money market accounts versus high-yield savings in 2026: check-writing, tiered rates, minimums, and which liquid account fits your cash.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/money-market-vs-savings",
+  },
 };
 
 export default function MoneyMarketVsSavingsPage() {
@@ -16,6 +21,9 @@ export default function MoneyMarketVsSavingsPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Money Market vs. Savings: Two Liquid Accounts, One Decision
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Money market accounts (MMAs) and savings accounts look nearly identical on a rate table —
         both are FDIC-insured, both pay variable interest, both keep cash liquid. The difference is
@@ -39,6 +47,8 @@ export default function MoneyMarketVsSavingsPage() {
         run higher too: $500–$2,500 to open and $1,000+ to avoid monthly fees is common at branch
         banks, versus $0 minimums standard for online savings.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         High-yield savings accounts strip away transaction features in exchange for simplicity and
         usually a slightly better rate. Without checkbooks to support, online savings accounts
@@ -105,6 +115,8 @@ export default function MoneyMarketVsSavingsPage() {
           check current offers and tier schedules.) Always find your balance&apos;s actual tier in
           the rate sheet, not the headline APY.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Which account for which job</h2>
@@ -134,42 +146,36 @@ export default function MoneyMarketVsSavingsPage() {
         no floor to fall through and no meter running on your transactions.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Is a money market account the same as a money market fund?</h3>
-          <p className="mt-2">
-            No. A money market deposit account is a bank product with FDIC insurance. A money
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Is a money market account the same as a money market fund?</summary>
+          <p className="mt-2">No. A money market deposit account is a bank product with FDIC insurance. A money
             market mutual fund is an investment holding short-term securities — SIPC coverage for
             brokerage failure, but no FDIC guarantee against investment loss. The similar names
-            cause constant confusion, so check which one any article or banker means.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I pay bills directly from an MMA?</h3>
-          <p className="mt-2">
-            Generally yes — that is the MMA&apos;s advantage. Checks, debit purchases, and
+            cause constant confusion, so check which one any article or banker means.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I pay bills directly from an MMA?</summary>
+          <p className="mt-2">Generally yes — that is the MMA&apos;s advantage. Checks, debit purchases, and
             electronic payments typically work, though some banks still limit certain transaction
             types per month. Confirm the transaction rules in the account disclosure before
-            routing bills through it.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Which pays more on average?</h3>
-          <p className="mt-2">
-            Online high-yield savings accounts have typically edged out MMAs on raw APY in recent
+            routing bills through it.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Which pays more on average?</summary>
+          <p className="mt-2">Online high-yield savings accounts have typically edged out MMAs on raw APY in recent
             years, especially for balances under $10,000. Large-balance tiered MMAs can match or
-            beat them — compare using your balance&apos;s actual tier, not headlines.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I hold both?</h3>
-          <p className="mt-2">
-            Absolutely — many savers pair an HYSA for goals with an MMA for spendable reserves at
+            beat them — compare using your balance&apos;s actual tier, not headlines.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I hold both?</summary>
+          <p className="mt-2">Absolutely — many savers pair an HYSA for goals with an MMA for spendable reserves at
             the same bank, moving money between them instantly. Just watch combined balances
-            against FDIC limits per ownership category.
-          </p>
-        </div>
+            against FDIC limits per ownership category.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -180,6 +186,21 @@ export default function MoneyMarketVsSavingsPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/money-market-vs-savings"
+        title="Money Market vs. Savings Account | LoanPay Save"
+        description="Money market accounts versus high-yield savings in 2026: check-writing, tiered rates, minimums, and which liquid account fits your cash."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Is a money market account the same as a money market fund?", answer: "No. A money market deposit account is a bank product with FDIC insurance. A money market mutual fund is an investment holding short-term securities — SIPC coverage for brokerage failure, but no FDIC guarantee against investment loss. The similar names cause constant confusion, so check which one any article or banker means." },
+          { question: "Can I pay bills directly from an MMA?", answer: "Generally yes — that is the MMA's advantage. Checks, debit purchases, and electronic payments typically work, though some banks still limit certain transaction types per month. Confirm the transaction rules in the account disclosure before routing bills through it." },
+          { question: "Which pays more on average?", answer: "Online high-yield savings accounts have typically edged out MMAs on raw APY in recent years, especially for balances under $10,000. Large-balance tiered MMAs can match or beat them — compare using your balance's actual tier, not headlines." },
+          { question: "Can I hold both?", answer: "Absolutely — many savers pair an HYSA for goals with an MMA for spendable reserves at the same bank, moving money between them instantly. Just watch combined balances against FDIC limits per ownership category." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/money-market-vs-savings" title="Money Market vs. Savings Account" />
+
     </div>
   );
 }

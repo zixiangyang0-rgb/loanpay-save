@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 import CompoundEstimator from "./estimator";
 
 export const metadata: Metadata = {
   title: "Compounding Interest Explained With Examples | LoanPay Save",
   description:
     "How compounding grows savings in 2026: daily vs. monthly compounding, the Rule of 72, time-vs-rate math, and an interactive growth estimator.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/compounding-interest-explained",
+  },
 };
 
 export default function CompoundingInterestExplainedPage() {
@@ -17,6 +22,9 @@ export default function CompoundingInterestExplainedPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Compounding Interest Explained: Why Time Beats Timing
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Compounding means earning interest on your interest: each period&apos;s payout joins the
         balance and earns its own returns in every period after. Over months the effect is
@@ -42,6 +50,8 @@ export default function CompoundingInterestExplainedPage() {
         while the plain interest rate excludes it. Two accounts with the same interest rate but
         different compounding frequencies have different APYs — always compare APY to APY.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Compounding frequency matters, but less than marketing implies. At an illustrative 4.00%
         interest rate, $10,000 grows in one year to $10,400.00 compounding annually, $10,407.42
@@ -105,6 +115,8 @@ export default function CompoundingInterestExplainedPage() {
           compounding: every year of waiting must be repaid with far larger deposits later. Start
           with whatever amount survives your budget today; the calendar does the heavy lifting.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Protecting the compounding chain</h2>
@@ -137,40 +149,34 @@ export default function CompoundingInterestExplainedPage() {
         reinvest it rather than spending it, and the curve keeps bending upward.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What is the difference between APR and APY?</h3>
-          <p className="mt-2">
-            APR (annual percentage rate) typically describes cost or simple-rate terms without
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What is the difference between APR and APY?</summary>
+          <p className="mt-2">APR (annual percentage rate) typically describes cost or simple-rate terms without
             compounding; APY (annual percentage yield) includes compounding — the actual yearly
-            growth. For comparing savings products, APY is the number that matters.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Does compounding help with debt too?</h3>
-          <p className="mt-2">
-            Yes — in reverse. Unpaid card balances compound against you at 20%+ rates, doubling in
+            growth. For comparing savings products, APY is the number that matters.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Does compounding help with debt too?</summary>
+          <p className="mt-2">Yes — in reverse. Unpaid card balances compound against you at 20%+ rates, doubling in
             under four years by the Rule of 72. Every extra debt payment earns a guaranteed
-            &ldquo;return&rdquo; equal to the APR by stopping that compounding.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">How accurate is the Rule of 72?</h3>
-          <p className="mt-2">
-            Very good for rates between 2% and 12% — within months of the exact doubling time.
+            &ldquo;return&rdquo; equal to the APR by stopping that compounding.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">How accurate is the Rule of 72?</summary>
+          <p className="mt-2">Very good for rates between 2% and 12% — within months of the exact doubling time.
             Outside that range, use 69.3 for tiny rates or just run the estimator above. It assumes
-            a constant rate, so treat results as ballpark illustrations.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Is daily compounding worth switching banks for?</h3>
-          <p className="mt-2">
-            Almost never by itself — the gap versus monthly compounding is a few dollars per
+            a constant rate, so treat results as ballpark illustrations.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Is daily compounding worth switching banks for?</summary>
+          <p className="mt-2">Almost never by itself — the gap versus monthly compounding is a few dollars per
             $10,000 yearly. Switch for a meaningfully higher APY, lower fees, or better features;
-            treat compounding frequency as a tiebreaker between otherwise equal accounts.
-          </p>
-        </div>
+            treat compounding frequency as a tiebreaker between otherwise equal accounts.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -181,6 +187,21 @@ export default function CompoundingInterestExplainedPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/compounding-interest-explained"
+        title="Compounding Interest Explained With Examples | LoanPay Save"
+        description="How compounding grows savings in 2026: daily vs. monthly compounding, the Rule of 72, time-vs-rate math, and an interactive growth estimator."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "What is the difference between APR and APY?", answer: "APR (annual percentage rate) typically describes cost or simple-rate terms without compounding; APY (annual percentage yield) includes compounding — the actual yearly growth. For comparing savings products, APY is the number that matters." },
+          { question: "Does compounding help with debt too?", answer: "Yes — in reverse. Unpaid card balances compound against you at 20%+ rates, doubling in under four years by the Rule of 72. Every extra debt payment earns a guaranteed 'return' equal to the APR by stopping that compounding." },
+          { question: "How accurate is the Rule of 72?", answer: "Very good for rates between 2% and 12% — within months of the exact doubling time. Outside that range, use 69.3 for tiny rates or just run the estimator above. It assumes a constant rate, so treat results as ballpark illustrations." },
+          { question: "Is daily compounding worth switching banks for?", answer: "Almost never by itself — the gap versus monthly compounding is a few dollars per $10,000 yearly. Switch for a meaningfully higher APY, lower fees, or better features; treat compounding frequency as a tiebreaker between otherwise equal accounts." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/compounding-interest-explained" title="Compounding Interest Explained With Examples" />
+
     </div>
   );
 }

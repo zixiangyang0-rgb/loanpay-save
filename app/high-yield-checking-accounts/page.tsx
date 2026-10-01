@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "High-Yield Checking Accounts: Worth It? | LoanPay Save",
   description:
     "Checking accounts that pay interest in 2026: rate caps, debit-transaction requirements, and when high-yield checking beats savings.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/high-yield-checking-accounts",
+  },
 };
 
 export default function HighYieldCheckingAccountsPage() {
@@ -16,6 +21,9 @@ export default function HighYieldCheckingAccountsPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         High-Yield Checking: Interest on Money That Never Sits Still
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Most checking accounts pay nothing — your bill-paying balance works for free while the
         bank lends it out. High-yield (or rewards) checking accounts break that deal, paying
@@ -42,6 +50,8 @@ export default function HighYieldCheckingAccountsPage() {
         per-transaction amounts and merchant-exclusion lists, so read the qualification definitions
         rather than assuming every swipe counts.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Caps define the second half of the economics. Most rewards checking pays the headline rate
         only up to a balance cap — commonly $10,000–$25,000 — with anything above earning a much
@@ -104,6 +114,8 @@ export default function HighYieldCheckingAccountsPage() {
           natural debit habits, rewards checking wins on convenience; above the cap, sweep the
           excess to savings and keep checking lean. (Figures illustrative — check current offers.)
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Who should skip it</h2>
@@ -134,40 +146,34 @@ export default function HighYieldCheckingAccountsPage() {
         a missed cycle cascade into ignoring the account for a quarter.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Do debit requirements hurt my credit?</h3>
-          <p className="mt-2">
-            No — debit activity has no credit impact, positive or negative. The only credit-adjacent
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Do debit requirements hurt my credit?</summary>
+          <p className="mt-2">No — debit activity has no credit impact, positive or negative. The only credit-adjacent
             consideration is if you shift spending from a rewards credit card to debit, forgoing
-            card rewards and the credit-history benefits of on-time card payments.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Are rewards checking accounts FDIC-insured?</h3>
-          <p className="mt-2">
-            At banks, yes — standard FDIC coverage applies to checking balances like any deposit.
+            card rewards and the credit-history benefits of on-time card payments.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Are rewards checking accounts FDIC-insured?</summary>
+          <p className="mt-2">At banks, yes — standard FDIC coverage applies to checking balances like any deposit.
             At credit unions, equivalent NCUA insurance applies. Confirm membership of the specific
-            institution before opening, as with any account.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What happens to interest above the cap?</h3>
-          <p className="mt-2">
-            Balances above the cap earn a disclosed lower rate — sometimes decent, often near-zero.
+            institution before opening, as with any account.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What happens to interest above the cap?</summary>
+          <p className="mt-2">Balances above the cap earn a disclosed lower rate — sometimes decent, often near-zero.
             The optimal setup keeps checking near (not over) the cap and sweeps the rest to
-            savings automatically, which many banks can do on a schedule.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I hold rewards checking just for the bonus?</h3>
-          <p className="mt-2">
-            Some rewards accounts pair with new-account bonuses carrying their own direct-deposit
+            savings automatically, which many banks can do on a schedule.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I hold rewards checking just for the bonus?</summary>
+          <p className="mt-2">Some rewards accounts pair with new-account bonuses carrying their own direct-deposit
             and holding requirements. Stack them deliberately: meet the bonus terms first, then
-            decide whether the ongoing monthly quotas suit your habits before committing long-term.
-          </p>
-        </div>
+            decide whether the ongoing monthly quotas suit your habits before committing long-term.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -178,6 +184,21 @@ export default function HighYieldCheckingAccountsPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/high-yield-checking-accounts"
+        title="High-Yield Checking Accounts: Worth It? | LoanPay Save"
+        description="Checking accounts that pay interest in 2026: rate caps, debit-transaction requirements, and when high-yield checking beats savings."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Do debit requirements hurt my credit?", answer: "No — debit activity has no credit impact, positive or negative. The only credit-adjacent consideration is if you shift spending from a rewards credit card to debit, forgoing card rewards and the credit-history benefits of on-time card payments." },
+          { question: "Are rewards checking accounts FDIC-insured?", answer: "At banks, yes — standard FDIC coverage applies to checking balances like any deposit. At credit unions, equivalent NCUA insurance applies. Confirm membership of the specific institution before opening, as with any account." },
+          { question: "What happens to interest above the cap?", answer: "Balances above the cap earn a disclosed lower rate — sometimes decent, often near-zero. The optimal setup keeps checking near (not over) the cap and sweeps the rest to savings automatically, which many banks can do on a schedule." },
+          { question: "Can I hold rewards checking just for the bonus?", answer: "Some rewards accounts pair with new-account bonuses carrying their own direct-deposit and holding requirements. Stack them deliberately: meet the bonus terms first, then decide whether the ongoing monthly quotas suit your habits before committing long-term." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/high-yield-checking-accounts" title="High-Yield Checking Accounts: Worth It?" />
+
     </div>
   );
 }

@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "CD vs. High-Yield Savings: Which Wins? | LoanPay Save",
   description:
     "Certificates of deposit versus high-yield savings in 2026: locked rates vs. flexibility, after-tax math, and a rule for splitting cash between both.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/cd-vs-high-yield-savings",
+  },
 };
 
 export default function CdVsHighYieldSavingsPage() {
@@ -16,6 +21,9 @@ export default function CdVsHighYieldSavingsPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         CD vs. High-Yield Savings: Where Should Each Dollar Go?
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Certificates of deposit and high-yield savings accounts are cousins: both are
         FDIC-insured bank products that pay interest on idle cash. The difference is the deal you
@@ -38,6 +46,8 @@ export default function CdVsHighYieldSavingsPage() {
         locked rates to maturity, which is why CDs shine brightest right before an expected
         cutting cycle.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Liquidity works the same way in reverse. Savings accounts let you withdraw anytime with no
         penalty (a few banks still impose monthly transaction limits, so check), making them the
@@ -106,6 +116,8 @@ export default function CdVsHighYieldSavingsPage() {
           is simple: money with a known date past 12 months leans CD, money with an uncertain
           date leans savings, and big goals use both.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">The allocation rule of thumb</h2>
@@ -134,40 +146,34 @@ export default function CdVsHighYieldSavingsPage() {
         rate-cycle positioning is a quarterly posture adjustment, not a trading strategy.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I lose money in a CD or HYSA?</h3>
-          <p className="mt-2">
-            Within FDIC limits at an insured bank, no — both principal and credited interest are
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I lose money in a CD or HYSA?</summary>
+          <p className="mt-2">Within FDIC limits at an insured bank, no — both principal and credited interest are
             protected even if the bank fails. The realistic risks are inflation eroding purchasing
-            power and penalties trimming CD returns, not loss of principal.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Which usually pays more?</h3>
-          <p className="mt-2">
-            CDs of 12 months or longer have often paid slightly more than top savings accounts in
+            power and penalties trimming CD returns, not loss of principal.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Which usually pays more?</summary>
+          <p className="mt-2">CDs of 12 months or longer have often paid slightly more than top savings accounts in
             recent years, but the spread varies and sometimes inverts on short terms. Compare
-            current offers at the same moment — week-old rankings mislead because both move.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What if rates rise right after I open a CD?</h3>
-          <p className="mt-2">
-            Run the penalty math before breaking: if the new rate exceeds your old rate by enough
+            current offers at the same moment — week-old rankings mislead because both move.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What if rates rise right after I open a CD?</summary>
+          <p className="mt-2">Run the penalty math before breaking: if the new rate exceeds your old rate by enough
             to cover the forfeited interest over the remaining term, breaking and reinvesting can
-            win. Otherwise, let it ride and direct new savings to the higher rate.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I hold both at the same bank?</h3>
-          <p className="mt-2">
-            Yes, and it simplifies transfers — many savers keep HYSA and CDs at one online bank so
+            win. Otherwise, let it ride and direct new savings to the higher rate.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I hold both at the same bank?</summary>
+          <p className="mt-2">Yes, and it simplifies transfers — many savers keep HYSA and CDs at one online bank so
             maturing CDs land in savings instantly. Just confirm the combined balance stays within
-            FDIC coverage for your ownership category.
-          </p>
-        </div>
+            FDIC coverage for your ownership category.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -178,6 +184,21 @@ export default function CdVsHighYieldSavingsPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/cd-vs-high-yield-savings"
+        title="CD vs. High-Yield Savings: Which Wins? | LoanPay Save"
+        description="Certificates of deposit versus high-yield savings in 2026: locked rates vs. flexibility, after-tax math, and a rule for splitting cash between both."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Can I lose money in a CD or HYSA?", answer: "Within FDIC limits at an insured bank, no — both principal and credited interest are protected even if the bank fails. The realistic risks are inflation eroding purchasing power and penalties trimming CD returns, not loss of principal." },
+          { question: "Which usually pays more?", answer: "CDs of 12 months or longer have often paid slightly more than top savings accounts in recent years, but the spread varies and sometimes inverts on short terms. Compare current offers at the same moment — week-old rankings mislead because both move." },
+          { question: "What if rates rise right after I open a CD?", answer: "Run the penalty math before breaking: if the new rate exceeds your old rate by enough to cover the forfeited interest over the remaining term, breaking and reinvesting can win. Otherwise, let it ride and direct new savings to the higher rate." },
+          { question: "Can I hold both at the same bank?", answer: "Yes, and it simplifies transfers — many savers keep HYSA and CDs at one online bank so maturing CDs land in savings instantly. Just confirm the combined balance stays within FDIC coverage for your ownership category." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/cd-vs-high-yield-savings" title="CD vs. High-Yield Savings: Which Wins?" />
+
     </div>
   );
 }

@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "High-Yield Savings Guide 2026 | LoanPay Save",
   description:
     "How high-yield savings accounts work in 2026: why online banks pay more, what to compare beyond the rate, and how to switch safely.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/high-yield-savings-guide-2026",
+  },
 };
 
 export default function HighYieldSavingsGuidePage() {
@@ -16,6 +21,9 @@ export default function HighYieldSavingsGuidePage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         High-Yield Savings Accounts in 2026: The Complete Guide
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         A high-yield savings account (HYSA) does exactly what a regular savings account does —
         holds your cash safely and pays interest — except it typically pays many times more. In
@@ -37,6 +45,8 @@ export default function HighYieldSavingsGuidePage() {
         nonprofit structure to post competitive yields. The result is a persistent two-tier market:
         convenience banks that compete on branches and apps, and rate banks that compete on yield.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         A second driver is the Federal Reserve&apos;s policy rate. When the Fed keeps rates
         elevated, banks earn more on their own reserves and loans, and competition pushes some of
@@ -111,6 +121,8 @@ export default function HighYieldSavingsGuidePage() {
         change rates frequently, so check current offers before you apply.
       </p>
 
+      <AdSlot format="display" slot="TODO-save-display-2" />
+
       <h2 className="mt-10 text-2xl font-bold">Worked example: what the gap is worth</h2>
       <div className="glass-card mt-4 rounded-2xl p-6">
         <p className="text-sm leading-relaxed text-slate-300">
@@ -148,41 +160,35 @@ export default function HighYieldSavingsGuidePage() {
         heavy lifting in between.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Are online high-yield savings accounts safe?</h3>
-          <p className="mt-2">
-            Yes, provided the bank is FDIC-insured and your balance is within insurance limits
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Are online high-yield savings accounts safe?</summary>
+          <p className="mt-2">Yes, provided the bank is FDIC-insured and your balance is within insurance limits
             ($250,000 per depositor, per bank, per ownership category). Verify insurance with the
-            FDIC&apos;s BankFind tool before depositing — a nice website alone proves nothing.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can the rate drop after I open the account?</h3>
-          <p className="mt-2">
-            Yes. HYSA rates are variable and track the broader rate environment. Banks can change
+            FDIC&apos;s BankFind tool before depositing — a nice website alone proves nothing.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can the rate drop after I open the account?</summary>
+          <p className="mt-2">Yes. HYSA rates are variable and track the broader rate environment. Banks can change
             APYs at any time, which is why rate history and consistent competitiveness matter more
-            than a single-day top rank.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Do I pay taxes on the interest?</h3>
-          <p className="mt-2">
-            Generally yes — savings interest is ordinary income for federal taxes, and usually for
+            than a single-day top rank.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Do I pay taxes on the interest?</summary>
+          <p className="mt-2">Generally yes — savings interest is ordinary income for federal taxes, and usually for
             state taxes too. Banks send Form 1099-INT when interest reaches $10 or more, but all
-            interest is technically reportable even below that threshold.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">How many savings accounts should I have?</h3>
-          <p className="mt-2">
-            One hub account is enough for most people; adding separate accounts per goal (emergency
+            interest is technically reportable even below that threshold.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">How many savings accounts should I have?</summary>
+          <p className="mt-2">One hub account is enough for most people; adding separate accounts per goal (emergency
             fund, vacation, car) helps others stay organized. Beyond three or four accounts,
             complexity usually outweighs the benefit — consider a single HYSA with a spreadsheet or
-            bucketing feature instead.
-          </p>
-        </div>
+            bucketing feature instead.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -193,6 +199,21 @@ export default function HighYieldSavingsGuidePage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/high-yield-savings-guide-2026"
+        title="High-Yield Savings Guide 2026 | LoanPay Save"
+        description="How high-yield savings accounts work in 2026: why online banks pay more, what to compare beyond the rate, and how to switch safely."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Are online high-yield savings accounts safe?", answer: "Yes, provided the bank is FDIC-insured and your balance is within insurance limits ($250,000 per depositor, per bank, per ownership category). Verify insurance with the FDIC's BankFind tool before depositing — a nice website alone proves nothing." },
+          { question: "Can the rate drop after I open the account?", answer: "Yes. HYSA rates are variable and track the broader rate environment. Banks can change APYs at any time, which is why rate history and consistent competitiveness matter more than a single-day top rank." },
+          { question: "Do I pay taxes on the interest?", answer: "Generally yes — savings interest is ordinary income for federal taxes, and usually for state taxes too. Banks send Form 1099-INT when interest reaches $10 or more, but all interest is technically reportable even below that threshold." },
+          { question: "How many savings accounts should I have?", answer: "One hub account is enough for most people; adding separate accounts per goal (emergency fund, vacation, car) helps others stay organized. Beyond three or four accounts, complexity usually outweighs the benefit — consider a single HYSA with a spreadsheet or bucketing feature instead." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/high-yield-savings-guide-2026" title="High-Yield Savings Guide 2026" />
+
     </div>
   );
 }

@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Savings for Kids Guide: Accounts & Lessons | LoanPay Save",
   description:
     "Teach kids to save in 2026: kids' savings accounts, custodial UTMA/UGMA accounts, youth CDs, and age-by-age money lessons that stick.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/savings-for-kids-guide",
+  },
 };
 
 export default function SavingsForKidsGuidePage() {
@@ -16,6 +21,9 @@ export default function SavingsForKidsGuidePage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Savings for Kids: Accounts That Teach While They Grow
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Children who handle real money early develop measurably better financial habits as adults —
         and the account you choose shapes what they learn. A children&apos;s savings account
@@ -80,6 +88,8 @@ export default function SavingsForKidsGuidePage() {
         specifically, 529 plans keep parental control with superior tax treatment — see our 529
         basics guide before choosing UTMA for education money.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Taxes on kids&apos; accounts follow the &ldquo;kiddie tax&rdquo; framework: a child&apos;s
         unearned income above a modest threshold (adjusted annually; around $2,500–$2,700 in recent
@@ -105,6 +115,8 @@ export default function SavingsForKidsGuidePage() {
           rewarding the way a 401(k) match does for adults, and it costs parents less than most
           birthday-party budgets.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Age-by-age lessons that stick</h2>
@@ -137,42 +149,36 @@ export default function SavingsForKidsGuidePage() {
         family that built together.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can a child lose UTMA money to their own choices at 18?</h3>
-          <p className="mt-2">
-            Yes — that is the genuine risk. At the age of majority the assets are legally theirs to
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can a child lose UTMA money to their own choices at 18?</summary>
+          <p className="mt-2">Yes — that is the genuine risk. At the age of majority the assets are legally theirs to
             spend. Families concerned about maturity sometimes favor 529 plans (parent retains
             control) for large education sums and keep UTMA balances modest until character is
-            proven.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Do kids&apos; accounts affect financial aid?</h3>
-          <p className="mt-2">
-            Student-owned assets (UTMA, child savings) are generally assessed at a much higher rate
+            proven.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Do kids&apos; accounts affect financial aid?</summary>
+          <p className="mt-2">Student-owned assets (UTMA, child savings) are generally assessed at a much higher rate
             in aid formulas than parent-owned assets like 529s. Small balances barely matter, but
             five-figure custodial accounts can meaningfully reduce aid — another reason to prefer
-            529s for college money.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What is the best first account?</h3>
-          <p className="mt-2">
-            A no-fee kids&apos; savings account at a convenient bank or credit union, opened with
+            529s for college money.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What is the best first account?</summary>
+          <p className="mt-2">A no-fee kids&apos; savings account at a convenient bank or credit union, opened with
             the child present. The ceremony — signing, depositing, receiving the first statement —
-            matters more than the rate for young savers.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Should teens have debit cards?</h3>
-          <p className="mt-2">
-            Yes, with guardrails: a youth checking account with instant parental alerts, no
+            matters more than the rate for young savers.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Should teens have debit cards?</summary>
+          <p className="mt-2">Yes, with guardrails: a youth checking account with instant parental alerts, no
             overdraft facility, and a modest balance cap. Supervised practice with real
-            consequences at 15 beats unsupervised discovery at 19.
-          </p>
-        </div>
+            consequences at 15 beats unsupervised discovery at 19.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -183,6 +189,21 @@ export default function SavingsForKidsGuidePage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/savings-for-kids-guide"
+        title="Savings for Kids Guide: Accounts & Lessons | LoanPay Save"
+        description="Teach kids to save in 2026: kids' savings accounts, custodial UTMA/UGMA accounts, youth CDs, and age-by-age money lessons that stick."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Can a child lose UTMA money to their own choices at 18?", answer: "Yes — that is the genuine risk. At the age of majority the assets are legally theirs to spend. Families concerned about maturity sometimes favor 529 plans (parent retains control) for large education sums and keep UTMA balances modest until character is proven." },
+          { question: "Do kids' accounts affect financial aid?", answer: "Student-owned assets (UTMA, child savings) are generally assessed at a much higher rate in aid formulas than parent-owned assets like 529s. Small balances barely matter, but five-figure custodial accounts can meaningfully reduce aid — another reason to prefer 529s for college money." },
+          { question: "What is the best first account?", answer: "A no-fee kids' savings account at a convenient bank or credit union, opened with the child present. The ceremony — signing, depositing, receiving the first statement — matters more than the rate for young savers." },
+          { question: "Should teens have debit cards?", answer: "Yes, with guardrails: a youth checking account with instant parental alerts, no overdraft facility, and a modest balance cap. Supervised practice with real consequences at 15 beats unsupervised discovery at 19." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/savings-for-kids-guide" title="Savings for Kids Guide: Accounts & Lessons" />
+
     </div>
   );
 }

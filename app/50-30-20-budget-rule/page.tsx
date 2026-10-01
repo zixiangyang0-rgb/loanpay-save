@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "50-30-20 Budget Rule Explained | LoanPay Save",
   description:
     "The 50-30-20 rule in 2026: 50% needs, 30% wants, 20% savings — how to adapt it to high-cost cities, low incomes, and high earners.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/50-30-20-budget-rule",
+  },
 };
 
 export default function BudgetRule503020Page() {
@@ -16,6 +21,9 @@ export default function BudgetRule503020Page() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         The 50-30-20 Budget Rule: Simple Split, Smart Adaptations
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Popularized by Senator Elizabeth Warren&apos;s research, the 50-30-20 rule divides
         after-tax income into three buckets: about 50% for needs, 30% for wants, and at least 20%
@@ -39,6 +47,8 @@ export default function BudgetRule503020Page() {
         three buckets before judging the rule; most overspending households discover wants near
         40–45% while savings languishes under 5%.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Two classification edge cases cause endless confusion. First, housing upgrades: the basic
         apartment that keeps you safe and commuting is a need; the premium for the luxury unit
@@ -101,6 +111,8 @@ export default function BudgetRule503020Page() {
           restoration and savings until 20% is reclaimed. A rule bent deliberately still guides;
           a rule abandoned guides nothing.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Running 50-30-20 on autopilot</h2>
@@ -130,40 +142,34 @@ export default function BudgetRule503020Page() {
         drift silently, and the audit is what keeps 50-30-20 an instrument rather than a poster.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Is 50-30-20 based on gross or net income?</h3>
-          <p className="mt-2">
-            After-tax (take-home) income — the money actually reaching you. Count pre-tax 401(k)
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Is 50-30-20 based on gross or net income?</summary>
+          <p className="mt-2">After-tax (take-home) income — the money actually reaching you. Count pre-tax 401(k)
             contributions and employer matches inside the 20% savings slice conceptually, but run
-            the checking-account math on net pay so transfers match reality.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Where do extra debt payments go?</h3>
-          <p className="mt-2">
-            Minimum payments are needs; every dollar above minimums is savings (future-net-worth
+            the checking-account math on net pay so transfers match reality.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Where do extra debt payments go?</summary>
+          <p className="mt-2">Minimum payments are needs; every dollar above minimums is savings (future-net-worth
             building). Households in aggressive payoff mode often run 50 / 10 / 40 temporarily —
-            wants compressed to a token while debt dies, then rebalanced afterward.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What if my needs exceed 50% permanently?</h3>
-          <p className="mt-2">
-            Then the diagnosis is structural, not behavioral: housing, transport, or childcare
+            wants compressed to a token while debt dies, then rebalanced afterward.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What if my needs exceed 50% permanently?</summary>
+          <p className="mt-2">Then the diagnosis is structural, not behavioral: housing, transport, or childcare
             costs need addressing (move, refinance, renegotiate) or income must rise. Budgeting
-            optimizes within constraints — it cannot fix a constraint that consumes everything.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">How does 50-30-20 compare to zero-based budgeting?</h3>
-          <p className="mt-2">
-            Zero-based budgeting assigns every dollar a job monthly — more precise, more work.
+            optimizes within constraints — it cannot fix a constraint that consumes everything.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">How does 50-30-20 compare to zero-based budgeting?</summary>
+          <p className="mt-2">Zero-based budgeting assigns every dollar a job monthly — more precise, more work.
             50-30-20 guards the ratios and frees the details. Detail-lovers and debt emergencies
-            suit zero-based; maintenance-mode households usually prefer 50-30-20&apos;s lightness.
-          </p>
-        </div>
+            suit zero-based; maintenance-mode households usually prefer 50-30-20&apos;s lightness.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -174,6 +180,21 @@ export default function BudgetRule503020Page() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/50-30-20-budget-rule"
+        title="50-30-20 Budget Rule Explained | LoanPay Save"
+        description="The 50-30-20 rule in 2026: 50% needs, 30% wants, 20% savings — how to adapt it to high-cost cities, low incomes, and high earners."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Is 50-30-20 based on gross or net income?", answer: "After-tax (take-home) income — the money actually reaching you. Count pre-tax 401(k) contributions and employer matches inside the 20% savings slice conceptually, but run the checking-account math on net pay so transfers match reality." },
+          { question: "Where do extra debt payments go?", answer: "Minimum payments are needs; every dollar above minimums is savings (future-net-worth building). Households in aggressive payoff mode often run 50 / 10 / 40 temporarily — wants compressed to a token while debt dies, then rebalanced afterward." },
+          { question: "What if my needs exceed 50% permanently?", answer: "Then the diagnosis is structural, not behavioral: housing, transport, or childcare costs need addressing (move, refinance, renegotiate) or income must rise. Budgeting optimizes within constraints — it cannot fix a constraint that consumes everything." },
+          { question: "How does 50-30-20 compare to zero-based budgeting?", answer: "Zero-based budgeting assigns every dollar a job monthly — more precise, more work. 50-30-20 guards the ratios and frees the details. Detail-lovers and debt emergencies suit zero-based; maintenance-mode households usually prefer 50-30-20's lightness." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/50-30-20-budget-rule" title="50-30-20 Budget Rule Explained" />
+
     </div>
   );
 }

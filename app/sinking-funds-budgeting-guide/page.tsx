@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Sinking Funds: Budget for Big Bills Monthly | LoanPay Save",
   description:
     "Sinking funds explained: save monthly for car repairs, holidays, insurance, and vacations so irregular bills never become emergencies.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/sinking-funds-budgeting-guide",
+  },
 };
 
 export default function SinkingFundsBudgetingGuidePage() {
@@ -16,6 +21,9 @@ export default function SinkingFundsBudgetingGuidePage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Sinking Funds: Turn Every Big Bill Into a Small Monthly Habit
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Most budgets fail on predictable surprises: the $900 car repair, the $1,200 holiday
         season, the $800 insurance premium, the $2,000 vacation. None are true emergencies — they
@@ -39,6 +47,8 @@ export default function SinkingFundsBudgetingGuidePage() {
         savings account with a bucketing feature plus a tracking spreadsheet) so each dollar knows
         its job.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
 
       <h2 className="mt-10 text-2xl font-bold">Build your sinking-fund inventory</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -115,6 +125,8 @@ export default function SinkingFundsBudgetingGuidePage() {
           insurance funds and the household effectively gives itself a raise equal to a year of
           avoided interest and late fees. The mechanism is unglamorous; the results compound.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Automation that survives real life</h2>
@@ -145,41 +157,35 @@ export default function SinkingFundsBudgetingGuidePage() {
         every estimate against actuals each January and the system gets smarter yearly.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">How many sinking funds should I have?</h3>
-          <p className="mt-2">
-            Five to eight covers most households (car, home, holidays, insurance, medical, pets,
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">How many sinking funds should I have?</summary>
+          <p className="mt-2">Five to eight covers most households (car, home, holidays, insurance, medical, pets,
             vacation, annual bills). Beyond ten, merge small ones into an &ldquo;irregular
-            bills&rdquo; fund — tracking overhead should never exceed the clarity benefit.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Where should sinking funds live?</h3>
-          <p className="mt-2">
-            A high-yield savings account — liquid enough for sudden repairs, earning yield while
+            bills&rdquo; fund — tracking overhead should never exceed the clarity benefit.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Where should sinking funds live?</summary>
+          <p className="mt-2">A high-yield savings account — liquid enough for sudden repairs, earning yield while
             waiting. Keep them separate from the emergency fund so a vacation never eats the job-loss
-            cushion, using buckets or separate accounts for labeling.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What if a bill exceeds its fund?</h3>
-          <p className="mt-2">
-            Cover the gap from the emergency fund only as a deliberate loan to yourself, then
+            cushion, using buckets or separate accounts for labeling.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What if a bill exceeds its fund?</summary>
+          <p className="mt-2">Cover the gap from the emergency fund only as a deliberate loan to yourself, then
             repay it first and raise that sinking fund&apos;s monthly slice — the shortfall is data
-            that your estimate was low, not failure of the method.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Do sinking funds replace the emergency fund?</h3>
-          <p className="mt-2">
-            No — they protect it. Sinking funds absorb every predictable irregular bill so the
+            that your estimate was low, not failure of the method.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Do sinking funds replace the emergency fund?</summary>
+          <p className="mt-2">No — they protect it. Sinking funds absorb every predictable irregular bill so the
             emergency fund faces only true surprises. Households running both report far fewer
             &ldquo;emergencies&rdquo; because most former emergencies were just unscheduled
-            predictables.
-          </p>
-        </div>
+            predictables.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -190,6 +196,21 @@ export default function SinkingFundsBudgetingGuidePage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/sinking-funds-budgeting-guide"
+        title="Sinking Funds: Budget for Big Bills Monthly | LoanPay Save"
+        description="Sinking funds explained: save monthly for car repairs, holidays, insurance, and vacations so irregular bills never become emergencies."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "How many sinking funds should I have?", answer: "Five to eight covers most households (car, home, holidays, insurance, medical, pets, vacation, annual bills). Beyond ten, merge small ones into an 'irregular bills' fund — tracking overhead should never exceed the clarity benefit." },
+          { question: "Where should sinking funds live?", answer: "A high-yield savings account — liquid enough for sudden repairs, earning yield while waiting. Keep them separate from the emergency fund so a vacation never eats the job-loss cushion, using buckets or separate accounts for labeling." },
+          { question: "What if a bill exceeds its fund?", answer: "Cover the gap from the emergency fund only as a deliberate loan to yourself, then repay it first and raise that sinking fund's monthly slice — the shortfall is data that your estimate was low, not failure of the method." },
+          { question: "Do sinking funds replace the emergency fund?", answer: "No — they protect it. Sinking funds absorb every predictable irregular bill so the emergency fund faces only true surprises. Households running both report far fewer 'emergencies' because most former emergencies were just unscheduled predictables." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/sinking-funds-budgeting-guide" title="Sinking Funds: Budget for Big Bills Monthly" />
+
     </div>
   );
 }

@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Checking Account Bonuses 2026: How to Earn Them | LoanPay Save",
   description:
     "Bank checking promotions in 2026: direct-deposit requirements, holding periods, tax treatment, and how to value a bonus before you switch.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/checking-account-bonuses-2026",
+  },
 };
 
 export default function CheckingAccountBonusesPage() {
@@ -16,6 +21,9 @@ export default function CheckingAccountBonusesPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Checking Account Bonuses in 2026: Free Money With Homework
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Banks routinely pay new customers a cash bonus — often framed in ranges like $200 to $750
         depending on the account tier and promotion — for opening a checking account and completing
@@ -40,6 +48,8 @@ export default function CheckingAccountBonusesPage() {
         minimum balance or monthly deposit, so an unqualified attempt can cost you money instead of
         making it.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Eligibility fine print matters just as much. Most bonuses exclude existing customers and
         anyone who received a bonus from the same bank in the past 12–24 months. Some require
@@ -110,6 +120,8 @@ export default function CheckingAccountBonusesPage() {
           high balance requirements locking up $10,000+ for months; run the numbers before you
           commit, and never stretch into fees to chase a payout.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Mistakes that forfeit bonuses</h2>
@@ -138,41 +150,35 @@ export default function CheckingAccountBonusesPage() {
         forms are common with closed accounts, and the IRS receives its copy regardless.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Do checking bonuses affect my credit score?</h3>
-          <p className="mt-2">
-            Usually not directly — banks typically check ChexSystems (deposit-account history), not
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Do checking bonuses affect my credit score?</summary>
+          <p className="mt-2">Usually not directly — banks typically check ChexSystems (deposit-account history), not
             the credit bureaus, and most do a soft pull. Overdraft lines of credit attached to the
-            account are the exception and may involve a hard inquiry.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Are bank bonuses taxable?</h3>
-          <p className="mt-2">
-            Checking and savings bonuses are generally treated as interest income and reported on
+            account are the exception and may involve a hard inquiry.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Are bank bonuses taxable?</summary>
+          <p className="mt-2">Checking and savings bonuses are generally treated as interest income and reported on
             Form 1099-INT when they reach $10 or more. Credit-card-style rewards tied to spending
             are treated differently, but cash for opening a deposit account is interest-like income
-            in the IRS&apos;s view.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I get multiple bonuses per year?</h3>
-          <p className="mt-2">
-            Yes — bonus churning is legal, and many savers collect two to four per year. The
+            in the IRS&apos;s view.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I get multiple bonuses per year?</summary>
+          <p className="mt-2">Yes — bonus churning is legal, and many savers collect two to four per year. The
             constraints are one-bonus-per-bank waiting periods (often 12–24 months), ChexSystems
-            inquiry sensitivity, and your own tolerance for tracking requirements and tax forms.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Should I switch my main checking for a bonus?</h3>
-          <p className="mt-2">
-            Only if the account is good beyond the bonus — low fees, decent app, convenient ATMs.
+            inquiry sensitivity, and your own tolerance for tracking requirements and tax forms.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Should I switch my main checking for a bonus?</summary>
+          <p className="mt-2">Only if the account is good beyond the bonus — low fees, decent app, convenient ATMs.
             Many experienced bonus hunters keep a stable primary checking account and open bonus
-            accounts as satellites, so bill payments never depend on an account they plan to close.
-          </p>
-        </div>
+            accounts as satellites, so bill payments never depend on an account they plan to close.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -183,6 +189,21 @@ export default function CheckingAccountBonusesPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/checking-account-bonuses-2026"
+        title="Checking Account Bonuses 2026: How to Earn Them | LoanPay Save"
+        description="Bank checking promotions in 2026: direct-deposit requirements, holding periods, tax treatment, and how to value a bonus before you switch."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Do checking bonuses affect my credit score?", answer: "Usually not directly — banks typically check ChexSystems (deposit-account history), not the credit bureaus, and most do a soft pull. Overdraft lines of credit attached to the account are the exception and may involve a hard inquiry." },
+          { question: "Are bank bonuses taxable?", answer: "Checking and savings bonuses are generally treated as interest income and reported on Form 1099-INT when they reach $10 or more. Credit-card-style rewards tied to spending are treated differently, but cash for opening a deposit account is interest-like income in the IRS's view." },
+          { question: "Can I get multiple bonuses per year?", answer: "Yes — bonus churning is legal, and many savers collect two to four per year. The constraints are one-bonus-per-bank waiting periods (often 12–24 months), ChexSystems inquiry sensitivity, and your own tolerance for tracking requirements and tax forms." },
+          { question: "Should I switch my main checking for a bonus?", answer: "Only if the account is good beyond the bonus — low fees, decent app, convenient ATMs. Many experienced bonus hunters keep a stable primary checking account and open bonus accounts as satellites, so bill payments never depend on an account they plan to close." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/checking-account-bonuses-2026" title="Checking Account Bonuses 2026: How to Earn Them" />
+
     </div>
   );
 }

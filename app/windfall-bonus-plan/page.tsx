@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Windfall & Bonus Plan: Spend Smart, Save More | LoanPay Save",
   description:
     "What to do with tax refunds, work bonuses, and gifts: split rules that balance debt, savings, and fun — plus tax and timing notes.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/windfall-bonus-plan",
+  },
 };
 
 export default function WindfallBonusPlanPage() {
@@ -16,6 +21,9 @@ export default function WindfallBonusPlanPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Windfall Plan: Give Every Surprise Dollar a Job Before It Arrives
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Tax refunds, work bonuses, cash gifts, and side-job payouts share a dangerous trait: money
         that was never in the budget feels free, so it evaporates into impulse spending with
@@ -37,6 +45,8 @@ export default function WindfallBonusPlanPage() {
         amounts so it scales from a $200 gift to a $10,000 bonus without renegotiation. Tell your
         partner or a friend; social commitment measurably improves follow-through.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         The classic allocation is a three-way split: one part to past obligations (high-interest
         debt, underfunded emergency reserves), one part to future goals (retirement, down payment,
@@ -98,6 +108,8 @@ export default function WindfallBonusPlanPage() {
           year), while work bonuses face withholding and gifts have their own reporting thresholds
           — confirm the tax character of each windfall type before allocating.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Timing tricks and tax notes</h2>
@@ -128,41 +140,35 @@ export default function WindfallBonusPlanPage() {
         present-you wrote far more readily than advice remembered vaguely.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Should I invest a windfall all at once or gradually?</h3>
-          <p className="mt-2">
-            Historical data favors immediate lump-sum investing about two-thirds of the time, since
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Should I invest a windfall all at once or gradually?</summary>
+          <p className="mt-2">Historical data favors immediate lump-sum investing about two-thirds of the time, since
             markets rise more often than they fall. But large windfalls that would cause regret if
             markets dipped can be dollar-cost averaged over 6–12 months — the slightly lower
-            expected return buys sleep, which has real value.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Is a big tax refund good or bad?</h3>
-          <p className="mt-2">
-            Comforting but inefficient — it means you over-withheld and gave an interest-free loan
+            expected return buys sleep, which has real value.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Is a big tax refund good or bad?</summary>
+          <p className="mt-2">Comforting but inefficient — it means you over-withheld and gave an interest-free loan
             all year. Aim for a small refund ($200–$500 buffer against owing) by tuning W-4
-            withholding, and redirect the monthly difference into automated savings.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What about expected inheritances?</h3>
-          <p className="mt-2">
-            Never budget against money you do not hold — estates take months or years to settle and
+            withholding, and redirect the monthly difference into automated savings.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What about expected inheritances?</summary>
+          <p className="mt-2">Never budget against money you do not hold — estates take months or years to settle and
             amounts shift. When funds arrive, park them separately, wait out the emotional period,
-            then run your normal split rule on the net proceeds after any estate taxes or debts.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">How do couples handle individual bonuses?</h3>
-          <p className="mt-2">
-            Agree in advance whether bonuses are joint or individual money — ambiguity causes most
+            then run your normal split rule on the net proceeds after any estate taxes or debts.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">How do couples handle individual bonuses?</summary>
+          <p className="mt-2">Agree in advance whether bonuses are joint or individual money — ambiguity causes most
             windfall fights. A common compromise: the earner keeps the fun slice personally while
-            debt and goal slices serve the household. Decide during calm planning, not on payday.
-          </p>
-        </div>
+            debt and goal slices serve the household. Decide during calm planning, not on payday.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -173,6 +179,21 @@ export default function WindfallBonusPlanPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/windfall-bonus-plan"
+        title="Windfall & Bonus Plan: Spend Smart, Save More | LoanPay Save"
+        description="What to do with tax refunds, work bonuses, and gifts: split rules that balance debt, savings, and fun — plus tax and timing notes."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Should I invest a windfall all at once or gradually?", answer: "Historical data favors immediate lump-sum investing about two-thirds of the time, since markets rise more often than they fall. But large windfalls that would cause regret if markets dipped can be dollar-cost averaged over 6–12 months — the slightly lower expected return buys sleep, which has real value." },
+          { question: "Is a big tax refund good or bad?", answer: "Comforting but inefficient — it means you over-withheld and gave an interest-free loan all year. Aim for a small refund ($200–$500 buffer against owing) by tuning W-4 withholding, and redirect the monthly difference into automated savings." },
+          { question: "What about expected inheritances?", answer: "Never budget against money you do not hold — estates take months or years to settle and amounts shift. When funds arrive, park them separately, wait out the emotional period, then run your normal split rule on the net proceeds after any estate taxes or debts." },
+          { question: "How do couples handle individual bonuses?", answer: "Agree in advance whether bonuses are joint or individual money — ambiguity causes most windfall fights. A common compromise: the earner keeps the fun slice personally while debt and goal slices serve the household. Decide during calm planning, not on payday." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/windfall-bonus-plan" title="Windfall & Bonus Plan: Spend Smart, Save More" />
+
     </div>
   );
 }

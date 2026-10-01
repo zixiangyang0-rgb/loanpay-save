@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "CD Ladder Strategy: How to Build One | LoanPay Save",
   description:
     "Build a certificate-of-deposit ladder that balances yield and access: rung sizing, renewal rules, and a worked 5-rung example.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/cd-ladder-strategy",
+  },
 };
 
 export default function CdLadderStrategyPage() {
@@ -16,6 +21,9 @@ export default function CdLadderStrategyPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         CD Ladder Strategy: Yield With Cash Freed Up Regularly
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         A certificate of deposit (CD) pays you a fixed rate for locking money away for a fixed
         term — but locking everything away for five years leaves you helpless if rates rise or a
@@ -39,6 +47,8 @@ export default function CdLadderStrategyPage() {
         four-rung quarterly ladder uses 3-, 6-, 9-, and 12-month CDs and frees cash every quarter,
         at the cost of lower short-term rates.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         The ladder automatically adapts to rate changes. If rates rise, each maturing rung
         reinvests at the new higher rate, so your average yield climbs within a year or two
@@ -107,6 +117,8 @@ export default function CdLadderStrategyPage() {
           Early-withdrawal penalties, often 90–365 days of interest depending on term, apply only
           if you break a rung before maturity, so size rungs you might raid conservatively.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Maintenance rules that keep ladders working</h2>
@@ -123,43 +135,37 @@ export default function CdLadderStrategyPage() {
         paperwork maze that costs more in time than it earns in interest.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">How much money do I need to start a ladder?</h3>
-          <p className="mt-2">
-            Many online banks let you open CDs with $500–$1,000 minimums, so a four-rung ladder can
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">How much money do I need to start a ladder?</summary>
+          <p className="mt-2">Many online banks let you open CDs with $500–$1,000 minimums, so a four-rung ladder can
             start around $2,000–$4,000. Smaller ladders still teach the mechanics, though the
-            dollar gains are modest — the strategy shines brightest above $10,000.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What happens if I need the money early?</h3>
-          <p className="mt-2">
-            You can break a CD anytime, but the early-withdrawal penalty typically forfeits 90 to
+            dollar gains are modest — the strategy shines brightest above $10,000.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What happens if I need the money early?</summary>
+          <p className="mt-2">You can break a CD anytime, but the early-withdrawal penalty typically forfeits 90 to
             365 days of interest depending on the term, and some banks can dip into principal on
             long CDs broken very early. That is precisely why emergency funds stay in savings, not
-            in the ladder.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Are CDs still worth it if savings rates are high?</h3>
-          <p className="mt-2">
-            Sometimes. A CD locks today&apos;s rate against future cuts, while savings rates float
+            in the ladder.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Are CDs still worth it if savings rates are high?</summary>
+          <p className="mt-2">Sometimes. A CD locks today&apos;s rate against future cuts, while savings rates float
             downward immediately. If you believe rates will fall, locking part of your cash in CDs
             preserves yield; if you expect rises, keep more in savings and build the ladder
-            gradually. Diversifying across both is the no-prediction-required answer.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Should I use brokered CDs in a ladder?</h3>
-          <p className="mt-2">
-            You can — brokered CDs held in a brokerage account ladder neatly and trade on a
+            gradually. Diversifying across both is the no-prediction-required answer.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Should I use brokered CDs in a ladder?</summary>
+          <p className="mt-2">You can — brokered CDs held in a brokerage account ladder neatly and trade on a
             secondary market instead of charging penalties. But their prices fluctuate before
             maturity and many are callable, so bank CDs with simple penalties suit most beginners
-            better. See our brokered CD guide for the full tradeoff.
-          </p>
-        </div>
+            better. See our brokered CD guide for the full tradeoff.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -171,6 +177,21 @@ export default function CdLadderStrategyPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/cd-ladder-strategy"
+        title="CD Ladder Strategy: How to Build One | LoanPay Save"
+        description="Build a certificate-of-deposit ladder that balances yield and access: rung sizing, renewal rules, and a worked 5-rung example."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "How much money do I need to start a ladder?", answer: "Many online banks let you open CDs with $500–$1,000 minimums, so a four-rung ladder can start around $2,000–$4,000. Smaller ladders still teach the mechanics, though the dollar gains are modest — the strategy shines brightest above $10,000." },
+          { question: "What happens if I need the money early?", answer: "You can break a CD anytime, but the early-withdrawal penalty typically forfeits 90 to 365 days of interest depending on the term, and some banks can dip into principal on long CDs broken very early. That is precisely why emergency funds stay in savings, not in the ladder." },
+          { question: "Are CDs still worth it if savings rates are high?", answer: "Sometimes. A CD locks today's rate against future cuts, while savings rates float downward immediately. If you believe rates will fall, locking part of your cash in CDs preserves yield; if you expect rises, keep more in savings and build the ladder gradually. Diversifying across both is the no-prediction-required answer." },
+          { question: "Should I use brokered CDs in a ladder?", answer: "You can — brokered CDs held in a brokerage account ladder neatly and trade on a secondary market instead of charging penalties. But their prices fluctuate before maturity and many are callable, so bank CDs with simple penalties suit most beginners better. See our brokered CD guide for the full tradeoff." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/cd-ladder-strategy" title="CD Ladder Strategy: How to Build One" />
+
     </div>
   );
 }

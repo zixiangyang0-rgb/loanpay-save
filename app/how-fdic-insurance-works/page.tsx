@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "How FDIC Insurance Works: Limits & Coverage | LoanPay Save",
   description:
     "FDIC deposit insurance in 2026: the $250,000 limit per depositor per bank per category, joint and trust coverage, and how to insure large balances.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/how-fdic-insurance-works",
+  },
 };
 
 export default function HowFdicInsuranceWorksPage() {
@@ -16,6 +21,9 @@ export default function HowFdicInsuranceWorksPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         How FDIC Insurance Works: The $250,000 Rule, Fully Explained
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         The Federal Deposit Insurance Corporation insures deposits at member banks up to $250,000
         per depositor, per insured bank, for each account ownership category. Since 1934, no
@@ -39,6 +47,8 @@ export default function HowFdicInsuranceWorksPage() {
         Coverage is automatic and free: banks pay the premiums, you do nothing, and principal plus
         accrued interest through the failure date are protected together.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Ownership categories are where ordinary families multiply protection without opening
         accounts everywhere. Single accounts cover $250,000 per owner. Joint accounts cover
@@ -107,6 +117,8 @@ export default function HowFdicInsuranceWorksPage() {
           cap). Verify any complex structure with the FDIC&apos;s free EDIE estimator before
           assuming you are covered — titling details decide everything.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">What FDIC insurance does not cover</h2>
@@ -139,42 +151,36 @@ export default function HowFdicInsuranceWorksPage() {
         check after any merger notice rather than assuming the grace period protects you forever.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">How do I check if my bank is FDIC-insured?</h3>
-          <p className="mt-2">
-            Use the FDIC&apos;s BankFind tool online and look for the official FDIC sign at
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">How do I check if my bank is FDIC-insured?</summary>
+          <p className="mt-2">Use the FDIC&apos;s BankFind tool online and look for the official FDIC sign at
             branches and on the bank&apos;s website. Be wary of lookalike language —
             &ldquo;banking services provided by&rdquo; a partner bank means your coverage depends
-            on that partner and the titling arrangement.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What happens if my bank fails?</h3>
-          <p className="mt-2">
-            The FDIC typically arranges an acquiring bank to assume insured deposits, often with
+            on that partner and the titling arrangement.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What happens if my bank fails?</summary>
+          <p className="mt-2">The FDIC typically arranges an acquiring bank to assume insured deposits, often with
             access restored by the next business day, or issues payment directly. Amounts above
             insurance limits may be partially recovered through the receivership process — slowly
-            and uncertainly, which is why staying within limits matters.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Do different branches count as different banks?</h3>
-          <p className="mt-2">
-            No. All branches of one chartered bank share a single limit, and mergers can combine
+            and uncertainly, which is why staying within limits matters.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Do different branches count as different banks?</summary>
+          <p className="mt-2">No. All branches of one chartered bank share a single limit, and mergers can combine
             previously separate limits — after your banks merge, review coverage promptly since
-            temporary extended coverage after mergers eventually expires.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Is the $250,000 limit changing?</h3>
-          <p className="mt-2">
-            Proposals surface periodically, but as of October 2026 the standard maximum remains
+            temporary extended coverage after mergers eventually expires.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Is the $250,000 limit changing?</summary>
+          <p className="mt-2">Proposals surface periodically, but as of October 2026 the standard maximum remains
             $250,000 per depositor, per bank, per ownership category. Verify against FDIC.gov
-            before acting on any headline claiming otherwise.
-          </p>
-        </div>
+            before acting on any headline claiming otherwise.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -185,6 +191,21 @@ export default function HowFdicInsuranceWorksPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/how-fdic-insurance-works"
+        title="How FDIC Insurance Works: Limits & Coverage | LoanPay Save"
+        description="FDIC deposit insurance in 2026: the $250,000 limit per depositor per bank per category, joint and trust coverage, and how to insure large balances."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "How do I check if my bank is FDIC-insured?", answer: "Use the FDIC's BankFind tool online and look for the official FDIC sign at branches and on the bank's website. Be wary of lookalike language — 'banking services provided by' a partner bank means your coverage depends on that partner and the titling arrangement." },
+          { question: "What happens if my bank fails?", answer: "The FDIC typically arranges an acquiring bank to assume insured deposits, often with access restored by the next business day, or issues payment directly. Amounts above insurance limits may be partially recovered through the receivership process — slowly and uncertainly, which is why staying within limits matters." },
+          { question: "Do different branches count as different banks?", answer: "No. All branches of one chartered bank share a single limit, and mergers can combine previously separate limits — after your banks merge, review coverage promptly since temporary extended coverage after mergers eventually expires." },
+          { question: "Is the $250,000 limit changing?", answer: "Proposals surface periodically, but as of October 2026 the standard maximum remains $250,000 per depositor, per bank, per ownership category. Verify against FDIC.gov before acting on any headline claiming otherwise." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/how-fdic-insurance-works" title="How FDIC Insurance Works: Limits & Coverage" />
+
     </div>
   );
 }

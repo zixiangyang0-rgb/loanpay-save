@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Savings Account Bonuses Guide | LoanPay Save",
   description:
     "How savings account bonuses work: deposit tiers, balance holding periods, stacking with high base rates, and the tax bite.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/savings-account-bonuses-guide",
+  },
 };
 
 export default function SavingsAccountBonusesGuidePage() {
@@ -16,6 +21,9 @@ export default function SavingsAccountBonusesGuidePage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Savings Account Bonuses: Stack a Payout on Top of Your Rate
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Savings account bonuses pay you a lump sum — illustratively $150 to $500+ at online banks,
         occasionally more at large banks with high deposit tiers — for bringing a chunk of money
@@ -38,6 +46,8 @@ export default function SavingsAccountBonusesGuidePage() {
         dips. Fall $1 below the tier for one day under an average-balance rule and the whole
         bonus can vanish — so keep a buffer of a few hundred dollars above the threshold.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         The subtle catch is the account&apos;s ongoing rate. Bonus-bearing savings accounts at
         large banks sometimes pay modest base APYs, well below top online competitors. A $300
@@ -99,6 +109,8 @@ export default function SavingsAccountBonusesGuidePage() {
           base interest together, never the bonus alone, and confirm whether the balance rule uses
           snapshots or daily averages before transferring.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Stacking rules and sequencing</h2>
@@ -127,43 +139,37 @@ export default function SavingsAccountBonusesGuidePage() {
         ChexSystems record spotless and the door open for the bank&apos;s next offer cycle.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I use my emergency fund to earn a bonus?</h3>
-          <p className="mt-2">
-            Yes, with caution: the bonus account must be equally safe (FDIC-insured) and reachable
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I use my emergency fund to earn a bonus?</summary>
+          <p className="mt-2">Yes, with caution: the bonus account must be equally safe (FDIC-insured) and reachable
             within days. Never chase a bonus with money locked in a CD or tied up past your
             comfort window — an emergency during a holding period forces an ugly choice between the
-            payout and the penalty.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What counts as &ldquo;new money&rdquo;?</h3>
-          <p className="mt-2">
-            Funds transferred from another institution, generally measured against your balance at
+            payout and the penalty.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What counts as &ldquo;new money&rdquo;?</summary>
+          <p className="mt-2">Funds transferred from another institution, generally measured against your balance at
             that bank on a specific baseline date. Internal transfers between your own accounts at
             the same bank almost never qualify, and joint-account aggregation rules vary — read the
-            offer&apos;s definitions section.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">How are savings bonuses taxed?</h3>
-          <p className="mt-2">
-            Like interest income: taxable federally as ordinary income and usually at the state
+            offer&apos;s definitions section.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">How are savings bonuses taxed?</summary>
+          <p className="mt-2">Like interest income: taxable federally as ordinary income and usually at the state
             level too, reported on Form 1099-INT at $10+. Set aside your marginal-rate share the
-            moment the bonus posts so April holds no surprise.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Will bonus hunting hurt future applications?</h3>
-          <p className="mt-2">
-            Moderate pacing — a few accounts a year, held through their full terms — rarely causes
+            moment the bonus posts so April holds no surprise.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Will bonus hunting hurt future applications?</summary>
+          <p className="mt-2">Moderate pacing — a few accounts a year, held through their full terms — rarely causes
             problems. Rapid-fire openings and quick closures can trigger ChexSystems denials and
             bank-specific blacklists, so treat each account respectfully and close cleanly after
-            requirements end.
-          </p>
-        </div>
+            requirements end.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -174,6 +180,21 @@ export default function SavingsAccountBonusesGuidePage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/savings-account-bonuses-guide"
+        title="Savings Account Bonuses Guide | LoanPay Save"
+        description="How savings account bonuses work: deposit tiers, balance holding periods, stacking with high base rates, and the tax bite."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Can I use my emergency fund to earn a bonus?", answer: "Yes, with caution: the bonus account must be equally safe (FDIC-insured) and reachable within days. Never chase a bonus with money locked in a CD or tied up past your comfort window — an emergency during a holding period forces an ugly choice between the payout and the penalty." },
+          { question: "What counts as 'new money'?", answer: "Funds transferred from another institution, generally measured against your balance at that bank on a specific baseline date. Internal transfers between your own accounts at the same bank almost never qualify, and joint-account aggregation rules vary — read the offer's definitions section." },
+          { question: "How are savings bonuses taxed?", answer: "Like interest income: taxable federally as ordinary income and usually at the state level too, reported on Form 1099-INT at $10+. Set aside your marginal-rate share the moment the bonus posts so April holds no surprise." },
+          { question: "Will bonus hunting hurt future applications?", answer: "Moderate pacing — a few accounts a year, held through their full terms — rarely causes problems. Rapid-fire openings and quick closures can trigger ChexSystems denials and bank-specific blacklists, so treat each account respectfully and close cleanly after requirements end." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/savings-account-bonuses-guide" title="Savings Account Bonuses Guide" />
+
     </div>
   );
 }

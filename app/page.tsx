@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { OrganizationJsonLd } from "../lib/schema";
 
 export const metadata: Metadata = {
   title: "LoanPay Save | High-Yield Savings, CDs & Budgeting Guides",
   description:
     "Free educational guides to high-yield savings accounts, CDs, bank bonuses, emergency funds, and budgeting systems that make saving automatic.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/",
+  },
 };
 
 type Card = { title: string; description: string; href: string; badge: string };
@@ -222,6 +227,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <AdSlot format="display" slot="TODO-save-display-1" />
+
       {clusters.map((cluster) => (
         <section key={cluster.id} className="mt-12">
           <h2 className="text-2xl font-bold">{cluster.heading}</h2>
@@ -265,6 +272,7 @@ export default function HomePage() {
           .
         </p>
       </section>
+      <OrganizationJsonLd />
     </div>
   );
 }

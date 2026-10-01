@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Emergency Fund: How Much Do You Need? | LoanPay Save",
   description:
     "Size your emergency fund in 2026: the 3-6 month rule, when 12 months makes sense, what counts as essential spending, and where beginners start.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/emergency-fund-how-much",
+  },
 };
 
 export default function EmergencyFundHowMuchPage() {
@@ -16,6 +21,9 @@ export default function EmergencyFundHowMuchPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Emergency Fund: How Much Is Enough in 2026?
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         An emergency fund is cash reserved for true surprises — job loss, major car repairs,
         medical deductibles — not vacations or holiday shopping. The classic guidance says three
@@ -39,6 +47,8 @@ export default function EmergencyFundHowMuchPage() {
         keeps the target honest, because unemployment benefits and slashed discretionary spending
         stretch essentials further than gross-pay rules of thumb imply.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Then adjust for your risk profile. Single-income households, freelancers with lumpy
         revenue, workers in cyclical industries, and people with chronic health conditions should
@@ -102,6 +112,8 @@ export default function EmergencyFundHowMuchPage() {
           offers.) The household&apos;s rule: pause extra investing only until the starter target,
           then fund both simultaneously, because over-saving cash for years has its own cost.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Building from zero without burnout</h2>
@@ -130,44 +142,38 @@ export default function EmergencyFundHowMuchPage() {
         target every January alongside insurance renewals so coverage and cash stay matched.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Should I pay debt or build savings first?</h3>
-          <p className="mt-2">
-            Do both in sequence: build a $1,000–$2,000 mini-fund first so surprises stop adding to
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Should I pay debt or build savings first?</summary>
+          <p className="mt-2">Do both in sequence: build a $1,000–$2,000 mini-fund first so surprises stop adding to
             debt, then attack high-interest debt aggressively, then complete the full 3–6 month
             fund. Skipping the mini-fund means every emergency lands back on the card you just paid
-            down.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can my emergency fund be too big?</h3>
-          <p className="mt-2">
-            Yes. Cash beyond about 6–12 months of essentials (depending on your risk) typically
+            down.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can my emergency fund be too big?</summary>
+          <p className="mt-2">Yes. Cash beyond about 6–12 months of essentials (depending on your risk) typically
             earns less than long-term investments over time. Once the fund is full, redirect new
             savings to retirement accounts, CDs, or other goals rather than growing cash
-            indefinitely.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What counts as an emergency?</h3>
-          <p className="mt-2">
-            Sudden, necessary, and urgent: job loss, essential home or car repairs, medical bills,
+            indefinitely.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What counts as an emergency?</summary>
+          <p className="mt-2">Sudden, necessary, and urgent: job loss, essential home or car repairs, medical bills,
             emergency travel. Not emergencies: sales, holidays, routine bills you forgot to budget,
             or investment &ldquo;opportunities.&rdquo; Write your definition down when times are
-            calm so stressed-you cannot renegotiate it.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Should couples combine emergency funds?</h3>
-          <p className="mt-2">
-            A joint fund sized to shared essentials works for most couples and simplifies
+            calm so stressed-you cannot renegotiate it.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Should couples combine emergency funds?</summary>
+          <p className="mt-2">A joint fund sized to shared essentials works for most couples and simplifies
             management. Partners with very different risk tolerances sometimes hold a shared base
             plus small individual buffers — the structure matters less than both partners agreeing
-            on the number and the rules for touching it.
-          </p>
-        </div>
+            on the number and the rules for touching it.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -178,6 +184,21 @@ export default function EmergencyFundHowMuchPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/emergency-fund-how-much"
+        title="Emergency Fund: How Much Do You Need? | LoanPay Save"
+        description="Size your emergency fund in 2026: the 3-6 month rule, when 12 months makes sense, what counts as essential spending, and where beginners start."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Should I pay debt or build savings first?", answer: "Do both in sequence: build a $1,000–$2,000 mini-fund first so surprises stop adding to debt, then attack high-interest debt aggressively, then complete the full 3–6 month fund. Skipping the mini-fund means every emergency lands back on the card you just paid down." },
+          { question: "Can my emergency fund be too big?", answer: "Yes. Cash beyond about 6–12 months of essentials (depending on your risk) typically earns less than long-term investments over time. Once the fund is full, redirect new savings to retirement accounts, CDs, or other goals rather than growing cash indefinitely." },
+          { question: "What counts as an emergency?", answer: "Sudden, necessary, and urgent: job loss, essential home or car repairs, medical bills, emergency travel. Not emergencies: sales, holidays, routine bills you forgot to budget, or investment 'opportunities.' Write your definition down when times are calm so stressed-you cannot renegotiate it." },
+          { question: "Should couples combine emergency funds?", answer: "A joint fund sized to shared essentials works for most couples and simplifies management. Partners with very different risk tolerances sometimes hold a shared base plus small individual buffers — the structure matters less than both partners agreeing on the number and the rules for touching it." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/emergency-fund-how-much" title="Emergency Fund: How Much Do You Need?" />
+
     </div>
   );
 }

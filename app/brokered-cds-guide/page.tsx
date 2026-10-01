@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Brokered CDs Guide: Buying CDs at a Brokerage | LoanPay Save",
   description:
     "Brokered certificates of deposit in 2026: how brokerage CDs price, secondary-market liquidity, call risk, and FDIC coverage across banks.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/brokered-cds-guide",
+  },
 };
 
 export default function BrokeredCdsGuidePage() {
@@ -16,6 +21,9 @@ export default function BrokeredCdsGuidePage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Brokered CDs: Shop Every Bank&apos;s Rates From One Account
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         A brokered CD is a bank certificate of deposit bought through a brokerage — Fidelity,
         Schwab, Vanguard, or similar — instead of directly from the issuing bank. The underlying
@@ -40,6 +48,8 @@ export default function BrokeredCdsGuidePage() {
         brokered CDs pay out monthly or semiannually to your cash sweep rather than compounding
         inside the CD, so the stated yield assumes you reinvest those payments yourself.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         FDIC insurance still applies — each issuing bank&apos;s CDs count toward your $250,000
         limit at that bank, aggregated across everything you hold from that issuer including
@@ -104,6 +114,8 @@ export default function BrokeredCdsGuidePage() {
           non-callable issues, which most brokerages let you do with one checkbox. (Yields
           illustrative — check current inventory.)
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Using brokered CDs well</h2>
@@ -135,40 +147,34 @@ export default function BrokeredCdsGuidePage() {
         stock thinly.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Do brokered CDs compound?</h3>
-          <p className="mt-2">
-            Often not automatically — coupon payments typically flow to your brokerage cash sweep,
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Do brokered CDs compound?</summary>
+          <p className="mt-2">Often not automatically — coupon payments typically flow to your brokerage cash sweep,
             where they earn the sweep rate until you reinvest. Your realized return depends on what
-            you do with those payments, so set sweep reinvestment or a manual routine.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What does &ldquo;callable&rdquo; mean exactly?</h3>
-          <p className="mt-2">
-            The issuing bank may redeem the CD before maturity on specified dates, usually when
+            you do with those payments, so set sweep reinvestment or a manual routine.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What does &ldquo;callable&rdquo; mean exactly?</summary>
+          <p className="mt-2">The issuing bank may redeem the CD before maturity on specified dates, usually when
             falling rates let it refinance cheaper. You get principal plus accrued interest — but
-            lose the above-market rate going forward. Non-callable CDs cannot be taken back early.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Are brokered CDs safe if my brokerage fails?</h3>
-          <p className="mt-2">
-            Your CD is an obligation of the issuing bank, FDIC-insured to limits — brokerage
+            lose the above-market rate going forward. Non-callable CDs cannot be taken back early.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Are brokered CDs safe if my brokerage fails?</summary>
+          <p className="mt-2">Your CD is an obligation of the issuing bank, FDIC-insured to limits — brokerage
             failure does not erase it, and assets transfer to another firm. SIPC covers missing
-            securities at a failed brokerage, a separate backstop you should rarely need.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I ladder brokered CDs?</h3>
-          <p className="mt-2">
-            Yes, beautifully — buy 1- through 5-year new-issue CDs in one session and roll each
+            securities at a failed brokerage, a separate backstop you should rarely need.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I ladder brokered CDs?</summary>
+          <p className="mt-2">Yes, beautifully — buy 1- through 5-year new-issue CDs in one session and roll each
             maturity into a new longest rung. One login, one tax form, automatic maturity
-            proceeds. Just keep every rung non-callable and from issuers within your FDIC headroom.
-          </p>
-        </div>
+            proceeds. Just keep every rung non-callable and from issuers within your FDIC headroom.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -179,6 +185,21 @@ export default function BrokeredCdsGuidePage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/brokered-cds-guide"
+        title="Brokered CDs Guide: Buying CDs at a Brokerage | LoanPay Save"
+        description="Brokered certificates of deposit in 2026: how brokerage CDs price, secondary-market liquidity, call risk, and FDIC coverage across banks."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Do brokered CDs compound?", answer: "Often not automatically — coupon payments typically flow to your brokerage cash sweep, where they earn the sweep rate until you reinvest. Your realized return depends on what you do with those payments, so set sweep reinvestment or a manual routine." },
+          { question: "What does 'callable' mean exactly?", answer: "The issuing bank may redeem the CD before maturity on specified dates, usually when falling rates let it refinance cheaper. You get principal plus accrued interest — but lose the above-market rate going forward. Non-callable CDs cannot be taken back early." },
+          { question: "Are brokered CDs safe if my brokerage fails?", answer: "Your CD is an obligation of the issuing bank, FDIC-insured to limits — brokerage failure does not erase it, and assets transfer to another firm. SIPC covers missing securities at a failed brokerage, a separate backstop you should rarely need." },
+          { question: "Can I ladder brokered CDs?", answer: "Yes, beautifully — buy 1- through 5-year new-issue CDs in one session and roll each maturity into a new longest rung. One login, one tax form, automatic maturity proceeds. Just keep every rung non-callable and from issuers within your FDIC headroom." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/brokered-cds-guide" title="Brokered CDs Guide: Buying CDs at a Brokerage" />
+
     </div>
   );
 }

@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Treasury Bills vs. CDs: After-Tax Math | LoanPay Save",
   description:
     "T-bills versus bank CDs in 2026: state-tax exemption, FDIC limits, liquidity, minimums, and a worked after-tax comparison.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/treasury-bills-vs-cds",
+  },
 };
 
 export default function TreasuryBillsVsCdsPage() {
@@ -16,6 +21,9 @@ export default function TreasuryBillsVsCdsPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Treasury Bills vs. CDs: The After-Tax Comparison Nobody Shows You
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Treasury bills and certificates of deposit compete for the same dollars: safe, fixed-term
         cash earning a known yield. T-bills are short-term US government debt (4 to 52 weeks) sold
@@ -40,6 +48,8 @@ export default function TreasuryBillsVsCdsPage() {
         a new bill — a T-bill ladder — keeps cash nearly as liquid as savings while capturing
         fixed-term yields.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         CDs invert several of these properties. Bank CDs commonly require $500–$1,000 minimums
         (many online banks now $0), pay interest that is fully taxable at both federal and state
@@ -107,6 +117,8 @@ export default function TreasuryBillsVsCdsPage() {
           multiply any CD yield by (1 − your state rate) before comparing with T-bills, and
           remember the bill&apos;s liquidity edge on top.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Practical setup: a T-bill ladder beside your CDs</h2>
@@ -136,42 +148,36 @@ export default function TreasuryBillsVsCdsPage() {
         repetition teaches more than any guide.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I lose money in T-bills?</h3>
-          <p className="mt-2">
-            Held to maturity, T-bills pay face value backed by the US government — the practical
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I lose money in T-bills?</summary>
+          <p className="mt-2">Held to maturity, T-bills pay face value backed by the US government — the practical
             risk is essentially zero in nominal terms. Selling early on the secondary market can
             produce small gains or losses if rates moved, and inflation can erode real purchasing
-            power, but nominal loss at maturity is not a realistic outcome.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What is the minimum to buy T-bills?</h3>
-          <p className="mt-2">
-            $100 in $100 increments for TreasuryDirect and most brokerages — lower than most bank
+            power, but nominal loss at maturity is not a realistic outcome.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What is the minimum to buy T-bills?</summary>
+          <p className="mt-2">$100 in $100 increments for TreasuryDirect and most brokerages — lower than most bank
             CDs. Non-competitive bids up to $10 million per auction are available for very large
-            savers, far above FDIC caps that would otherwise force multi-bank spreading.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Are T-bills better than a high-yield savings account?</h3>
-          <p className="mt-2">
-            Different jobs: T-bills lock a fixed yield and dodge state tax but require rolling
+            savers, far above FDIC caps that would otherwise force multi-bank spreading.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Are T-bills better than a high-yield savings account?</summary>
+          <p className="mt-2">Different jobs: T-bills lock a fixed yield and dodge state tax but require rolling
             maturities; savings stay instantly liquid with variable rates. Many savers hold both —
             savings for the emergency core, T-bills for the deeper reserve earning a fixed,
-            tax-efficient yield.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Do T-bills make sense in no-tax states?</h3>
-          <p className="mt-2">
-            Less often on yield alone, since the state-tax edge is worth zero there — compare
+            tax-efficient yield.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Do T-bills make sense in no-tax states?</summary>
+          <p className="mt-2">Less often on yield alone, since the state-tax edge is worth zero there — compare
             headline rates directly and favor CDs or savings when they lead. T-bills can still win
-            on liquidity (resale vs. penalties) or when amounts exceed convenient FDIC coverage.
-          </p>
-        </div>
+            on liquidity (resale vs. penalties) or when amounts exceed convenient FDIC coverage.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -182,6 +188,21 @@ export default function TreasuryBillsVsCdsPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/treasury-bills-vs-cds"
+        title="Treasury Bills vs. CDs: After-Tax Math | LoanPay Save"
+        description="T-bills versus bank CDs in 2026: state-tax exemption, FDIC limits, liquidity, minimums, and a worked after-tax comparison."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Can I lose money in T-bills?", answer: "Held to maturity, T-bills pay face value backed by the US government — the practical risk is essentially zero in nominal terms. Selling early on the secondary market can produce small gains or losses if rates moved, and inflation can erode real purchasing power, but nominal loss at maturity is not a realistic outcome." },
+          { question: "What is the minimum to buy T-bills?", answer: "$100 in $100 increments for TreasuryDirect and most brokerages — lower than most bank CDs. Non-competitive bids up to $10 million per auction are available for very large savers, far above FDIC caps that would otherwise force multi-bank spreading." },
+          { question: "Are T-bills better than a high-yield savings account?", answer: "Different jobs: T-bills lock a fixed yield and dodge state tax but require rolling maturities; savings stay instantly liquid with variable rates. Many savers hold both — savings for the emergency core, T-bills for the deeper reserve earning a fixed, tax-efficient yield." },
+          { question: "Do T-bills make sense in no-tax states?", answer: "Less often on yield alone, since the state-tax edge is worth zero there — compare headline rates directly and favor CDs or savings when they lead. T-bills can still win on liquidity (resale vs. penalties) or when amounts exceed convenient FDIC coverage." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/treasury-bills-vs-cds" title="Treasury Bills vs. CDs: After-Tax Math" />
+
     </div>
   );
 }

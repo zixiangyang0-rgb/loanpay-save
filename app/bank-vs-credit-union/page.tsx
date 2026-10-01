@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Bank vs. Credit Union: Honest Comparison | LoanPay Save",
   description:
     "Banks versus credit unions in 2026: rates, fees, branches, apps, membership rules, and FDIC vs. NCUA insurance compared.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/bank-vs-credit-union",
+  },
 };
 
 export default function BankVsCreditUnionPage() {
@@ -16,6 +21,9 @@ export default function BankVsCreditUnionPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Bank vs. Credit Union: Which Deserves Your Savings?
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Banks are for-profit companies serving shareholders; credit unions are nonprofit
         cooperatives owned by their members. That single structural difference ripples into rates,
@@ -38,6 +46,8 @@ export default function BankVsCreditUnionPage() {
         cooperative edge shows up in pricing, while the corporate edge shows up in convenience and
         innovation. Your banking personality decides which edge matters more.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Insurance differs in name but not in strength. Bank deposits carry FDIC insurance;
         federal credit union deposits carry NCUA insurance through the National Credit Union Share
@@ -106,6 +116,8 @@ export default function BankVsCreditUnionPage() {
           yield-maximizer comfortable online, the internet bank leads. Price the whole
           relationship — deposits, loans, and fees together — not the savings APY in isolation.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">The hybrid answer most savers land on</h2>
@@ -134,43 +146,37 @@ export default function BankVsCreditUnionPage() {
         bill and sours you on an institution that did nothing wrong.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Is my money as safe at a credit union?</h3>
-          <p className="mt-2">
-            At federally insured credit unions, yes — NCUA insurance mirrors FDIC coverage at
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Is my money as safe at a credit union?</summary>
+          <p className="mt-2">At federally insured credit unions, yes — NCUA insurance mirrors FDIC coverage at
             $250,000 per depositor per category with the same government backing. Verify any
             credit union&apos;s insured status on the NCUA&apos;s site, especially
-            state-chartered institutions.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can anyone join a credit union?</h3>
-          <p className="mt-2">
-            You must fit its field of membership, but definitions are broad — many accept anyone in
+            state-chartered institutions.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can anyone join a credit union?</summary>
+          <p className="mt-2">You must fit its field of membership, but definitions are broad — many accept anyone in
             a county, employees of partner companies, or members of an affiliated nonprofit
             (sometimes joinable with a small donation). Check eligibility on the credit
-            union&apos;s website in minutes.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Do credit unions offer CDs and bonuses?</h3>
-          <p className="mt-2">
-            Credit unions offer share certificates (their name for CDs), often at rates beating
+            union&apos;s website in minutes.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Do credit unions offer CDs and bonuses?</summary>
+          <p className="mt-2">Credit unions offer share certificates (their name for CDs), often at rates beating
             branch banks, plus occasional new-member bonuses. Terms and penalties parallel bank
-            CDs — compare current offers side by side regardless of institution type.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Are credit union apps really worse?</h3>
-          <p className="mt-2">
-            It varies enormously. Large credit unions invest heavily and score well; tiny ones may
+            CDs — compare current offers side by side regardless of institution type.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Are credit union apps really worse?</summary>
+          <p className="mt-2">It varies enormously. Large credit unions invest heavily and score well; tiny ones may
             lag on features like mobile deposit limits or budgeting tools. Test-drive the app with
             reviews and a demo before moving primary banking — technology gaps are the most common
-            reason members leave.
-          </p>
-        </div>
+            reason members leave.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -181,6 +187,21 @@ export default function BankVsCreditUnionPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/bank-vs-credit-union"
+        title="Bank vs. Credit Union: Honest Comparison | LoanPay Save"
+        description="Banks versus credit unions in 2026: rates, fees, branches, apps, membership rules, and FDIC vs. NCUA insurance compared."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Is my money as safe at a credit union?", answer: "At federally insured credit unions, yes — NCUA insurance mirrors FDIC coverage at $250,000 per depositor per category with the same government backing. Verify any credit union's insured status on the NCUA's site, especially state-chartered institutions." },
+          { question: "Can anyone join a credit union?", answer: "You must fit its field of membership, but definitions are broad — many accept anyone in a county, employees of partner companies, or members of an affiliated nonprofit (sometimes joinable with a small donation). Check eligibility on the credit union's website in minutes." },
+          { question: "Do credit unions offer CDs and bonuses?", answer: "Credit unions offer share certificates (their name for CDs), often at rates beating branch banks, plus occasional new-member bonuses. Terms and penalties parallel bank CDs — compare current offers side by side regardless of institution type." },
+          { question: "Are credit union apps really worse?", answer: "It varies enormously. Large credit unions invest heavily and score well; tiny ones may lag on features like mobile deposit limits or budgeting tools. Test-drive the app with reviews and a demo before moving primary banking — technology gaps are the most common reason members leave." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/bank-vs-credit-union" title="Bank vs. Credit Union: Honest Comparison" />
+
     </div>
   );
 }

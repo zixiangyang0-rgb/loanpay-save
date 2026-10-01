@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Pay Yourself First: Automate Saving | LoanPay Save",
   description:
     "Pay-yourself-first automation: move money on payday before spending, size the transfer, split across goals, and handle irregular income.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/pay-yourself-first-automation",
+  },
 };
 
 export default function PayYourselfFirstAutomationPage() {
@@ -16,6 +21,9 @@ export default function PayYourselfFirstAutomationPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Pay Yourself First: The Automation That Beats Every Budget App
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Pay yourself first means treating savings as the first bill of the month — an automatic
         transfer that leaves checking on payday, before discretionary spending gets a vote. It
@@ -38,6 +46,8 @@ export default function PayYourselfFirstAutomationPage() {
         apply the same default effect to cash savings. The practical upshot: a modest automatic
         transfer you never think about reliably beats an ambitious manual plan you revisit twice.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Timing is the mechanism. Schedule transfers for payday itself (or the next morning),
         never for month-end when balances are lowest and willpower thinnest. If you are paid
@@ -99,6 +109,8 @@ export default function PayYourselfFirstAutomationPage() {
           are tight and escalate one point per quarter — the automation habit matters more than
           the initial amount.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Setup for steady and irregular incomes</h2>
@@ -128,41 +140,35 @@ export default function PayYourselfFirstAutomationPage() {
         with a scheduled increase turns the system into a ratchet that only moves upward.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What if my balance goes negative from the transfer?</h3>
-          <p className="mt-2">
-            The transfer is too large or mistimed — shrink it until checking never dips below a
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What if my balance goes negative from the transfer?</summary>
+          <p className="mt-2">The transfer is too large or mistimed — shrink it until checking never dips below a
             one-week buffer, then grow gradually. An automated system that triggers overdraft fees
-            destroys trust in itself; start small enough to be boring and scale from there.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Should automation go to savings or investments?</h3>
-          <p className="mt-2">
-            Sequence it: emergency mini-fund first, high-interest debt next (automate extra
+            destroys trust in itself; start small enough to be boring and scale from there.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Should automation go to savings or investments?</summary>
+          <p className="mt-2">Sequence it: emergency mini-fund first, high-interest debt next (automate extra
             payments), then split between completing the emergency fund and retirement investing.
             Cash goals under three years stay in savings; longer horizons can flow to invested
-            accounts.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">How much should I pay myself first?</h3>
-          <p className="mt-2">
-            Ten percent of take-home is the classic floor; 15–20% builds wealth meaningfully; 50%+
+            accounts.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">How much should I pay myself first?</summary>
+          <p className="mt-2">Ten percent of take-home is the classic floor; 15–20% builds wealth meaningfully; 50%+
             savings rates belong to aggressive FIRE savers. More important than the number: a rate
-            you sustain for years beats a heroic rate abandoned in March.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I automate bill payments the same way?</h3>
-          <p className="mt-2">
-            Yes — and you should. Autopay for fixed bills plus payday savings transfers means the
+            you sustain for years beats a heroic rate abandoned in March.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I automate bill payments the same way?</summary>
+          <p className="mt-2">Yes — and you should. Autopay for fixed bills plus payday savings transfers means the
             only money requiring decisions is true discretionary spending. Keep one calendar of all
-            automatic moves and review it monthly so nothing drifts unnoticed.
-          </p>
-        </div>
+            automatic moves and review it monthly so nothing drifts unnoticed.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -173,6 +179,21 @@ export default function PayYourselfFirstAutomationPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/pay-yourself-first-automation"
+        title="Pay Yourself First: Automate Saving | LoanPay Save"
+        description="Pay-yourself-first automation: move money on payday before spending, size the transfer, split across goals, and handle irregular income."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "What if my balance goes negative from the transfer?", answer: "The transfer is too large or mistimed — shrink it until checking never dips below a one-week buffer, then grow gradually. An automated system that triggers overdraft fees destroys trust in itself; start small enough to be boring and scale from there." },
+          { question: "Should automation go to savings or investments?", answer: "Sequence it: emergency mini-fund first, high-interest debt next (automate extra payments), then split between completing the emergency fund and retirement investing. Cash goals under three years stay in savings; longer horizons can flow to invested accounts." },
+          { question: "How much should I pay myself first?", answer: "Ten percent of take-home is the classic floor; 15–20% builds wealth meaningfully; 50%+ savings rates belong to aggressive FIRE savers. More important than the number: a rate you sustain for years beats a heroic rate abandoned in March." },
+          { question: "Can I automate bill payments the same way?", answer: "Yes — and you should. Autopay for fixed bills plus payday savings transfers means the only money requiring decisions is true discretionary spending. Keep one calendar of all automatic moves and review it monthly so nothing drifts unnoticed." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/pay-yourself-first-automation" title="Pay Yourself First: Automate Saving" />
+
     </div>
   );
 }

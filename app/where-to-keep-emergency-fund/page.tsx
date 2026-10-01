@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Where to Keep Your Emergency Fund | LoanPay Save",
   description:
     "Best homes for emergency cash in 2026: tiered savings, T-bills, I bonds, and what to avoid — balancing speed, safety, and yield.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/where-to-keep-emergency-fund",
+  },
 };
 
 export default function WhereToKeepEmergencyFundPage() {
@@ -16,6 +21,9 @@ export default function WhereToKeepEmergencyFundPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Where to Keep Your Emergency Fund: Safe, Reachable, Growing
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Knowing your emergency-fund number is half the battle; parking it correctly is the other
         half. The ideal home is safe from market loss, reachable within days, and earning a
@@ -39,6 +47,8 @@ export default function WhereToKeepEmergencyFundPage() {
         all. Size the tiers to your life: freelancers with lumpy income often fatten tier one,
         while tenured employees might keep tier one lean.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Keep all three tiers boring and insured. Tier one and two belong in FDIC-insured deposit
         accounts (confirming coverage per ownership category if balances are large). Tier three can
@@ -105,6 +115,8 @@ export default function WhereToKeepEmergencyFundPage() {
           20% just as a layoff hits, the &ldquo;fund&rdquo; is worth $19,200 at the worst moment.
           Tiering buys yield without ever risking that arithmetic.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Where emergency money must never go</h2>
@@ -134,42 +146,36 @@ export default function WhereToKeepEmergencyFundPage() {
         years; households that wing it discover blurred tiers exactly when clarity matters most.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Should spouses each keep their own fund?</h3>
-          <p className="mt-2">
-            One joint fund sized to shared essentials is simplest and avoids duplicated idle cash.
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Should spouses each keep their own fund?</summary>
+          <p className="mt-2">One joint fund sized to shared essentials is simplest and avoids duplicated idle cash.
             Couples who prefer autonomy can split proportionally to income — either works as long
-            as the combined total hits the target and both partners know where it lives.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I bonds really be emergency money?</h3>
-          <p className="mt-2">
-            Only the seasoned portion. I bonds cannot be redeemed at all for 12 months, so new
+            as the combined total hits the target and both partners know where it lives.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I bonds really be emergency money?</summary>
+          <p className="mt-2">Only the seasoned portion. I bonds cannot be redeemed at all for 12 months, so new
             purchases are not emergency money yet. After the lockup expires, they become an
             excellent inflation-protected deep tier — redeemable in days, with only a 3-month
-            interest penalty before year five.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">How often should I rebalance the tiers?</h3>
-          <p className="mt-2">
-            Check twice a year or after major changes: raises, moves, new babies, or insurance
+            interest penalty before year five.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">How often should I rebalance the tiers?</summary>
+          <p className="mt-2">Check twice a year or after major changes: raises, moves, new babies, or insurance
             changes all shift essentials. Refill any tier you raided as the top savings priority
             before resuming investing — an emergency fund with a hole in it is just a savings
-            account.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Does keeping tier one in checking waste money?</h3>
-          <p className="mt-2">
-            Trivially. One month of essentials earning near-zero instead of 4% costs roughly 0.3%
+            account.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Does keeping tier one in checking waste money?</summary>
+          <p className="mt-2">Trivially. One month of essentials earning near-zero instead of 4% costs roughly 0.3%
             of annual spending — a few dozen dollars a year for most households. Instant access for
-            true midnight emergencies is worth far more than that.
-          </p>
-        </div>
+            true midnight emergencies is worth far more than that.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -180,6 +186,21 @@ export default function WhereToKeepEmergencyFundPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/where-to-keep-emergency-fund"
+        title="Where to Keep Your Emergency Fund | LoanPay Save"
+        description="Best homes for emergency cash in 2026: tiered savings, T-bills, I bonds, and what to avoid — balancing speed, safety, and yield."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Should spouses each keep their own fund?", answer: "One joint fund sized to shared essentials is simplest and avoids duplicated idle cash. Couples who prefer autonomy can split proportionally to income — either works as long as the combined total hits the target and both partners know where it lives." },
+          { question: "Can I bonds really be emergency money?", answer: "Only the seasoned portion. I bonds cannot be redeemed at all for 12 months, so new purchases are not emergency money yet. After the lockup expires, they become an excellent inflation-protected deep tier — redeemable in days, with only a 3-month interest penalty before year five." },
+          { question: "How often should I rebalance the tiers?", answer: "Check twice a year or after major changes: raises, moves, new babies, or insurance changes all shift essentials. Refill any tier you raided as the top savings priority before resuming investing — an emergency fund with a hole in it is just a savings account." },
+          { question: "Does keeping tier one in checking waste money?", answer: "Trivially. One month of essentials earning near-zero instead of 4% costs roughly 0.3% of annual spending — a few dozen dollars a year for most households. Instant access for true midnight emergencies is worth far more than that." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/where-to-keep-emergency-fund" title="Where to Keep Your Emergency Fund" />
+
     </div>
   );
 }

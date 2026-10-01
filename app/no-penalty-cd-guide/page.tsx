@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "No-Penalty CD Guide: Flexible Fixed Rates | LoanPay Save",
   description:
     "No-penalty CDs in 2026: how the early-withdrawal window works, rate tradeoffs vs. standard CDs, and when they beat high-yield savings.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/no-penalty-cd-guide",
+  },
 };
 
 export default function NoPenaltyCdGuidePage() {
@@ -16,6 +21,9 @@ export default function NoPenaltyCdGuidePage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         No-Penalty CDs: Lock the Rate, Keep the Exit
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         A no-penalty CD (sometimes called a liquid CD) pays a fixed rate like a standard CD but
         lets you withdraw the full balance once — penalty-free — after a short initial lockup,
@@ -39,6 +47,8 @@ export default function NoPenaltyCdGuidePage() {
         Minimums commonly run $500–$1,000 at online banks, and terms usually span 6–13 months,
         after which maturing funds can renew or move to savings during the grace period.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         The headline rate typically trails comparable standard CDs by a modest spread —
         illustratively 0.10 to 0.40 percentage points — because the bank prices your option to
@@ -108,6 +118,8 @@ export default function NoPenaltyCdGuidePage() {
           to avoid the worst outcome in volatile ones. (All figures illustrative — check current
           offers.)
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Smart uses and fine-print traps</h2>
@@ -136,40 +148,34 @@ export default function NoPenaltyCdGuidePage() {
         — because an unmade renewal decision is a decision made by the bank, in its favor.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I withdraw partially and keep the CD open?</h3>
-          <p className="mt-2">
-            Depends on the bank — many require a full withdrawal that closes the CD, while a few
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I withdraw partially and keep the CD open?</summary>
+          <p className="mt-2">Depends on the bank — many require a full withdrawal that closes the CD, while a few
             permit partial penalty-free withdrawals above a remaining-balance floor. Read the
-            withdrawal section of the disclosure, not just the marketing page.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Is the rate really fixed?</h3>
-          <p className="mt-2">
-            Yes, for the contracted term — that is the product&apos;s point. The bank cannot lower
+            withdrawal section of the disclosure, not just the marketing page.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Is the rate really fixed?</summary>
+          <p className="mt-2">Yes, for the contracted term — that is the product&apos;s point. The bank cannot lower
             it mid-term the way savings yields float. Renewal rates, however, reset to whatever
-            the bank offers at maturity.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Are no-penalty CDs FDIC-insured?</h3>
-          <p className="mt-2">
-            Bank-issued no-penalty CDs carry the same FDIC insurance as standard CDs, aggregating
+            the bank offers at maturity.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Are no-penalty CDs FDIC-insured?</summary>
+          <p className="mt-2">Bank-issued no-penalty CDs carry the same FDIC insurance as standard CDs, aggregating
             with your other same-category deposits at that bank toward the $250,000 limit. Confirm
-            the issuer is an FDIC member before opening.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">When is plain savings better?</h3>
-          <p className="mt-2">
-            When you will transact frequently, when the savings rate matches or beats the
+            the issuer is an FDIC member before opening.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">When is plain savings better?</summary>
+          <p className="mt-2">When you will transact frequently, when the savings rate matches or beats the
             no-penalty CD, or when rates are clearly rising — savings reprice upward automatically
-            while the CD sits fixed until you bother to break and move it.
-          </p>
-        </div>
+            while the CD sits fixed until you bother to break and move it.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -180,6 +186,21 @@ export default function NoPenaltyCdGuidePage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/no-penalty-cd-guide"
+        title="No-Penalty CD Guide: Flexible Fixed Rates | LoanPay Save"
+        description="No-penalty CDs in 2026: how the early-withdrawal window works, rate tradeoffs vs. standard CDs, and when they beat high-yield savings."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Can I withdraw partially and keep the CD open?", answer: "Depends on the bank — many require a full withdrawal that closes the CD, while a few permit partial penalty-free withdrawals above a remaining-balance floor. Read the withdrawal section of the disclosure, not just the marketing page." },
+          { question: "Is the rate really fixed?", answer: "Yes, for the contracted term — that is the product's point. The bank cannot lower it mid-term the way savings yields float. Renewal rates, however, reset to whatever the bank offers at maturity." },
+          { question: "Are no-penalty CDs FDIC-insured?", answer: "Bank-issued no-penalty CDs carry the same FDIC insurance as standard CDs, aggregating with your other same-category deposits at that bank toward the $250,000 limit. Confirm the issuer is an FDIC member before opening." },
+          { question: "When is plain savings better?", answer: "When you will transact frequently, when the savings rate matches or beats the no-penalty CD, or when rates are clearly rising — savings reprice upward automatically while the CD sits fixed until you bother to break and move it." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/no-penalty-cd-guide" title="No-Penalty CD Guide: Flexible Fixed Rates" />
+
     </div>
   );
 }

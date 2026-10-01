@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "52-Week Savings Challenge & Variations | LoanPay Save",
   description:
     "The 52-week money challenge explained: save $1,378 in a year, plus reverse, biweekly, and high-stakes variations that fit real budgets.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/savings-challenges-52-week",
+  },
 };
 
 export default function SavingsChallenges52WeekPage() {
@@ -16,6 +21,9 @@ export default function SavingsChallenges52WeekPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         The 52-Week Savings Challenge: $1,378 and Every Twist Worth Trying
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         The classic 52-week challenge is beautifully simple: save $1 in week one, $2 in week two,
         $3 in week three, all the way to $52 in week fifty-two. Finish every deposit and you hold
@@ -39,6 +47,8 @@ export default function SavingsChallenges52WeekPage() {
         with the challenge name — visible progress is the fuel, and restarts are allowed: missing
         week 34 just means doubling up later or extending into week 53, not abandoning the year.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         The December problem deserves its design response: the reverse challenge. Save $52 in week
         one, $51 in week two, descending to $1 in the final week — identical $1,378 total, but the
@@ -111,6 +121,8 @@ export default function SavingsChallenges52WeekPage() {
           automated in batches — ten minutes of setup per quarter if batched monthly by summing
           each month&apos;s weeks in advance.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Finishing: automation, partners, and what&apos;s next</h2>
@@ -141,41 +153,35 @@ export default function SavingsChallenges52WeekPage() {
         spending absorbs the win.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">What if I miss several weeks?</h3>
-          <p className="mt-2">
-            Catch up by spreading missed amounts over coming weeks, or restart the count from the
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">What if I miss several weeks?</summary>
+          <p className="mt-2">Catch up by spreading missed amounts over coming weeks, or restart the count from the
             current week number — a $1,000 partial completion still beats every alternative that
-            saved nothing. Never let perfect become the enemy of $1,000.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Should kids do the challenge?</h3>
-          <p className="mt-2">
-            A scaled version (pennies or dimes weekly) works wonderfully for ages 8+, teaching
+            saved nothing. Never let perfect become the enemy of $1,000.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Should kids do the challenge?</summary>
+          <p className="mt-2">A scaled version (pennies or dimes weekly) works wonderfully for ages 8+, teaching
             arithmetic alongside thrift. Match their deposits 50% to supercharge motivation — the
-            habit formed matters more than the balance.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Is $1,378 even worth the effort?</h3>
-          <p className="mt-2">
-            As money alone, modestly — as behavior change, enormously. Finishers prove to
+            habit formed matters more than the balance.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Is $1,378 even worth the effort?</summary>
+          <p className="mt-2">As money alone, modestly — as behavior change, enormously. Finishers prove to
             themselves they can save on schedule for a year, which unlocks bigger systems
             (pay-yourself-first, 401(k) increases) that move tens of thousands. Treat it as paid
-            training, not as the training&apos;s end goal.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I do multiple challenges at once?</h3>
-          <p className="mt-2">
-            One at a time is the rule — stacked challenges collide in December and both die.
+            training, not as the training&apos;s end goal.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I do multiple challenges at once?</summary>
+          <p className="mt-2">One at a time is the rule — stacked challenges collide in December and both die.
             Households wanting more should run a single double-stakes challenge rather than two
-            parallel ones.
-          </p>
-        </div>
+            parallel ones.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -186,6 +192,21 @@ export default function SavingsChallenges52WeekPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/savings-challenges-52-week"
+        title="52-Week Savings Challenge & Variations | LoanPay Save"
+        description="The 52-week money challenge explained: save $1,378 in a year, plus reverse, biweekly, and high-stakes variations that fit real budgets."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "What if I miss several weeks?", answer: "Catch up by spreading missed amounts over coming weeks, or restart the count from the current week number — a $1,000 partial completion still beats every alternative that saved nothing. Never let perfect become the enemy of $1,000." },
+          { question: "Should kids do the challenge?", answer: "A scaled version (pennies or dimes weekly) works wonderfully for ages 8+, teaching arithmetic alongside thrift. Match their deposits 50% to supercharge motivation — the habit formed matters more than the balance." },
+          { question: "Is $1,378 even worth the effort?", answer: "As money alone, modestly — as behavior change, enormously. Finishers prove to themselves they can save on schedule for a year, which unlocks bigger systems (pay-yourself-first, 401(k) increases) that move tens of thousands. Treat it as paid training, not as the training's end goal." },
+          { question: "Can I do multiple challenges at once?", answer: "One at a time is the rule — stacked challenges collide in December and both die. Households wanting more should run a single double-stakes challenge rather than two parallel ones." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/savings-challenges-52-week" title="52-Week Savings Challenge & Variations" />
+
     </div>
   );
 }

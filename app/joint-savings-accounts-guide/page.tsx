@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Joint Savings Accounts Guide for Couples | LoanPay Save",
   description:
     "Joint savings for partners in 2026: ownership rights, FDIC coverage, contribution rules, and systems that prevent money fights.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/joint-savings-accounts-guide",
+  },
 };
 
 export default function JointSavingsAccountsGuidePage() {
@@ -16,6 +21,9 @@ export default function JointSavingsAccountsGuidePage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         Joint Savings Accounts: Sharing Money Without Sharing Stress
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         A joint savings account gives two people equal ownership of one balance — either owner can
         typically deposit or withdraw the full amount without the other&apos;s signature. That
@@ -40,6 +48,8 @@ export default function JointSavingsAccountsGuidePage() {
         adult children, a convenience account or formal authorization is often safer than full
         joint ownership.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         The insurance math, by contrast, rewards joint accounts. FDIC coverage for joint accounts
         is $250,000 per co-owner — a two-owner joint savings account insures up to $500,000,
@@ -107,6 +117,8 @@ export default function JointSavingsAccountsGuidePage() {
           the balance together. Structure plus ritual beats willpower in every study of couples
           and money.
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Rules that prevent fights</h2>
@@ -137,43 +149,37 @@ export default function JointSavingsAccountsGuidePage() {
         surprises — the true fuel of financial conflict — disappear.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can one owner empty a joint account?</h3>
-          <p className="mt-2">
-            Generally yes — either owner may withdraw the full balance without the other&apos;s
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can one owner empty a joint account?</summary>
+          <p className="mt-2">Generally yes — either owner may withdraw the full balance without the other&apos;s
             consent at most banks. Joint accounts run on trust plus agreements, not technical
             restrictions. If that worries you, keep the bulk of savings individual and fund shared
-            goals by transfer.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Do both owners need good credit to open?</h3>
-          <p className="mt-2">
-            Banks typically review ChexSystems deposit history for both applicants; a negative
+            goals by transfer.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Do both owners need good credit to open?</summary>
+          <p className="mt-2">Banks typically review ChexSystems deposit history for both applicants; a negative
             record for either can cause denial. Ordinary savings accounts usually involve no credit
-            pull, so credit scores matter less than a clean banking record.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Should unmarried couples open joint accounts?</h3>
-          <p className="mt-2">
-            Many do, but with extra care: no divorce court will divide things fairly if disputes
+            pull, so credit scores matter less than a clean banking record.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Should unmarried couples open joint accounts?</summary>
+          <p className="mt-2">Many do, but with extra care: no divorce court will divide things fairly if disputes
             arise, and survivorship handling varies by state and titling. Keep contributions
             documented, balances moderate relative to your trust level, and estate documents
-            updated.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">How do taxes work on joint savings interest?</h3>
-          <p className="mt-2">
-            Banks typically report interest under the first-listed owner&apos;s Social Security
+            updated.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">How do taxes work on joint savings interest?</summary>
+          <p className="mt-2">Banks typically report interest under the first-listed owner&apos;s Social Security
             number on Form 1099-INT. Couples filing jointly simply report it together; unmarried
             co-owners should agree on splitting the reported interest consistent with contributions
-            and keep records.
-          </p>
-        </div>
+            and keep records.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -184,6 +190,21 @@ export default function JointSavingsAccountsGuidePage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/joint-savings-accounts-guide"
+        title="Joint Savings Accounts Guide for Couples | LoanPay Save"
+        description="Joint savings for partners in 2026: ownership rights, FDIC coverage, contribution rules, and systems that prevent money fights."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Can one owner empty a joint account?", answer: "Generally yes — either owner may withdraw the full balance without the other's consent at most banks. Joint accounts run on trust plus agreements, not technical restrictions. If that worries you, keep the bulk of savings individual and fund shared goals by transfer." },
+          { question: "Do both owners need good credit to open?", answer: "Banks typically review ChexSystems deposit history for both applicants; a negative record for either can cause denial. Ordinary savings accounts usually involve no credit pull, so credit scores matter less than a clean banking record." },
+          { question: "Should unmarried couples open joint accounts?", answer: "Many do, but with extra care: no divorce court will divide things fairly if disputes arise, and survivorship handling varies by state and titling. Keep contributions documented, balances moderate relative to your trust level, and estate documents updated." },
+          { question: "How do taxes work on joint savings interest?", answer: "Banks typically report interest under the first-listed owner's Social Security number on Form 1099-INT. Couples filing jointly simply report it together; unmarried co-owners should agree on splitting the reported interest consistent with contributions and keep records." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/joint-savings-accounts-guide" title="Joint Savings Accounts Guide for Couples" />
+
     </div>
   );
 }

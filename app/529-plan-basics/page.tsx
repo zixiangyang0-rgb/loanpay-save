@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "529 Plan Basics: Tax-Free College Savings | LoanPay Save",
   description:
     "529 education savings plans in 2026: tax-free growth, contribution rules, state deductions, SECURE 2.0 Roth rollovers, and what happens if college plans change.",
+  alternates: {
+    canonical: "https://save.loanpaylogic.com/529-plan-basics",
+  },
 };
 
 export default function Plan529BasicsPage() {
@@ -16,6 +21,9 @@ export default function Plan529BasicsPage() {
       <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
         529 Plan Basics: The Tax-Free Engine for Education Savings
       </h1>
+      <p className="mt-3 text-xs text-slate-400">
+        By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
+      </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         A 529 plan is a tax-advantaged investment account dedicated to education: contributions
         grow free of federal tax, and withdrawals for qualified education expenses — tuition, room
@@ -41,6 +49,8 @@ export default function Plan529BasicsPage() {
         generally must use it to claim its deduction — compare your state&apos;s tax savings
         against another state&apos;s lower fees before defaulting to home.
       </p>
+
+      <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Qualified expenses have expanded well beyond four-year tuition: K–12 tuition up to $10,000
         per year, apprenticeship program costs, student-loan repayment up to a $10,000 lifetime
@@ -110,6 +120,8 @@ export default function Plan529BasicsPage() {
           if no college&rdquo; is largely a myth under current law. (All figures illustrative;
           verify current rules.)
         </p>
+
+      <AdSlot format="display" slot="TODO-save-display-2" />
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Setup checklist and common mistakes</h2>
@@ -140,44 +152,38 @@ export default function Plan529BasicsPage() {
         downward — overfunding one account is fixable, underfunding all of them is not.
       </p>
 
+            <AdSlot format="multiplex" slot="TODO-save-multiplex-1" />
+
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Does a 529 hurt financial-aid eligibility?</h3>
-          <p className="mt-2">
-            Parent-owned 529s are assessed as parental assets (a low assessment rate, around 5.64%
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Does a 529 hurt financial-aid eligibility?</summary>
+          <p className="mt-2">Parent-owned 529s are assessed as parental assets (a low assessment rate, around 5.64%
             in the federal formula) — far gentler than student-owned UTMA assets at around 20%.
             Grandparent-owned 529 distributions historically complicated aid, though recent FAFSA
-            simplification changed the treatment — confirm current-year rules when planning.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Can I change the beneficiary?</h3>
-          <p className="mt-2">
-            Yes, to another qualifying family member (sibling, cousin, parent, even yourself) with
+            simplification changed the treatment — confirm current-year rules when planning.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Can I change the beneficiary?</summary>
+          <p className="mt-2">Yes, to another qualifying family member (sibling, cousin, parent, even yourself) with
             no tax consequences. This flexibility is the answer to most &ldquo;what if&rdquo;
             scenarios — unused funds follow the family&apos;s needs, not just one child&apos;s
-            path.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">How does the Roth rollover escape hatch work?</h3>
-          <p className="mt-2">
-            Under SECURE 2.0, up to $35,000 lifetime can roll from a 529 to the beneficiary&apos;s
+            path.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">How does the Roth rollover escape hatch work?</summary>
+          <p className="mt-2">Under SECURE 2.0, up to $35,000 lifetime can roll from a 529 to the beneficiary&apos;s
             Roth IRA, provided the 529 has existed 15+ years, contributions being rolled are 5+
             years old, and rollovers respect annual Roth limits and earned-income requirements.
-            Verify current IRS guidance — details have evolved since enactment.
-          </p>
-        </div>
-        <div className="glass-card rounded-2xl p-5">
-          <h3 className="font-semibold text-white">Which state&apos;s plan should I pick?</h3>
-          <p className="mt-2">
-            If your state offers a meaningful deduction or credit, its plan usually wins unless
+            Verify current IRS guidance — details have evolved since enactment.</p>
+        </details>
+        <details className="glass-card rounded-2xl p-5">
+          <summary className="cursor-pointer font-semibold text-white">Which state&apos;s plan should I pick?</summary>
+          <p className="mt-2">If your state offers a meaningful deduction or credit, its plan usually wins unless
             fees are extreme. Without a home-state perk, compare the lowest-cost highly rated
             national plans on expense ratios and investment options — check current plan ratings
-            before committing.
-          </p>
-        </div>
+            before committing.</p>
+        </details>
       </div>
 
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
@@ -188,6 +194,21 @@ export default function Plan529BasicsPage() {
         </Link>
         .
       </p>
+      <ArticleJsonLd
+        slug="/529-plan-basics"
+        title="529 Plan Basics: Tax-Free College Savings | LoanPay Save"
+        description="529 education savings plans in 2026: tax-free growth, contribution rules, state deductions, SECURE 2.0 Roth rollovers, and what happens if college plans change."
+      />
+      <FaqJsonLd
+        items={[
+          { question: "Does a 529 hurt financial-aid eligibility?", answer: "Parent-owned 529s are assessed as parental assets (a low assessment rate, around 5.64% in the federal formula) — far gentler than student-owned UTMA assets at around 20%. Grandparent-owned 529 distributions historically complicated aid, though recent FAFSA simplification changed the treatment — confirm current-year rules when planning." },
+          { question: "Can I change the beneficiary?", answer: "Yes, to another qualifying family member (sibling, cousin, parent, even yourself) with no tax consequences. This flexibility is the answer to most 'what if' scenarios — unused funds follow the family's needs, not just one child's path." },
+          { question: "How does the Roth rollover escape hatch work?", answer: "Under SECURE 2.0, up to $35,000 lifetime can roll from a 529 to the beneficiary's Roth IRA, provided the 529 has existed 15+ years, contributions being rolled are 5+ years old, and rollovers respect annual Roth limits and earned-income requirements. Verify current IRS guidance — details have evolved since enactment." },
+          { question: "Which state's plan should I pick?", answer: "If your state offers a meaningful deduction or credit, its plan usually wins unless fees are extreme. Without a home-state perk, compare the lowest-cost highly rated national plans on expense ratios and investment options — check current plan ratings before committing." }
+        ]}
+      />
+      <BreadcrumbJsonLd slug="/529-plan-basics" title="529 Plan Basics: Tax-Free College Savings" />
+
     </div>
   );
 }
