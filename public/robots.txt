@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://save.loanpaylogic.com/sitemap.xml
