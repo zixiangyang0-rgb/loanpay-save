@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     description:
       "Compare savings accounts, CDs, money markets, and Treasury options — plus budgeting systems that make saving automatic.",
   },
+  other: {
+    "google-adsense-account": "ca-pub-4906207495792820",
+  },
 };
 
 const navLinks = [
@@ -74,6 +77,13 @@ function Footer() {
       <p className="mt-4">
         &copy; {new Date().getFullYear()} save.loanpaylogic.com. General education only, not
         financial advice.
+      </p>
+      <p className="mt-2 text-xs">
+        LoanPay Logic Network:{" "}
+        <a href="https://loanpaylogic.com" className="underline hover:text-white">Loan Calculators</a>{" "}
+        &middot; <a href="https://retire.loanpaylogic.com" className="underline hover:text-white">Retirement</a>{" "}
+        &middot; <a href="https://credit.loanpaylogic.com" className="underline hover:text-white">Credit &amp; Cards</a>{" "}
+        &middot; <a href="https://tax.loanpaylogic.com" className="underline hover:text-white">Tax Guides</a>
       </p>
     </footer>
   );
