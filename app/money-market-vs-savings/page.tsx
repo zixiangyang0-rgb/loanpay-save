@@ -179,6 +179,13 @@ export default function MoneyMarketVsSavingsPage() {
       </div>
 
 
+      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+        <h2 className="text-lg font-bold text-white">Official resources</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
+          <li><a href="https://www.fdic.gov/resources/deposit-insurance/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">FDIC deposit insurance resources</a> — which money-market deposit accounts carry FDIC coverage and which funds do not</li>
+          <li><a href="https://www.bankrate.com/banking/savings/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate savings hub</a> — independent money-market versus savings rate comparisons</li>
+        </ul>
+      </section>
       <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">

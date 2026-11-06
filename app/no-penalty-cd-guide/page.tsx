@@ -179,6 +179,13 @@ export default function NoPenaltyCdGuidePage() {
       </div>
 
 
+      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+        <h2 className="text-lg font-bold text-white">Official resources</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
+          <li><a href="https://www.fdic.gov/resources/deposit-insurance/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">FDIC deposit insurance resources</a> — coverage rules that apply identically to no-penalty and standard CDs</li>
+          <li><a href="https://www.bankrate.com/banking/cds/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate CD hub</a> — independent no-penalty CD rate tracking and withdrawal-term reviews</li>
+        </ul>
+      </section>
       <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">

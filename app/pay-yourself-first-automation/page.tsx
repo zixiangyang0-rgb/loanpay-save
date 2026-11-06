@@ -172,6 +172,13 @@ export default function PayYourselfFirstAutomationPage() {
       </div>
 
 
+      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+        <h2 className="text-lg font-bold text-white">Official resources</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
+          <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB automatic-saving guidance</a> — official steps for automating transfers and splitting direct deposits</li>
+          <li><a href="https://www.nerdwallet.com/article/banking" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">NerdWallet automation guides</a> — independent pay-yourself-first setups with bank-by-bank how-tos</li>
+        </ul>
+      </section>
       <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">

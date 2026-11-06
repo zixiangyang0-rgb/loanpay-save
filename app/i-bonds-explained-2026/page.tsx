@@ -171,6 +171,13 @@ export default function IBondsExplainedPage() {
       </div>
 
 
+      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+        <h2 className="text-lg font-bold text-white">Official resources</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
+          <li><a href="https://www.federalreserve.gov/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Federal Reserve monetary policy resources</a> — how policy rates and inflation shape the variable rate on I bonds</li>
+          <li><a href="https://www.bankrate.com/investing/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate investing hub</a> — independent I-bond rate breakdowns and purchase-limit explainers</li>
+        </ul>
+      </section>
       <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">

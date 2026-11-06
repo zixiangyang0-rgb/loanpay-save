@@ -182,6 +182,13 @@ export default function CheckingAccountBonusesPage() {
       </div>
 
 
+      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+        <h2 className="text-lg font-bold text-white">Official resources</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
+          <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB checking-account explainers</a> — official answers on account fees, direct-deposit rules, and bonus pitfalls</li>
+          <li><a href="https://www.bankrate.com/banking/checking/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate checking hub</a> — independent checking-account bonus tracking and fee comparisons</li>
+        </ul>
+      </section>
       <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">

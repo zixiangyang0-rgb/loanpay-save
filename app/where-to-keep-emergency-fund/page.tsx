@@ -179,6 +179,13 @@ export default function WhereToKeepEmergencyFundPage() {
       </div>
 
 
+      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+        <h2 className="text-lg font-bold text-white">Official resources</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
+          <li><a href="https://www.fdic.gov/resources/deposit-insurance/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">FDIC deposit insurance resources</a> — confirm every parking spot you consider carries federal insurance</li>
+          <li><a href="https://www.bankrate.com/banking/savings/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate savings hub</a> — independent rankings of liquid accounts suited to emergency cash</li>
+        </ul>
+      </section>
       <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
