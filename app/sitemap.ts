@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://save.loanpaylogic.com";
+const base = "https://save.loanpaylogic.com";
 
-const ROUTES: { url: string; priority: number; changeFrequency: "weekly" | "monthly" }[] = [
+const routes: { url: string; priority: number; changeFrequency: "weekly" | "monthly" }[] = [
   { url: "/", priority: 1.0, changeFrequency: "weekly" },
   // Accounts
   { url: "/high-yield-savings-guide-2026", priority: 0.9, changeFrequency: "monthly" },
@@ -44,8 +44,8 @@ const ROUTES: { url: string; priority: number; changeFrequency: "weekly" | "mont
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date("2026-10-01");
-  return ROUTES.map((route) => ({
-    url: `${BASE}${route.url}`,
+  return routes.map((route) => ({
+    url: `${base}${route.url}`,
     lastModified,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
