@@ -179,6 +179,16 @@ export default function CompoundingInterestExplainedPage() {
         </details>
       </div>
 
+
+      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+        <h2 className="text-lg font-bold text-white">Keep reading</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
+          <li><Link href="/high-yield-savings-guide-2026" className="underline underline-offset-2 text-amber-100 hover:text-white">High-Yield Savings Guide 2026</Link></li>
+          <li><Link href="/cd-vs-high-yield-savings" className="underline underline-offset-2 text-amber-100 hover:text-white">CD vs. High-Yield Savings: Which Wins?</Link></li>
+          <li><Link href="/pay-yourself-first-automation" className="underline underline-offset-2 text-amber-100 hover:text-white">Pay Yourself First: Automate Saving</Link></li>
+          <li><Link href="/how-to-save-10000-in-a-year" className="underline underline-offset-2 text-amber-100 hover:text-white">How to Save $10,000 in a Year</Link></li>
+        </ul>
+      </nav>
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
         General education, not financial advice. Estimator figures are hypothetical illustrations,
         not predictions — verify current offers before opening accounts. Read our full{" "}

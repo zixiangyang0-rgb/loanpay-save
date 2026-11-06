@@ -168,6 +168,16 @@ export default function CdLadderStrategyPage() {
         </details>
       </div>
 
+
+      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+        <h2 className="text-lg font-bold text-white">Keep reading</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
+          <li><Link href="/cd-vs-high-yield-savings" className="underline underline-offset-2 text-amber-100 hover:text-white">CD vs. High-Yield Savings: Which Wins?</Link></li>
+          <li><Link href="/no-penalty-cd-guide" className="underline underline-offset-2 text-amber-100 hover:text-white">No-Penalty CD Guide</Link></li>
+          <li><Link href="/brokered-cds-guide" className="underline underline-offset-2 text-amber-100 hover:text-white">Brokered CDs Guide</Link></li>
+          <li><Link href="/treasury-bills-vs-cds" className="underline underline-offset-2 text-amber-100 hover:text-white">Treasury Bills vs. CDs</Link></li>
+        </ul>
+      </nav>
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
         General education, not financial advice. CD rates and penalties vary by bank and change
         often — verify current offers and read the early-withdrawal terms before opening. Read our

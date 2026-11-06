@@ -188,6 +188,16 @@ export default function SinkingFundsBudgetingGuidePage() {
         </details>
       </div>
 
+
+      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+        <h2 className="text-lg font-bold text-white">Keep reading</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
+          <li><Link href="/pay-yourself-first-automation" className="underline underline-offset-2 text-amber-100 hover:text-white">Pay Yourself First: Automate Saving</Link></li>
+          <li><Link href="/50-30-20-budget-rule" className="underline underline-offset-2 text-amber-100 hover:text-white">50-30-20 Budget Rule Explained</Link></li>
+          <li><Link href="/emergency-fund-how-much" className="underline underline-offset-2 text-amber-100 hover:text-white">Emergency Fund: How Much Do You Need?</Link></li>
+          <li><Link href="/savings-challenges-52-week" className="underline underline-offset-2 text-amber-100 hover:text-white">52-Week Savings Challenge & Variations</Link></li>
+        </ul>
+      </nav>
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
         General education, not financial advice. Estimates are starting points — adapt every fund
         to your own bills and verify account terms. Read our full{" "}

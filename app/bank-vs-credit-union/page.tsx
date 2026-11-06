@@ -179,6 +179,16 @@ export default function BankVsCreditUnionPage() {
         </details>
       </div>
 
+
+      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+        <h2 className="text-lg font-bold text-white">Keep reading</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
+          <li><Link href="/high-yield-savings-guide-2026" className="underline underline-offset-2 text-amber-100 hover:text-white">High-Yield Savings Guide 2026</Link></li>
+          <li><Link href="/how-fdic-insurance-works" className="underline underline-offset-2 text-amber-100 hover:text-white">How FDIC Insurance Works</Link></li>
+          <li><Link href="/high-yield-checking-accounts" className="underline underline-offset-2 text-amber-100 hover:text-white">High-Yield Checking Accounts: Worth It?</Link></li>
+          <li><Link href="/money-market-vs-savings" className="underline underline-offset-2 text-amber-100 hover:text-white">Money Market vs. Savings Account</Link></li>
+        </ul>
+      </nav>
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
         General education, not financial advice. Rates, fees, and membership rules change — verify
         current terms and insurance status. Read our full{" "}

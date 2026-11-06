@@ -192,6 +192,16 @@ export default function HighYieldSavingsGuidePage() {
         </details>
       </div>
 
+
+      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+        <h2 className="text-lg font-bold text-white">Keep reading</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
+          <li><Link href="/cd-vs-high-yield-savings" className="underline underline-offset-2 text-amber-100 hover:text-white">CD vs. High-Yield Savings: Which Wins?</Link></li>
+          <li><Link href="/money-market-vs-savings" className="underline underline-offset-2 text-amber-100 hover:text-white">Money Market vs. Savings Account</Link></li>
+          <li><Link href="/how-fdic-insurance-works" className="underline underline-offset-2 text-amber-100 hover:text-white">How FDIC Insurance Works</Link></li>
+          <li><Link href="/where-to-keep-emergency-fund" className="underline underline-offset-2 text-amber-100 hover:text-white">Where to Keep Your Emergency Fund</Link></li>
+        </ul>
+      </nav>
       <p className="mt-10 rounded-xl border border-amber-200/20 bg-amber-200/5 p-4 text-xs leading-relaxed text-amber-100/90">
         General education, not financial advice. Rates change frequently — verify current offers
         with each bank and confirm FDIC insurance before depositing. Read our full{" "}
