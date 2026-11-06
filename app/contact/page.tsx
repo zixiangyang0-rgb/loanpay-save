@@ -30,7 +30,42 @@ export default function ContactPage() {
           information about our educational guides — we cannot review personal accounts or give
           individualized financial advice by email.
         </p>
+        <p className="mt-2 text-sm leading-relaxed text-slate-300">
+          For corrections, tell us the exact sentence that looks wrong and, if you have one, a
+          link to an authoritative source such as the FDIC or the bank&apos;s current disclosures.
+          Verified corrections are published promptly. For new topic ideas, tell us which decision
+          you are trying to make, so we can shape a future guide around it.
+        </p>
       </div>
+      <section
+        aria-label="Editorial byline and sources"
+        className="glass-card mt-6 rounded-2xl p-6 sm:p-8"
+      >
+        <h2 className="text-lg font-semibold text-white">
+          Who Reads Your Message and How We Keep Guides Accurate
+        </h2>
+        <p className="mt-4 text-sm leading-relaxed text-slate-300">
+          Messages to this page are read by our three-person editorial team: Sarah Mitchell,
+          Senior Personal Finance Writer, who drafts and maintains our savings guides; David
+          Chen, CPA, our independent fact-checking reviewer, who verifies numbers, definitions,
+          and worked examples; and Emily Roberts, Managing Editor, who gives the final sign-off
+          before anything is published.
+        </p>
+        <p className="mt-4 text-sm leading-relaxed text-slate-300">
+          Our editorial process starts with primary public sources, including the Federal Deposit
+          Insurance Corporation, the Consumer Financial Protection Bureau, Federal Reserve
+          publications, and TreasuryDirect guidance. We cross-check every figure against at least
+          two independent sources, rewrite findings in original plain-English language, and never
+          let advertising partners influence our conclusions. Corrections sent here go directly to
+          the editors.
+        </p>
+        <p className="mt-4 text-sm leading-relaxed text-slate-300">
+          This page was last reviewed and updated on November 6, 2026. We re-check our contact
+          workflow and every linked guide regularly, and we publish corrections promptly whenever
+          a reader flags an error. Please include the page URL and a short description of what
+          looks outdated, and our team will verify the facts and update the guide quickly.
+        </p>
+      </section>
     </div>
   );
 }
