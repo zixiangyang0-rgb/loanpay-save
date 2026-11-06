@@ -15,6 +15,7 @@ const routes: { url: string; priority: number; changeFrequency: "weekly" | "mont
   // CDs & bonds
   { url: "/cd-ladder-strategy", priority: 0.9, changeFrequency: "monthly" },
   { url: "/cd-vs-high-yield-savings", priority: 0.9, changeFrequency: "monthly" },
+  { url: "/high-yield-savings-vs-cd-ladder-calculator", priority: 0.9, changeFrequency: "monthly" },
   { url: "/no-penalty-cd-guide", priority: 0.8, changeFrequency: "monthly" },
   { url: "/brokered-cds-guide", priority: 0.8, changeFrequency: "monthly" },
   { url: "/treasury-bills-vs-cds", priority: 0.8, changeFrequency: "monthly" },
@@ -26,6 +27,7 @@ const routes: { url: string; priority: number; changeFrequency: "weekly" | "mont
   // Emergency & goals
   { url: "/emergency-fund-how-much", priority: 0.9, changeFrequency: "monthly" },
   { url: "/where-to-keep-emergency-fund", priority: 0.8, changeFrequency: "monthly" },
+  { url: "/emergency-fund-calculator-by-expenses", priority: 0.9, changeFrequency: "monthly" },
   { url: "/529-plan-basics", priority: 0.7, changeFrequency: "monthly" },
   // Budgeting systems
   { url: "/sinking-funds-budgeting-guide", priority: 0.8, changeFrequency: "monthly" },
