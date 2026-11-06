@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
-import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
+import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd, Byline, GuideSchema } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "High-Yield Savings Guide 2026 | LoanPay Save",
@@ -24,6 +24,7 @@ export default function HighYieldSavingsGuidePage() {
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
+      <Byline updated="October 2026" />
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         A high-yield savings account (HYSA) does exactly what a regular savings account does —
         holds your cash safely and pays interest — except it typically pays many times more. In
@@ -213,6 +214,17 @@ export default function HighYieldSavingsGuidePage() {
         ]}
       />
       <BreadcrumbJsonLd slug="/high-yield-savings-guide-2026" title="High-Yield Savings Guide 2026" />
+      <GuideSchema
+        slug="high-yield-savings-guide-2026"
+        title="High-Yield Savings Guide 2026 | LoanPay Save"
+        description="How high-yield savings accounts work in 2026: why online banks pay more, what to compare beyond the rate, and how to switch safely."
+        faqs={[
+          { question: "Are online high-yield savings accounts safe?", answer: "Yes, provided the bank is FDIC-insured and your balance is within insurance limits ($250,000 per depositor, per bank, per ownership category). Verify insurance with the FDIC's BankFind tool before depositing — a nice website alone proves nothing." },
+          { question: "Can the rate drop after I open the account?", answer: "Yes. HYSA rates are variable and track the broader rate environment. Banks can change APYs at any time, which is why rate history and consistent competitiveness matter more than a single-day top rank." },
+          { question: "Do I pay taxes on the interest?", answer: "Generally yes — savings interest is ordinary income for federal taxes, and usually for state taxes too. Banks send Form 1099-INT when interest reaches $10 or more, but all interest is technically reportable even below that threshold." },
+          { question: "How many savings accounts should I have?", answer: "One hub account is enough for most people; adding separate accounts per goal (emergency fund, vacation, car) helps others stay organized. Beyond three or four accounts, complexity usually outweighs the benefit — consider a single HYSA with a spreadsheet or bucketing feature instead." }
+        ]}
+      />
 
     </div>
   );
