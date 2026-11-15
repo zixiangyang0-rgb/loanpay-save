@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function NoPenaltyCdGuidePage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · CDs & bonds
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         No-Penalty CDs: Lock the Rate, Keep the Exit
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         A no-penalty CD (sometimes called a liquid CD) pays a fixed rate like a standard CD but
         lets you withdraw the full balance once — penalty-free — after a short initial lockup,
         usually 6–7 days. It is the cautious saver&apos;s compromise: better rate insurance than
@@ -34,6 +36,9 @@ export default function NoPenaltyCdGuidePage() {
         tradeoff, and the situations where no-penalty CDs beat both savings and standard CDs.
         Illustrative rates only — check current offers.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">How the withdrawal window actually works</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -62,7 +67,7 @@ export default function NoPenaltyCdGuidePage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">No-penalty vs. standard CD vs. savings</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -102,7 +107,7 @@ export default function NoPenaltyCdGuidePage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: pricing the exit option</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           You park $15,000 for 11 months. Option A: standard CD at an illustrative 4.30% earns
           about $15,000 × 0.043 × (11/12) ≈ <strong className="text-white">$591</strong>. Option B:
@@ -152,25 +157,25 @@ export default function NoPenaltyCdGuidePage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I withdraw partially and keep the CD open?</summary>
           <p className="mt-2">Depends on the bank — many require a full withdrawal that closes the CD, while a few
             permit partial penalty-free withdrawals above a remaining-balance floor. Read the
             withdrawal section of the disclosure, not just the marketing page.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Is the rate really fixed?</summary>
           <p className="mt-2">Yes, for the contracted term — that is the product&apos;s point. The bank cannot lower
             it mid-term the way savings yields float. Renewal rates, however, reset to whatever
             the bank offers at maturity.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Are no-penalty CDs FDIC-insured?</summary>
           <p className="mt-2">Bank-issued no-penalty CDs carry the same FDIC insurance as standard CDs, aggregating
             with your other same-category deposits at that bank toward the $250,000 limit. Confirm
             the issuer is an FDIC member before opening.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">When is plain savings better?</summary>
           <p className="mt-2">When you will transact frequently, when the savings rate matches or beats the
             no-penalty CD, or when rates are clearly rising — savings reprice upward automatically
@@ -179,14 +184,14 @@ export default function NoPenaltyCdGuidePage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.fdic.gov/resources/deposit-insurance/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">FDIC deposit insurance resources</a> — coverage rules that apply identically to no-penalty and standard CDs</li>
           <li><a href="https://www.bankrate.com/banking/cds/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate CD hub</a> — independent no-penalty CD rate tracking and withdrawal-term reviews</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/cd-ladder-strategy" className="underline underline-offset-2 text-amber-100 hover:text-white">CD Ladder Strategy</Link></li>
@@ -218,6 +223,7 @@ export default function NoPenaltyCdGuidePage() {
       />
       <BreadcrumbJsonLd slug="/no-penalty-cd-guide" title="No-Penalty CD Guide: Flexible Fixed Rates" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

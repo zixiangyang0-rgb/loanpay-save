@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
+import LedgerTable from "../../components/LedgerTable";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +16,18 @@ export const metadata: Metadata = {
 
 export default function EmergencyFundHowMuchPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Emergency & goals
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Emergency Fund: How Much Is Enough in 2026?
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         An emergency fund is cash reserved for true surprises — job loss, major car repairs,
         medical deductibles — not vacations or holiday shopping. The classic guidance says three
         to six months of essential expenses, but the right number depends on how volatile your
@@ -34,6 +37,9 @@ export default function EmergencyFundHowMuchPage() {
         guide shows how to compute your number, adjust it to your situation, and build it from
         zero without misery.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">Start with essential monthly spending</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -62,7 +68,8 @@ export default function EmergencyFundHowMuchPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Target sizes by situation</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <LedgerTable label="emergency-fund-how-much — cushion by situation">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -95,9 +102,10 @@ export default function EmergencyFundHowMuchPage() {
           </tbody>
         </table>
       </div>
+      </LedgerTable>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: the $4,200 essentials household</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           A couple spends $6,000 monthly but identifies $4,200 of essentials: $1,800 housing,
           $600 groceries, $400 transport, $500 insurance and minimums, $500 childcare basics, $400
@@ -146,28 +154,28 @@ export default function EmergencyFundHowMuchPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Should I pay debt or build savings first?</summary>
           <p className="mt-2">Do both in sequence: build a $1,000–$2,000 mini-fund first so surprises stop adding to
             debt, then attack high-interest debt aggressively, then complete the full 3–6 month
             fund. Skipping the mini-fund means every emergency lands back on the card you just paid
             down.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can my emergency fund be too big?</summary>
           <p className="mt-2">Yes. Cash beyond about 6–12 months of essentials (depending on your risk) typically
             earns less than long-term investments over time. Once the fund is full, redirect new
             savings to retirement accounts, CDs, or other goals rather than growing cash
             indefinitely.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What counts as an emergency?</summary>
           <p className="mt-2">Sudden, necessary, and urgent: job loss, essential home or car repairs, medical bills,
             emergency travel. Not emergencies: sales, holidays, routine bills you forgot to budget,
             or investment &ldquo;opportunities.&rdquo; Write your definition down when times are
             calm so stressed-you cannot renegotiate it.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Should couples combine emergency funds?</summary>
           <p className="mt-2">A joint fund sized to shared essentials works for most couples and simplifies
             management. Partners with very different risk tolerances sometimes hold a shared base
@@ -177,17 +185,18 @@ export default function EmergencyFundHowMuchPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB emergency-savings guidance</a> — official steps for sizing and building an emergency fund</li>
           <li><a href="https://www.bankrate.com/banking/savings/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate savings hub</a> — independent advice on where to park an emergency fund in 2026</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/where-to-keep-emergency-fund" className="underline underline-offset-2 text-amber-100 hover:text-white">Where to Keep Your Emergency Fund</Link></li>
+          <li><Link href="/emergency-fund-calculator-by-expenses" className="underline underline-offset-2 text-amber-100 hover:text-white">Emergency Fund Calculator by Expenses</Link></li>
           <li><Link href="/high-yield-savings-guide-2026" className="underline underline-offset-2 text-amber-100 hover:text-white">High-Yield Savings Guide 2026</Link></li>
           <li><Link href="/pay-yourself-first-automation" className="underline underline-offset-2 text-amber-100 hover:text-white">Pay Yourself First: Automate Saving</Link></li>
           <li><Link href="/50-30-20-budget-rule" className="underline underline-offset-2 text-amber-100 hover:text-white">50-30-20 Budget Rule Explained</Link></li>
@@ -216,6 +225,7 @@ export default function EmergencyFundHowMuchPage() {
       />
       <BreadcrumbJsonLd slug="/emergency-fund-how-much" title="Emergency Fund: How Much Do You Need?" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

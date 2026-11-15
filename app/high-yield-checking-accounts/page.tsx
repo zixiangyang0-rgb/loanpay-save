@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function HighYieldCheckingAccountsPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Savings accounts
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         High-Yield Checking: Interest on Money That Never Sits Still
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Most checking accounts pay nothing — your bill-paying balance works for free while the
         bank lends it out. High-yield (or rewards) checking accounts break that deal, paying
         savings-like rates on checking balances to customers who meet monthly activity
@@ -35,6 +37,9 @@ export default function HighYieldCheckingAccountsPage() {
         upside, and exactly who should (and should not) bother. Illustrative rates only — check
         current offers.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">How the requirements machine works</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -65,7 +70,7 @@ export default function HighYieldCheckingAccountsPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Checking vs. savings for yield</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -100,7 +105,7 @@ export default function HighYieldCheckingAccountsPage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: $12,000 of bill-paying cash</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           You keep a $12,000 average checking balance (rent buffer plus monthly flow) and already
           make 20+ debit purchases monthly with direct deposit in place. Account A: rewards
@@ -150,25 +155,25 @@ export default function HighYieldCheckingAccountsPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Do debit requirements hurt my credit?</summary>
           <p className="mt-2">No — debit activity has no credit impact, positive or negative. The only credit-adjacent
             consideration is if you shift spending from a rewards credit card to debit, forgoing
             card rewards and the credit-history benefits of on-time card payments.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Are rewards checking accounts FDIC-insured?</summary>
           <p className="mt-2">At banks, yes — standard FDIC coverage applies to checking balances like any deposit.
             At credit unions, equivalent NCUA insurance applies. Confirm membership of the specific
             institution before opening, as with any account.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What happens to interest above the cap?</summary>
           <p className="mt-2">Balances above the cap earn a disclosed lower rate — sometimes decent, often near-zero.
             The optimal setup keeps checking near (not over) the cap and sweeps the rest to
             savings automatically, which many banks can do on a schedule.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I hold rewards checking just for the bonus?</summary>
           <p className="mt-2">Some rewards accounts pair with new-account bonuses carrying their own direct-deposit
             and holding requirements. Stack them deliberately: meet the bonus terms first, then
@@ -177,14 +182,14 @@ export default function HighYieldCheckingAccountsPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB checking-account explainers</a> — official answers on checking yields, fees, and overdraft rules</li>
           <li><a href="https://www.bankrate.com/banking/checking/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate checking hub</a> — independent high-yield checking reviews and balance-cap comparisons</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/high-yield-savings-guide-2026" className="underline underline-offset-2 text-amber-100 hover:text-white">High-Yield Savings Guide 2026</Link></li>
@@ -216,6 +221,7 @@ export default function HighYieldCheckingAccountsPage() {
       />
       <BreadcrumbJsonLd slug="/high-yield-checking-accounts" title="High-Yield Checking Accounts: Worth It?" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

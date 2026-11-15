@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function HowFdicInsuranceWorksPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Savings accounts
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         How FDIC Insurance Works: The $250,000 Rule, Fully Explained
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         The Federal Deposit Insurance Corporation insures deposits at member banks up to $250,000
         per depositor, per insured bank, for each account ownership category. Since 1934, no
         depositor has lost insured funds — even through bank failures, insured customers typically
@@ -34,6 +36,9 @@ export default function HowFdicInsuranceWorksPage() {
         insure millions. This guide explains the coverage formula, the categories that multiply
         it, and what FDIC insurance does not cover.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">The coverage formula: three dimensions</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -62,7 +67,7 @@ export default function HowFdicInsuranceWorksPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Coverage by ownership category</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -102,7 +107,7 @@ export default function HowFdicInsuranceWorksPage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: insuring $1,000,000 at one bank</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           A couple holds $1,000,000 at one FDIC-insured bank. Structured carelessly — $1,000,000
           in one spouse&apos;s single-name savings — only $250,000 is insured and{" "}
@@ -155,27 +160,27 @@ export default function HowFdicInsuranceWorksPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How do I check if my bank is FDIC-insured?</summary>
           <p className="mt-2">Use the FDIC&apos;s BankFind tool online and look for the official FDIC sign at
             branches and on the bank&apos;s website. Be wary of lookalike language —
             &ldquo;banking services provided by&rdquo; a partner bank means your coverage depends
             on that partner and the titling arrangement.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What happens if my bank fails?</summary>
           <p className="mt-2">The FDIC typically arranges an acquiring bank to assume insured deposits, often with
             access restored by the next business day, or issues payment directly. Amounts above
             insurance limits may be partially recovered through the receivership process — slowly
             and uncertainly, which is why staying within limits matters.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Do different branches count as different banks?</summary>
           <p className="mt-2">No. All branches of one chartered bank share a single limit, and mergers can combine
             previously separate limits — after your banks merge, review coverage promptly since
             temporary extended coverage after mergers eventually expires.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Is the $250,000 limit changing?</summary>
           <p className="mt-2">Proposals surface periodically, but as of October 2026 the standard maximum remains
             $250,000 per depositor, per bank, per ownership category. Verify against FDIC.gov
@@ -184,14 +189,14 @@ export default function HowFdicInsuranceWorksPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://banks.data.fdic.gov/bankfind-suite/bankfind" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">FDIC BankFind Suite</a> — verify that any bank you use is FDIC-insured before depositing</li>
           <li><a href="https://www.bankrate.com/banking/savings/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate savings hub</a> — independent explainers on structuring balances within coverage limits</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/high-yield-savings-guide-2026" className="underline underline-offset-2 text-amber-100 hover:text-white">High-Yield Savings Guide 2026</Link></li>
@@ -223,6 +228,7 @@ export default function HowFdicInsuranceWorksPage() {
       />
       <BreadcrumbJsonLd slug="/how-fdic-insurance-works" title="How FDIC Insurance Works: Limits & Coverage" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function SavingsAccountBonusesGuidePage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Bank bonuses
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Savings Account Bonuses: Stack a Payout on Top of Your Rate
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Savings account bonuses pay you a lump sum — illustratively $150 to $500+ at online banks,
         occasionally more at large banks with high deposit tiers — for bringing a chunk of money
         and leaving it alone for a few months. Unlike checking bonuses built around direct
@@ -34,6 +36,9 @@ export default function SavingsAccountBonusesGuidePage() {
         calculations, and account-rate traps decide whether the bonus beats simply parking the
         money at the best plain rate. Terms below are illustrative — always check current offers.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">How savings bonuses are structured</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -59,7 +64,7 @@ export default function SavingsAccountBonusesGuidePage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Savings vs. checking bonuses</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -94,7 +99,7 @@ export default function SavingsAccountBonusesGuidePage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: is a $300 bonus worth moving $25,000?</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           Your $25,000 emergency fund earns an illustrative 4.00% at your current online bank.
           A competitor offers an illustrative $300 bonus for $25,000 in new money held 120 days,
@@ -143,27 +148,27 @@ export default function SavingsAccountBonusesGuidePage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I use my emergency fund to earn a bonus?</summary>
           <p className="mt-2">Yes, with caution: the bonus account must be equally safe (FDIC-insured) and reachable
             within days. Never chase a bonus with money locked in a CD or tied up past your
             comfort window — an emergency during a holding period forces an ugly choice between the
             payout and the penalty.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What counts as &ldquo;new money&rdquo;?</summary>
           <p className="mt-2">Funds transferred from another institution, generally measured against your balance at
             that bank on a specific baseline date. Internal transfers between your own accounts at
             the same bank almost never qualify, and joint-account aggregation rules vary — read the
             offer&apos;s definitions section.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How are savings bonuses taxed?</summary>
           <p className="mt-2">Like interest income: taxable federally as ordinary income and usually at the state
             level too, reported on Form 1099-INT at $10+. Set aside your marginal-rate share the
             moment the bonus posts so April holds no surprise.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Will bonus hunting hurt future applications?</summary>
           <p className="mt-2">Moderate pacing — a few accounts a year, held through their full terms — rarely causes
             problems. Rapid-fire openings and quick closures can trigger ChexSystems denials and
@@ -173,14 +178,14 @@ export default function SavingsAccountBonusesGuidePage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB account-bonus explainers</a> — official answers on bonus fine print, holding periods, and tax reporting</li>
           <li><a href="https://www.bankrate.com/banking/savings/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate savings hub</a> — independent savings bonus tracking with requirement comparisons</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/checking-account-bonuses-2026" className="underline underline-offset-2 text-amber-100 hover:text-white">Checking Account Bonuses 2026</Link></li>
@@ -212,6 +217,7 @@ export default function SavingsAccountBonusesGuidePage() {
       />
       <BreadcrumbJsonLd slug="/savings-account-bonuses-guide" title="Savings Account Bonuses Guide" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function CheckingAccountBonusesPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Bank bonuses
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Checking Account Bonuses in 2026: Free Money With Homework
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Banks routinely pay new customers a cash bonus — often framed in ranges like $200 to $750
         depending on the account tier and promotion — for opening a checking account and completing
         qualifying activity. It sounds like free money, and it can be, but every bonus carries
@@ -34,6 +36,9 @@ export default function CheckingAccountBonusesPage() {
         turn a $500 bonus into a $12 monthly fee. Bonus amounts and terms below are illustrative
         ranges — always check current offers, because promotions change constantly.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">The anatomy of a checking bonus</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -61,7 +66,7 @@ export default function CheckingAccountBonusesPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Bonus types compared</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -105,7 +110,7 @@ export default function CheckingAccountBonusesPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: valuing a $500 bonus honestly</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           Take an illustrative $500 bonus requiring $2,000 in direct deposits within 90 days and a
           6-month holding period. Your effort: roughly 2 hours opening, rerouting payroll, and
@@ -154,26 +159,26 @@ export default function CheckingAccountBonusesPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Do checking bonuses affect my credit score?</summary>
           <p className="mt-2">Usually not directly — banks typically check ChexSystems (deposit-account history), not
             the credit bureaus, and most do a soft pull. Overdraft lines of credit attached to the
             account are the exception and may involve a hard inquiry.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Are bank bonuses taxable?</summary>
           <p className="mt-2">Checking and savings bonuses are generally treated as interest income and reported on
             Form 1099-INT when they reach $10 or more. Credit-card-style rewards tied to spending
             are treated differently, but cash for opening a deposit account is interest-like income
             in the IRS&apos;s view.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I get multiple bonuses per year?</summary>
           <p className="mt-2">Yes — bonus churning is legal, and many savers collect two to four per year. The
             constraints are one-bonus-per-bank waiting periods (often 12–24 months), ChexSystems
             inquiry sensitivity, and your own tolerance for tracking requirements and tax forms.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Should I switch my main checking for a bonus?</summary>
           <p className="mt-2">Only if the account is good beyond the bonus — low fees, decent app, convenient ATMs.
             Many experienced bonus hunters keep a stable primary checking account and open bonus
@@ -182,14 +187,14 @@ export default function CheckingAccountBonusesPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB checking-account explainers</a> — official answers on account fees, direct-deposit rules, and bonus pitfalls</li>
           <li><a href="https://www.bankrate.com/banking/checking/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate checking hub</a> — independent checking-account bonus tracking and fee comparisons</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/savings-account-bonuses-guide" className="underline underline-offset-2 text-amber-100 hover:text-white">Savings Account Bonuses Guide</Link></li>
@@ -221,6 +226,7 @@ export default function CheckingAccountBonusesPage() {
       />
       <BreadcrumbJsonLd slug="/checking-account-bonuses-2026" title="Checking Account Bonuses 2026: How to Earn Them" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

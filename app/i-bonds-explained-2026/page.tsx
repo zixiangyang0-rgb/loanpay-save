@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function IBondsExplainedPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · CDs & bonds
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         I Bonds Explained 2026: Inflation Protection With Strings Attached
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Series I savings bonds are US government bonds designed to protect purchasing power: their
         interest rate combines a fixed rate (locked for the bond&apos;s 30-year life) with an
         inflation rate that resets every six months based on the Consumer Price Index. When
@@ -34,6 +36,9 @@ export default function IBondsExplainedPage() {
         with zero redemptions, and a 3-month interest penalty for redemptions before five years.
         This guide covers the mechanics, the math, and where I bonds fit in a 2026 savings plan.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">The composite rate: fixed plus inflation</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -63,7 +68,7 @@ export default function IBondsExplainedPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Rules and limits at a glance</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -103,7 +108,7 @@ export default function IBondsExplainedPage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: $10,000 through inflation and back</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           You buy the illustrative maximum $10,000 in I bonds in January with a fixed rate of
           1.00% and an annualized inflation component near 3.00%, giving a composite around 4.03%
@@ -140,7 +145,7 @@ export default function IBondsExplainedPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I buy more than $10,000 per year?</summary>
           <p className="mt-2">Electronic purchases cap at $10,000 per person per calendar year. Spouses buy
             separately ($20,000 per couple), and entities like trusts have their own limits. Paper
@@ -148,20 +153,20 @@ export default function IBondsExplainedPage() {
             under separate rules — confirm whether that program is currently available before
             relying on it.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What happens at 30 years?</summary>
           <p className="mt-2">I bonds mature and stop earning interest at 30 years. Redeem matured bonds promptly —
             money sitting past maturity earns nothing, and the deferred federal tax bill comes due
             whether you redeem or not.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Are I bonds better than TIPS?</summary>
           <p className="mt-2">Different tools: I bonds never lose nominal value and defer federal tax, but cap
             purchases and lock money for a year. TIPS trade freely in any size with market-price
             risk before maturity. Small savers prioritizing safety usually prefer I bonds; large
             portfolios often use both.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How do I redeem I bonds?</summary>
           <p className="mt-2">Log in to TreasuryDirect, select redeem, and direct proceeds to your linked bank
             account — typically arriving in a few business days. Redemptions are final, partial
@@ -171,14 +176,14 @@ export default function IBondsExplainedPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.federalreserve.gov/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Federal Reserve monetary policy resources</a> — how policy rates and inflation shape the variable rate on I bonds</li>
           <li><a href="https://www.bankrate.com/investing/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate investing hub</a> — independent I-bond rate breakdowns and purchase-limit explainers</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/treasury-bills-vs-cds" className="underline underline-offset-2 text-amber-100 hover:text-white">Treasury Bills vs. CDs</Link></li>
@@ -210,6 +215,7 @@ export default function IBondsExplainedPage() {
       />
       <BreadcrumbJsonLd slug="/i-bonds-explained-2026" title="I Bonds Explained 2026: Limits, Rates & Locks" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

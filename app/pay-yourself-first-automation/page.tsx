@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function PayYourselfFirstAutomationPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Budgeting systems
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Pay Yourself First: The Automation That Beats Every Budget App
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Pay yourself first means treating savings as the first bill of the month — an automatic
         transfer that leaves checking on payday, before discretionary spending gets a vote. It
         inverts the standard approach of saving &ldquo;what&apos;s left,&rdquo; which behavioral
@@ -33,6 +35,9 @@ export default function PayYourselfFirstAutomationPage() {
         online checkout. This guide shows how to size the transfer, where to send it, how to split
         it across goals, and how freelancers with irregular income can adapt the system.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">Why automation outperforms discipline</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -60,7 +65,7 @@ export default function PayYourselfFirstAutomationPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Manual vs. automated saving</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -95,7 +100,7 @@ export default function PayYourselfFirstAutomationPage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: 10% on a $5,200 paycheck</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           Take-home pay is $5,200 monthly. A 10% pay-yourself-first transfer moves{" "}
           <strong className="text-white">$520/month</strong> to savings the morning after payday —
@@ -144,26 +149,26 @@ export default function PayYourselfFirstAutomationPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What if my balance goes negative from the transfer?</summary>
           <p className="mt-2">The transfer is too large or mistimed — shrink it until checking never dips below a
             one-week buffer, then grow gradually. An automated system that triggers overdraft fees
             destroys trust in itself; start small enough to be boring and scale from there.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Should automation go to savings or investments?</summary>
           <p className="mt-2">Sequence it: emergency mini-fund first, high-interest debt next (automate extra
             payments), then split between completing the emergency fund and retirement investing.
             Cash goals under three years stay in savings; longer horizons can flow to invested
             accounts.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How much should I pay myself first?</summary>
           <p className="mt-2">Ten percent of take-home is the classic floor; 15–20% builds wealth meaningfully; 50%+
             savings rates belong to aggressive FIRE savers. More important than the number: a rate
             you sustain for years beats a heroic rate abandoned in March.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I automate bill payments the same way?</summary>
           <p className="mt-2">Yes — and you should. Autopay for fixed bills plus payday savings transfers means the
             only money requiring decisions is true discretionary spending. Keep one calendar of all
@@ -172,14 +177,14 @@ export default function PayYourselfFirstAutomationPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB automatic-saving guidance</a> — official steps for automating transfers and splitting direct deposits</li>
           <li><a href="https://www.nerdwallet.com/article/banking" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">NerdWallet automation guides</a> — independent pay-yourself-first setups with bank-by-bank how-tos</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/50-30-20-budget-rule" className="underline underline-offset-2 text-amber-100 hover:text-white">50-30-20 Budget Rule Explained</Link></li>
@@ -211,6 +216,7 @@ export default function PayYourselfFirstAutomationPage() {
       />
       <BreadcrumbJsonLd slug="/pay-yourself-first-automation" title="Pay Yourself First: Automate Saving" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

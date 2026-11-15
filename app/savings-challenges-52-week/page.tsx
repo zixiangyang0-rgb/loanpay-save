@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function SavingsChallenges52WeekPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Budgeting systems
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         The 52-Week Savings Challenge: $1,378 and Every Twist Worth Trying
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         The classic 52-week challenge is beautifully simple: save $1 in week one, $2 in week two,
         $3 in week three, all the way to $52 in week fifty-two. Finish every deposit and you hold
         $1,378 — the sum of 1 through 52 — plus a year of built habit. Its genius is the gentle
@@ -34,6 +36,9 @@ export default function SavingsChallenges52WeekPage() {
         reverse variant that fixes December, and scaled versions for every budget — plus the
         automation that makes all of them actually finish.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">How the classic challenge works</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -60,7 +65,7 @@ export default function SavingsChallenges52WeekPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Challenge variations compared</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -106,7 +111,7 @@ export default function SavingsChallenges52WeekPage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: reverse challenge month by month</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           A renter starts the reverse challenge in January. Month one deposits $52+$51+$50+$49 =
           <strong className="text-white"> $202</strong> — the heaviest month, handled while New
@@ -157,26 +162,26 @@ export default function SavingsChallenges52WeekPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What if I miss several weeks?</summary>
           <p className="mt-2">Catch up by spreading missed amounts over coming weeks, or restart the count from the
             current week number — a $1,000 partial completion still beats every alternative that
             saved nothing. Never let perfect become the enemy of $1,000.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Should kids do the challenge?</summary>
           <p className="mt-2">A scaled version (pennies or dimes weekly) works wonderfully for ages 8+, teaching
             arithmetic alongside thrift. Match their deposits 50% to supercharge motivation — the
             habit formed matters more than the balance.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Is $1,378 even worth the effort?</summary>
           <p className="mt-2">As money alone, modestly — as behavior change, enormously. Finishers prove to
             themselves they can save on schedule for a year, which unlocks bigger systems
             (pay-yourself-first, 401(k) increases) that move tens of thousands. Treat it as paid
             training, not as the training&apos;s end goal.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I do multiple challenges at once?</summary>
           <p className="mt-2">One at a time is the rule — stacked challenges collide in December and both die.
             Households wanting more should run a single double-stakes challenge rather than two
@@ -185,14 +190,14 @@ export default function SavingsChallenges52WeekPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB savings guidance</a> — official starter steps for building a saving habit that sticks</li>
           <li><a href="https://www.nerdwallet.com/article/banking" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">NerdWallet savings guides</a> — independent challenge trackers and habit-based savings templates</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/how-to-save-10000-in-a-year" className="underline underline-offset-2 text-amber-100 hover:text-white">How to Save $10,000 in a Year</Link></li>
@@ -224,6 +229,7 @@ export default function SavingsChallenges52WeekPage() {
       />
       <BreadcrumbJsonLd slug="/savings-challenges-52-week" title="52-Week Savings Challenge & Variations" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

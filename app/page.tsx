@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../components/AdSlot";
-import { OrganizationJsonLd } from "../lib/schema";
+import GoalRail from "../components/GoalRail";
+import { HeroImageJsonLd, OrganizationJsonLd } from "../lib/schema";
 
 export const metadata: Metadata = {
   title: "LoanPay Save | High-Yield Savings, CDs & Budgeting Guides",
@@ -9,6 +10,16 @@ export const metadata: Metadata = {
     "Free educational guides to high-yield savings accounts, CDs, bank bonuses, emergency funds, and budgeting systems that make saving automatic.",
   alternates: {
     canonical: "https://save.loanpaylogic.com/",
+  },
+  openGraph: {
+    images: [
+      {
+        url: "https://save.loanpaylogic.com/photos/save.webp",
+        width: 1600,
+        height: 1066,
+        alt: "Glass savings jar filled with coins and a banknote — saving concept, no people",
+      },
+    ],
   },
 };
 
@@ -75,6 +86,12 @@ const clusters: Cluster[] = [
         description: "Split money across terms so yield rises and cash frees up every few months.",
         href: "/cd-ladder-strategy",
         badge: "Strategy",
+      },
+      {
+        title: "High-Yield Savings vs. CD Ladder Calculator",
+        description: "Compare flexible savings against a CD ladder with a simple formula and worked math.",
+        href: "/high-yield-savings-vs-cd-ladder-calculator",
+        badge: "Calculator",
       },
       {
         title: "CD vs. High-Yield Savings",
@@ -145,6 +162,12 @@ const clusters: Cluster[] = [
         badge: "Guide",
       },
       {
+        title: "Emergency Fund Calculator by Expenses",
+        description: "Build your essentials baseline and compare 3 vs. 6 vs. 9-month targets.",
+        href: "/emergency-fund-calculator-by-expenses",
+        badge: "Calculator",
+      },
+      {
         title: "Where to Keep Emergency Fund",
         description: "Accessible but separate: tiering cash across savings, T-bills, and I bonds.",
         href: "/where-to-keep-emergency-fund",
@@ -199,14 +222,17 @@ const clusters: Cluster[] = [
 export default function HomePage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16">
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-14 text-center sm:px-12">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
-          save.loanpaylogic.com
+      <div
+        style={{ background: "#F3F5F1", color: "#1F2A22", border: "1px solid #CBD5C6", borderRadius: 16 }}
+        className="px-6 py-10 sm:px-10"
+      >
+        <p style={{ fontSize: 12, letterSpacing: ".16em", textTransform: "uppercase", color: "#68756B" }}>
+          Save · quiet goal
         </p>
-        <h1 className="hero-title mt-4 text-4xl font-extrabold leading-tight sm:text-5xl">
-          Make Your Savings Work as Hard as You Do
+        <h1 className="mt-2 text-4xl font-extrabold leading-tight sm:text-5xl">
+          Save toward what matters, month by month.
         </h1>
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-300">
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed" style={{ color: "#4A554D" }}>
           LoanPay Save explains American saving in plain English: high-yield accounts, CD ladders,
           Treasury options, bank bonuses, emergency funds, and budgeting systems that run on
           autopilot — no signup required.
@@ -214,42 +240,68 @@ export default function HomePage() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
             href="/high-yield-savings-guide-2026"
-            className="rounded-full bg-amber-300 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-amber-200"
+            className="rounded-full px-6 py-3 text-sm font-semibold transition"
+            style={{ background: "#2F6B3C", color: "#FFFFFF" }}
           >
             Start with high-yield savings
           </Link>
           <Link
             href="/pay-yourself-first-automation"
-            className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-white/30"
+            className="rounded-full px-6 py-3 text-sm font-semibold transition"
+            style={{ border: "1px solid #2F6B3C", color: "#2F6B3C" }}
           >
             Automate your saving
           </Link>
         </div>
-      </section>
+        <figure
+          style={{ marginTop: 24, border: "1px solid #CBD5C6", borderRadius: 12, overflow: "hidden", background: "#FFFFFF" }}
+        >
+          <img
+            src="/photos/save.webp"
+            width={1600}
+            height={1066}
+            alt="Glass savings jar filled with coins and a banknote — saving concept, no people"
+            loading="lazy"
+            style={{ display: "block", width: "100%", height: 220, objectFit: "cover", objectPosition: "50% 60%" }}
+          />
+          <figcaption style={{ fontSize: 12, color: "#5A665D", padding: "8px 10px" }}>
+            Glass savings jar. Public domain (CC0) via Wikimedia Commons. Full source + license in public/photos/RECORD.md.
+          </figcaption>
+        </figure>
+      </div>
 
       <AdSlot format="display" slot="TODO-save-display-1" />
 
-      {clusters.map((cluster) => (
-        <section key={cluster.id} className="mt-12">
-          <h2 className="text-2xl font-bold">{cluster.heading}</h2>
-          <p className="mt-2 text-sm text-slate-400">{cluster.blurb}</p>
-          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {cluster.cards.map((tool) => (
-              <Link
-                key={tool.href}
-                href={tool.href}
-                className="glass-card block rounded-2xl p-6 transition hover:border-amber-200/30"
-              >
-                <span className="inline-block rounded-full border border-amber-200/30 px-3 py-1 text-xs font-medium text-amber-200">
-                  {tool.badge}
-                </span>
-                <h3 className="mt-4 text-lg font-semibold text-white">{tool.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-300">{tool.description}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
-      ))}
+      <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_240px]">
+        <div>
+          {clusters.map((cluster) => (
+            <section key={cluster.id} id={cluster.id} className="mt-12 first:mt-0">
+              <h2 className="text-2xl font-bold">{cluster.heading}</h2>
+              <p className="mt-2 text-sm text-slate-400">{cluster.blurb}</p>
+              <div className="mt-6 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+                {cluster.cards.map((tool) => (
+                  <Link
+                    key={tool.href}
+                    href={tool.href}
+                    className="block rounded-2xl p-6 transition"
+                    style={{ background: "#FFFFFF", color: "#1F2A22", border: "1px solid #CBD5C6" }}
+                  >
+                    <span
+                      className="inline-block rounded-full px-3 py-1 text-xs font-medium"
+                      style={{ border: "1px solid #2F6B3C", color: "#2F6B3C" }}
+                    >
+                      {tool.badge}
+                    </span>
+                    <h3 className="mt-4 text-lg font-semibold">{tool.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed" style={{ color: "#4A554D" }}>{tool.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+        <GoalRail />
+      </div>
 
       <section className="glass-card mt-12 rounded-2xl p-8">
         <h2 className="text-2xl font-bold">Why a savings strategy beats a savings account</h2>
@@ -273,6 +325,7 @@ export default function HomePage() {
         </p>
       </section>
       <OrganizationJsonLd />
+      <HeroImageJsonLd />
     </div>
   );
 }

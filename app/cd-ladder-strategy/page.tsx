@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
+import LedgerTable from "../../components/LedgerTable";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +16,18 @@ export const metadata: Metadata = {
 
 export default function CdLadderStrategyPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · CDs & bonds
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         CD Ladder Strategy: Yield With Cash Freed Up Regularly
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         A certificate of deposit (CD) pays you a fixed rate for locking money away for a fixed
         term — but locking everything away for five years leaves you helpless if rates rise or a
         roof repair lands in month seven. A CD ladder solves this by splitting your money across
@@ -34,6 +37,9 @@ export default function CdLadderStrategyPage() {
         maturing every few months. This guide shows exactly how to size, stagger, and maintain a
         ladder in 2026.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">How a ladder works, step by step</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -61,7 +67,8 @@ export default function CdLadderStrategyPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Ladder shapes compared</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <LedgerTable label="cd-ladder-strategy — comparison table 1">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -99,9 +106,10 @@ export default function CdLadderStrategyPage() {
           </tbody>
         </table>
       </div>
+      </LedgerTable>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: a $25,000 five-rung ladder</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           You set aside $25,000 — five rungs of $5,000 each. For illustration only (verify current
           offers), assume 1-year CDs pay 3.50%, 2-year 3.80%, 3-year 4.00%, 4-year 4.10%, and
@@ -139,27 +147,27 @@ export default function CdLadderStrategyPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How much money do I need to start a ladder?</summary>
           <p className="mt-2">Many online banks let you open CDs with $500–$1,000 minimums, so a four-rung ladder can
             start around $2,000–$4,000. Smaller ladders still teach the mechanics, though the
             dollar gains are modest — the strategy shines brightest above $10,000.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What happens if I need the money early?</summary>
           <p className="mt-2">You can break a CD anytime, but the early-withdrawal penalty typically forfeits 90 to
             365 days of interest depending on the term, and some banks can dip into principal on
             long CDs broken very early. That is precisely why emergency funds stay in savings, not
             in the ladder.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Are CDs still worth it if savings rates are high?</summary>
           <p className="mt-2">Sometimes. A CD locks today&apos;s rate against future cuts, while savings rates float
             downward immediately. If you believe rates will fall, locking part of your cash in CDs
             preserves yield; if you expect rises, keep more in savings and build the ladder
             gradually. Diversifying across both is the no-prediction-required answer.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Should I use brokered CDs in a ladder?</summary>
           <p className="mt-2">You can — brokered CDs held in a brokerage account ladder neatly and trade on a
             secondary market instead of charging penalties. But their prices fluctuate before
@@ -169,17 +177,18 @@ export default function CdLadderStrategyPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.fdic.gov/resources/deposit-insurance/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">FDIC deposit insurance resources</a> — coverage limits when spreading CDs across banks and ownership categories</li>
           <li><a href="https://www.bankrate.com/banking/cds/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate CD hub</a> — independent CD-ladder examples and current term-rate comparisons</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/cd-vs-high-yield-savings" className="underline underline-offset-2 text-amber-100 hover:text-white">CD vs. High-Yield Savings: Which Wins?</Link></li>
+          <li><Link href="/high-yield-savings-vs-cd-ladder-calculator" className="underline underline-offset-2 text-amber-100 hover:text-white">High-Yield Savings vs. CD Ladder Calculator</Link></li>
           <li><Link href="/no-penalty-cd-guide" className="underline underline-offset-2 text-amber-100 hover:text-white">No-Penalty CD Guide</Link></li>
           <li><Link href="/brokered-cds-guide" className="underline underline-offset-2 text-amber-100 hover:text-white">Brokered CDs Guide</Link></li>
           <li><Link href="/treasury-bills-vs-cds" className="underline underline-offset-2 text-amber-100 hover:text-white">Treasury Bills vs. CDs</Link></li>
@@ -209,6 +218,7 @@ export default function CdLadderStrategyPage() {
       />
       <BreadcrumbJsonLd slug="/cd-ladder-strategy" title="CD Ladder Strategy: How to Build One" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

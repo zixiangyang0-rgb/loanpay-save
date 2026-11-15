@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function BrokeredCdsGuidePage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · CDs & bonds
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Brokered CDs: Shop Every Bank&apos;s Rates From One Account
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         A brokered CD is a bank certificate of deposit bought through a brokerage — Fidelity,
         Schwab, Vanguard, or similar — instead of directly from the issuing bank. The underlying
         promise is identical (fixed rate, fixed term, FDIC-insured up to limits), but the wrapper
@@ -34,6 +36,9 @@ export default function BrokeredCdsGuidePage() {
         notorious call feature that lets some issuers redeem early when rates fall. This guide
         explains pricing, liquidity, call risk, and how to use brokered CDs well.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">How brokered CDs differ from bank CDs</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -63,7 +68,7 @@ export default function BrokeredCdsGuidePage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Bank CDs vs. brokered CDs</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -98,7 +103,7 @@ export default function BrokeredCdsGuidePage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: the callable-CD trap</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           Two illustrative 5-year offerings: a non-callable brokered CD at 4.20% and a callable one
           at 4.60% (callable after one year). On $20,000 held the full term, the non-callable pays
@@ -151,25 +156,25 @@ export default function BrokeredCdsGuidePage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Do brokered CDs compound?</summary>
           <p className="mt-2">Often not automatically — coupon payments typically flow to your brokerage cash sweep,
             where they earn the sweep rate until you reinvest. Your realized return depends on what
             you do with those payments, so set sweep reinvestment or a manual routine.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What does &ldquo;callable&rdquo; mean exactly?</summary>
           <p className="mt-2">The issuing bank may redeem the CD before maturity on specified dates, usually when
             falling rates let it refinance cheaper. You get principal plus accrued interest — but
             lose the above-market rate going forward. Non-callable CDs cannot be taken back early.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Are brokered CDs safe if my brokerage fails?</summary>
           <p className="mt-2">Your CD is an obligation of the issuing bank, FDIC-insured to limits — brokerage
             failure does not erase it, and assets transfer to another firm. SIPC covers missing
             securities at a failed brokerage, a separate backstop you should rarely need.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I ladder brokered CDs?</summary>
           <p className="mt-2">Yes, beautifully — buy 1- through 5-year new-issue CDs in one session and roll each
             maturity into a new longest rung. One login, one tax form, automatic maturity
@@ -178,14 +183,14 @@ export default function BrokeredCdsGuidePage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.fdic.gov/resources/deposit-insurance/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">FDIC deposit insurance resources</a> — coverage rules for brokered deposits and pass-through insurance details</li>
           <li><a href="https://www.bankrate.com/banking/cds/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate CD hub</a> — independent brokered-CD rate tracking and platform comparisons</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/cd-ladder-strategy" className="underline underline-offset-2 text-amber-100 hover:text-white">CD Ladder Strategy</Link></li>
@@ -217,6 +222,7 @@ export default function BrokeredCdsGuidePage() {
       />
       <BreadcrumbJsonLd slug="/brokered-cds-guide" title="Brokered CDs Guide: Buying CDs at a Brokerage" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

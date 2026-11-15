@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function SavingsForKidsGuidePage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Savings accounts
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Savings for Kids: Accounts That Teach While They Grow
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Children who handle real money early develop measurably better financial habits as adults —
         and the account you choose shapes what they learn. A children&apos;s savings account
         teaches deposits, statements, and patience; a custodial UTMA/UGMA account introduces
@@ -33,9 +35,12 @@ export default function SavingsForKidsGuidePage() {
         small family systems — allowance splits, matching contributions, visible compounding — turn
         abstract thrift into a habit kids keep.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">Account types for minors compared</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -100,7 +105,7 @@ export default function SavingsForKidsGuidePage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: $25 a week from age 8 to 18</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           A child saves $25 weekly — $1,300 a year — from allowance and birthday money. Path A: a
           savings account earning an illustrative 3.00% grows to roughly{" "}
@@ -153,27 +158,27 @@ export default function SavingsForKidsGuidePage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can a child lose UTMA money to their own choices at 18?</summary>
           <p className="mt-2">Yes — that is the genuine risk. At the age of majority the assets are legally theirs to
             spend. Families concerned about maturity sometimes favor 529 plans (parent retains
             control) for large education sums and keep UTMA balances modest until character is
             proven.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Do kids&apos; accounts affect financial aid?</summary>
           <p className="mt-2">Student-owned assets (UTMA, child savings) are generally assessed at a much higher rate
             in aid formulas than parent-owned assets like 529s. Small balances barely matter, but
             five-figure custodial accounts can meaningfully reduce aid — another reason to prefer
             529s for college money.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What is the best first account?</summary>
           <p className="mt-2">A no-fee kids&apos; savings account at a convenient bank or credit union, opened with
             the child present. The ceremony — signing, depositing, receiving the first statement —
             matters more than the rate for young savers.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Should teens have debit cards?</summary>
           <p className="mt-2">Yes, with guardrails: a youth checking account with instant parental alerts, no
             overdraft facility, and a modest balance cap. Supervised practice with real
@@ -182,14 +187,14 @@ export default function SavingsForKidsGuidePage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.consumerfinance.gov/money-as-you-grow/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Money as You Grow</a> — age-by-age official activities that teach kids saving and compound growth</li>
           <li><a href="https://www.bankrate.com/banking/savings/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate savings hub</a> — independent reviews of kids savings accounts and custodial options</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/529-plan-basics" className="underline underline-offset-2 text-amber-100 hover:text-white">529 Plan Basics: Tax-Free College Savings</Link></li>
@@ -221,6 +226,7 @@ export default function SavingsForKidsGuidePage() {
       />
       <BreadcrumbJsonLd slug="/savings-for-kids-guide" title="Savings for Kids Guide: Accounts & Lessons" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

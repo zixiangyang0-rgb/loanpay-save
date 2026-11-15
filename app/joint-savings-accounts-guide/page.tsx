@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function JointSavingsAccountsGuidePage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Savings accounts
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Joint Savings Accounts: Sharing Money Without Sharing Stress
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         A joint savings account gives two people equal ownership of one balance — either owner can
         typically deposit or withdraw the full amount without the other&apos;s signature. That
         simplicity powers shared emergency funds, house down payments, and vacation savings, but it
@@ -34,6 +36,9 @@ export default function JointSavingsAccountsGuidePage() {
         is for. This guide covers the legal realities, the insurance advantages, and the operating
         agreements that keep joint saving harmonious.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">What &ldquo;joint&rdquo; legally means</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -62,7 +67,7 @@ export default function JointSavingsAccountsGuidePage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Account structures for couples compared</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -102,7 +107,7 @@ export default function JointSavingsAccountsGuidePage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: funding a $30,000 house fund fairly</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           Partners earning $90,000 and $60,000 want $30,000 for a down payment in 18 months —
           $1,667/month combined. A 50/50 split demands $833 each, which consumes a much larger
@@ -153,27 +158,27 @@ export default function JointSavingsAccountsGuidePage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can one owner empty a joint account?</summary>
           <p className="mt-2">Generally yes — either owner may withdraw the full balance without the other&apos;s
             consent at most banks. Joint accounts run on trust plus agreements, not technical
             restrictions. If that worries you, keep the bulk of savings individual and fund shared
             goals by transfer.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Do both owners need good credit to open?</summary>
           <p className="mt-2">Banks typically review ChexSystems deposit history for both applicants; a negative
             record for either can cause denial. Ordinary savings accounts usually involve no credit
             pull, so credit scores matter less than a clean banking record.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Should unmarried couples open joint accounts?</summary>
           <p className="mt-2">Many do, but with extra care: no divorce court will divide things fairly if disputes
             arise, and survivorship handling varies by state and titling. Keep contributions
             documented, balances moderate relative to your trust level, and estate documents
             updated.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How do taxes work on joint savings interest?</summary>
           <p className="mt-2">Banks typically report interest under the first-listed owner&apos;s Social Security
             number on Form 1099-INT. Couples filing jointly simply report it together; unmarried
@@ -183,14 +188,14 @@ export default function JointSavingsAccountsGuidePage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.fdic.gov/resources/deposit-insurance/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">FDIC deposit insurance resources</a> — how joint ownership categories multiply coverage per co-owner</li>
           <li><a href="https://www.bankrate.com/banking/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate banking hub</a> — independent joint-account reviews and titling comparisons</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/high-yield-savings-guide-2026" className="underline underline-offset-2 text-amber-100 hover:text-white">High-Yield Savings Guide 2026</Link></li>
@@ -222,6 +227,7 @@ export default function JointSavingsAccountsGuidePage() {
       />
       <BreadcrumbJsonLd slug="/joint-savings-accounts-guide" title="Joint Savings Accounts Guide for Couples" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

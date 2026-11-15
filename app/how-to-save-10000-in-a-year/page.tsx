@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function HowToSave10000InAYearPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Budgeting systems
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         How to Save $10,000 in a Year: $834 a Month, Step by Step
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Ten thousand dollars in twelve months sounds heroic until you divide it: $834 a month,
         $417 every two weeks, $192 a week, or about $27 a day. Framed that way, it becomes an
         engineering problem rather than a willpower contest — a combination of automated transfers,
@@ -34,6 +36,9 @@ export default function HowToSave10000InAYearPage() {
         about both paths. Below is the full breakdown: the monthly math, the cuts that actually
         stick, and the quarterly milestones that keep you on track.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">The monthly math, three ways</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -53,7 +58,7 @@ export default function HowToSave10000InAYearPage() {
       <AdSlot format="in-article" slot="TODO-save-inarticle-1" />
 
       <h2 className="mt-10 text-2xl font-bold">Cuts that stick vs. cuts that snap back</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -96,7 +101,7 @@ export default function HowToSave10000InAYearPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: quarterly milestones</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           A household automates $500/month and harvests $334/month from cuts — $834 total. End of
           Q1: <strong className="text-white">$2,502</strong> saved (plus a few dollars of
@@ -146,25 +151,25 @@ export default function HowToSave10000InAYearPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Where should the $10,000 accumulate?</summary>
           <p className="mt-2">A high-yield savings account separate from checking — liquid, insured, earning yield
             while you build. Avoid investing the balance (too short a horizon for market risk) and
             avoid CDs (lockups complicate monthly additions; use them after the goal is reached).</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What if an emergency raids the fund mid-year?</summary>
           <p className="mt-2">That is the fund doing its job — do not count it as failure. Rebuild with the same
             automation, extend the deadline by the setback months, and consider whether a separate
             small emergency buffer would protect the next attempt.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Should couples each save $10,000?</summary>
           <p className="mt-2">Set one household goal ($10K combined) rather than doubling pressure — $417 each per
             month for equal earners, or proportional shares for unequal incomes. Shared tracking
             (a visible chart on the fridge still works) keeps both partners engaged.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How do I stay motivated for 12 months?</summary>
           <p className="mt-2">Quarterly milestones with small non-spending rewards, a visual tracker, and one
             accountability partner. Motivation follows progress — automate the deposits so progress
@@ -173,14 +178,14 @@ export default function HowToSave10000InAYearPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB savings guidance</a> — official tactics for setting and automating a yearly savings goal</li>
           <li><a href="https://www.nerdwallet.com/article/banking" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">NerdWallet savings guides</a> — independent annual-savings plans with monthly target math</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/pay-yourself-first-automation" className="underline underline-offset-2 text-amber-100 hover:text-white">Pay Yourself First: Automate Saving</Link></li>
@@ -212,6 +217,7 @@ export default function HowToSave10000InAYearPage() {
       />
       <BreadcrumbJsonLd slug="/how-to-save-10000-in-a-year" title="How to Save $10,000 in a Year: Month-by-Month Plan" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

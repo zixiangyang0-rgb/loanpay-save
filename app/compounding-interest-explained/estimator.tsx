@@ -24,7 +24,7 @@ export default function CompoundEstimator() {
     v.toLocaleString("en-US", { maximumFractionDigits: 0 });
 
   return (
-    <div className="glass-card mt-4 rounded-2xl p-6">
+    <div className="glass-card s-tool-island mt-4 rounded-2xl p-6">
       <h3 className="text-lg font-semibold text-white">Try it: compound-growth estimator</h3>
       <p className="mt-1 text-xs text-slate-400">
         Illustrative education only — not a prediction of any account&apos;s rate. Verify current offers separately.

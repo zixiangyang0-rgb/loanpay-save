@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
+import LedgerTable from "../../components/LedgerTable";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +16,18 @@ export const metadata: Metadata = {
 
 export default function BudgetRule503020Page() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Budgeting systems
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         The 50-30-20 Budget Rule: Simple Split, Smart Adaptations
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Popularized by Senator Elizabeth Warren&apos;s research, the 50-30-20 rule divides
         after-tax income into three buckets: about 50% for needs, 30% for wants, and at least 20%
         for savings and debt payoff. Its power is diagnostic speed — one look at your last three
@@ -33,6 +36,9 @@ export default function BudgetRule503020Page() {
         noticing. This guide explains the classic rule, shows how to adapt it across incomes and
         cities, and pairs it with automation so the percentages run themselves.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">What counts as needs, wants, and savings</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -62,7 +68,8 @@ export default function BudgetRule503020Page() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Adaptations by situation</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <LedgerTable label="50-30-20-budget-rule — comparison table 1">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -95,9 +102,10 @@ export default function BudgetRule503020Page() {
           </tbody>
         </table>
       </div>
+      </LedgerTable>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: $6,400 take-home in a pricey city</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           Take-home pay: <strong className="text-white">$6,400/month</strong>. Textbook 50-30-20
           gives $3,200 needs / $1,920 wants / $1,280 savings. Reality: rent plus utilities total
@@ -146,25 +154,25 @@ export default function BudgetRule503020Page() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Is 50-30-20 based on gross or net income?</summary>
           <p className="mt-2">After-tax (take-home) income — the money actually reaching you. Count pre-tax 401(k)
             contributions and employer matches inside the 20% savings slice conceptually, but run
             the checking-account math on net pay so transfers match reality.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Where do extra debt payments go?</summary>
           <p className="mt-2">Minimum payments are needs; every dollar above minimums is savings (future-net-worth
             building). Households in aggressive payoff mode often run 50 / 10 / 40 temporarily —
             wants compressed to a token while debt dies, then rebalanced afterward.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What if my needs exceed 50% permanently?</summary>
           <p className="mt-2">Then the diagnosis is structural, not behavioral: housing, transport, or childcare
             costs need addressing (move, refinance, renegotiate) or income must rise. Budgeting
             optimizes within constraints — it cannot fix a constraint that consumes everything.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How does 50-30-20 compare to zero-based budgeting?</summary>
           <p className="mt-2">Zero-based budgeting assigns every dollar a job monthly — more precise, more work.
             50-30-20 guards the ratios and frees the details. Detail-lovers and debt emergencies
@@ -173,14 +181,14 @@ export default function BudgetRule503020Page() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB budgeting explainers</a> — official budgeting worksheets and answers on building a workable plan</li>
           <li><a href="https://www.nerdwallet.com/article/banking" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">NerdWallet budgeting guides</a> — independent walkthroughs of popular budgeting methods and tools</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/pay-yourself-first-automation" className="underline underline-offset-2 text-amber-100 hover:text-white">Pay Yourself First: Automate Saving</Link></li>
@@ -212,6 +220,7 @@ export default function BudgetRule503020Page() {
       />
       <BreadcrumbJsonLd slug="/50-30-20-budget-rule" title="50-30-20 Budget Rule Explained" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

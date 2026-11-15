@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function HighYieldSavingsVsCdLadderCalculatorPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Savings accounts
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         High-Yield Savings vs CD Ladder Calculator: Which Earns More in 2026?
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         A high-yield savings account and a certificate of deposit ladder solve the same problem in
         opposite ways. The savings account pays a variable rate that floats with the market and lets
         you withdraw at any time, while a CD ladder locks chunks of money into fixed-rate
@@ -37,6 +39,9 @@ export default function HighYieldSavingsVsCdLadderCalculatorPage() {
         decide in about ten minutes whether to keep cash flexible, lock a ladder, or split the
         difference with a hybrid.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">How each option works in 2026</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -73,7 +78,7 @@ export default function HighYieldSavingsVsCdLadderCalculatorPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Head-to-head comparison</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -113,7 +118,7 @@ export default function HighYieldSavingsVsCdLadderCalculatorPage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Calculator: worked example on $25,000</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           Use this simple formula to compare any quotes you find today. For savings: projected
           one-year interest equals balance times APY, or $25,000 × 4.50% ={" "}
@@ -193,7 +198,7 @@ export default function HighYieldSavingsVsCdLadderCalculatorPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How do I calculate which earns more over two years?</summary>
           <p className="mt-2">Multiply each option by its expected path, not just today&apos;s rate.
             For savings, estimate year-one APY and a lower or higher year-two APY, then compound both
@@ -201,7 +206,7 @@ export default function HighYieldSavingsVsCdLadderCalculatorPage() {
             at a conservative reinvestment rate. The option with the higher two-year total — after
             subtracting any early-withdrawal penalty you would plausibly pay — is the honest winner.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What is the penalty if I break a CD rung early?</summary>
           <p className="mt-2">Most banks charge 90 days of interest on CDs under one year and 180 to
             365 days on longer terms, sometimes reaching into principal if little interest has
@@ -209,7 +214,7 @@ export default function HighYieldSavingsVsCdLadderCalculatorPage() {
             erases half a year of that rung&apos;s advantage over savings, which is why emergency
             money should never sit in a standard CD.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Are CD ladders safe if my bank fails?</summary>
           <p className="mt-2">CDs at FDIC-insured banks carry the same deposit insurance as savings:
             generally $250,000 per depositor, per bank, per ownership category, including principal
@@ -217,14 +222,14 @@ export default function HighYieldSavingsVsCdLadderCalculatorPage() {
             total approaches the limit, and verify any fintech or brokerage CD&apos;s pass-through
             coverage in writing.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Should I build a ladder when rates are expected to fall?</summary>
           <p className="mt-2">Falling-rate periods are historically the best time to ladder, because
             locking fixed rates today preserves yield while savings APYs drift down over the
             following months. Favor slightly longer rungs and renew maturing CDs promptly so cash
             does not sit in a low default maturity account earning a fraction of the market rate.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I split money between both options?</summary>
           <p className="mt-2">Yes, and most savers should. Keep your emergency fund and any spending
             needed within twelve months in high-yield savings, and ladder money with a one-to-five
@@ -257,6 +262,7 @@ export default function HighYieldSavingsVsCdLadderCalculatorPage() {
       />
       <BreadcrumbJsonLd slug="/high-yield-savings-vs-cd-ladder-calculator" title="High-Yield Savings vs CD Ladder Calculator: Which Earns More in 2026?" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

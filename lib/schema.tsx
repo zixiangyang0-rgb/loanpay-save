@@ -246,3 +246,30 @@ export function Byline({ updated = "October 2026" }: { updated?: string }) {
     </p>
   );
 }
+
+/** Home hero image license JSON-LD (additive SEO, no visual change). */
+export function HeroImageJsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    contentUrl: `${SITE}/photos/save.webp`,
+    url: `${SITE}/photos/save.webp`,
+    width: 1600,
+    height: 1066,
+    name: "Glass savings jar filled with coins and a banknote",
+    caption:
+      "Glass savings jar filled with coins and a banknote — saving concept, no people, no personal data. Public domain (CC0) via Wikimedia Commons.",
+    creditText: "stevepb (Pixabay via Wikimedia Commons)",
+    creator: {
+      "@type": "Person",
+      name: "stevepb",
+    },
+    copyrightNotice: "CC0 1.0 Universal Public Domain Dedication",
+    license: "https://creativecommons.org/publicdomain/zero/1.0/",
+    acquireLicensePage:
+      "https://commons.wikimedia.org/wiki/File:Piggy-bank-968302.jpg",
+  };
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(data) }} />
+  );
+}

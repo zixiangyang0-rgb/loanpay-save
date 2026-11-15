@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function BankVsCreditUnionPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Savings accounts
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Bank vs. Credit Union: Which Deserves Your Savings?
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Banks are for-profit companies serving shareholders; credit unions are nonprofit
         cooperatives owned by their members. That single structural difference ripples into rates,
         fees, service, and scope — credit unions return profits to members as better yields and
@@ -33,6 +35,9 @@ export default function BankVsCreditUnionPage() {
         rival regional banks in apps and networks. This guide compares the two across every
         dimension that affects savers, so you can choose on facts rather than folklore.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">The structural difference and why it matters</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -62,7 +67,7 @@ export default function BankVsCreditUnionPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Dimension-by-dimension comparison</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -102,7 +107,7 @@ export default function BankVsCreditUnionPage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: $30,000 across three options</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           A saver compares homes for $30,000 using illustrative rates (check current offers):
           branch bank savings at 0.30% ($90/year), credit union money market at 3.00% ($900/year),
@@ -150,27 +155,27 @@ export default function BankVsCreditUnionPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Is my money as safe at a credit union?</summary>
           <p className="mt-2">At federally insured credit unions, yes — NCUA insurance mirrors FDIC coverage at
             $250,000 per depositor per category with the same government backing. Verify any
             credit union&apos;s insured status on the NCUA&apos;s site, especially
             state-chartered institutions.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can anyone join a credit union?</summary>
           <p className="mt-2">You must fit its field of membership, but definitions are broad — many accept anyone in
             a county, employees of partner companies, or members of an affiliated nonprofit
             (sometimes joinable with a small donation). Check eligibility on the credit
             union&apos;s website in minutes.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Do credit unions offer CDs and bonuses?</summary>
           <p className="mt-2">Credit unions offer share certificates (their name for CDs), often at rates beating
             branch banks, plus occasional new-member bonuses. Terms and penalties parallel bank
             CDs — compare current offers side by side regardless of institution type.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Are credit union apps really worse?</summary>
           <p className="mt-2">It varies enormously. Large credit unions invest heavily and score well; tiny ones may
             lag on features like mobile deposit limits or budgeting tools. Test-drive the app with
@@ -180,14 +185,14 @@ export default function BankVsCreditUnionPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.fdic.gov/resources/deposit-insurance/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">FDIC deposit insurance resources</a> — how coverage applies at banks, plus NCUA pass-through for credit unions</li>
           <li><a href="https://www.bankrate.com/banking/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate banking hub</a> — independent bank-versus-credit-union comparisons and fee breakdowns</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/high-yield-savings-guide-2026" className="underline underline-offset-2 text-amber-100 hover:text-white">High-Yield Savings Guide 2026</Link></li>
@@ -219,6 +224,7 @@ export default function BankVsCreditUnionPage() {
       />
       <BreadcrumbJsonLd slug="/bank-vs-credit-union" title="Bank vs. Credit Union: Honest Comparison" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

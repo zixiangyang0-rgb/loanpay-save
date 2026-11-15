@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function EmergencyFundCalculatorByExpensesPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Emergency & goals
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Emergency Fund Calculator by Expenses: Find Your 3, 6, or 9 Month Number
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Rules of thumb like three to six months of expenses only help if you know which expenses
         count and which month count fits your life. This expense based calculator walks through
         both decisions step by step. You will build a clean monthly essentials baseline from your
@@ -39,6 +41,9 @@ export default function EmergencyFundCalculatorByExpensesPage() {
         , think of this page as the hands on worksheet companion that turns that guidance into
         your personal calculation.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">Step 1: define your monthly essentials baseline</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -92,7 +97,7 @@ export default function EmergencyFundCalculatorByExpensesPage() {
         shows the arithmetic for three common baselines so you can locate your row and read off
         all three targets at once.
       </p>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -148,7 +153,7 @@ export default function EmergencyFundCalculatorByExpensesPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: from $5,800 spending to a $26,400 fund</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           Maya spends 5,800 dollars a month and wants her six month number. She averages three
           statements and finds 4,400 dollars of essentials: 1,900 dollars housing with insurance
@@ -217,23 +222,23 @@ export default function EmergencyFundCalculatorByExpensesPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Should I use gross income or expenses for the calculation?</summary>
           <p className="mt-2">Use essential expenses, not income. Income overstates the target because taxes, retirement contributions, and discretionary spending stop or shrink during unemployment. Essentials answer what must still be paid, which is the amount the fund must actually cover.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How do I pick between 3, 6, and 9 months?</summary>
           <p className="mt-2">Start with earners and volatility. Dual stable incomes with good insurance can begin at 3 months. Single earners and most families fit 6 months. Freelancers, single earners in specialized roles, and households with high deductibles should consider 9 months. When unsure, fund 3 months first, then extend.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Do minimum debt payments count as essentials?</summary>
           <p className="mt-2">Yes. Include minimums on credit cards, student loans, auto loans, and any court ordered payments, because missed minimums damage credit and trigger fees even during hardship. Exclude extra prepayments above the minimum, since those pause when income stops.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What if my expenses change every month?</summary>
           <p className="mt-2">Average two to three recent months, monthlyize annual bills by dividing by twelve, and use the higher of the average and a realistic lean month if income is variable. Recheck the baseline each January or after moves, new children, job changes, or insurance changes.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Where should I keep the money while I build the fund?</summary>
           <p className="mt-2">Keep building balances in an FDIC insured high yield savings account separate from checking so daily spending never mixes with safety money. One to three day transfer delays actually help by adding friction against impulse raids while keeping funds reachable for real emergencies.</p>
         </details>
@@ -263,6 +268,7 @@ export default function EmergencyFundCalculatorByExpensesPage() {
       />
       <BreadcrumbJsonLd slug="/emergency-fund-calculator-by-expenses" title="Emergency Fund Calculator by Expenses" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

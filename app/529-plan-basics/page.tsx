@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function Plan529BasicsPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Emergency & goals
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         529 Plan Basics: The Tax-Free Engine for Education Savings
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         A 529 plan is a tax-advantaged investment account dedicated to education: contributions
         grow free of federal tax, and withdrawals for qualified education expenses — tuition, room
         and board, books, and more — come out federal-tax-free as well. Unlike retirement accounts,
@@ -34,6 +36,9 @@ export default function Plan529BasicsPage() {
         many states plus SECURE 2.0&apos;s Roth rollover escape hatch for unused funds, and the
         529 is the default answer for dedicated college savings in 2026.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">How the tax benefits stack</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -64,7 +69,7 @@ export default function Plan529BasicsPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">529 vs. other education savings</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -104,7 +109,7 @@ export default function Plan529BasicsPage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: $300/month from birth to 18</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           Parents contribute $300 monthly ($3,600/year) from birth. At an illustrative 7% average
           annual return in an age-based 529 portfolio, the balance at 18 is roughly{" "}
@@ -156,28 +161,28 @@ export default function Plan529BasicsPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Does a 529 hurt financial-aid eligibility?</summary>
           <p className="mt-2">Parent-owned 529s are assessed as parental assets (a low assessment rate, around 5.64%
             in the federal formula) — far gentler than student-owned UTMA assets at around 20%.
             Grandparent-owned 529 distributions historically complicated aid, though recent FAFSA
             simplification changed the treatment — confirm current-year rules when planning.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I change the beneficiary?</summary>
           <p className="mt-2">Yes, to another qualifying family member (sibling, cousin, parent, even yourself) with
             no tax consequences. This flexibility is the answer to most &ldquo;what if&rdquo;
             scenarios — unused funds follow the family&apos;s needs, not just one child&apos;s
             path.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How does the Roth rollover escape hatch work?</summary>
           <p className="mt-2">Under SECURE 2.0, up to $35,000 lifetime can roll from a 529 to the beneficiary&apos;s
             Roth IRA, provided the 529 has existed 15+ years, contributions being rolled are 5+
             years old, and rollovers respect annual Roth limits and earned-income requirements.
             Verify current IRS guidance — details have evolved since enactment.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Which state&apos;s plan should I pick?</summary>
           <p className="mt-2">If your state offers a meaningful deduction or credit, its plan usually wins unless
             fees are extreme. Without a home-state perk, compare the lowest-cost highly rated
@@ -187,14 +192,14 @@ export default function Plan529BasicsPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB education-savings explainers</a> — official answers on 529 plans, qualified expenses, and key tax rules</li>
           <li><a href="https://www.bankrate.com/investing/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate investing hub</a> — independent comparisons of 529 plans and other education-savings options</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/savings-for-kids-guide" className="underline underline-offset-2 text-amber-100 hover:text-white">Savings for Kids Guide</Link></li>
@@ -226,6 +231,7 @@ export default function Plan529BasicsPage() {
       />
       <BreadcrumbJsonLd slug="/529-plan-basics" title="529 Plan Basics: Tax-Free College Savings" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

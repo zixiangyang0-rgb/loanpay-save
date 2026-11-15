@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function SinkingFundsBudgetingGuidePage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Budgeting systems
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Sinking Funds: Turn Every Big Bill Into a Small Monthly Habit
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Most budgets fail on predictable surprises: the $900 car repair, the $1,200 holiday
         season, the $800 insurance premium, the $2,000 vacation. None are true emergencies — they
         happen every year — yet without a system they land on credit cards each time. A sinking
@@ -33,6 +35,9 @@ export default function SinkingFundsBudgetingGuidePage() {
         there. This guide shows how to inventory your irregular expenses, size each fund, automate
         the transfers, and keep the system alive for years.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">Sinking funds vs. emergency funds vs. savings goals</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -64,7 +69,7 @@ export default function SinkingFundsBudgetingGuidePage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Sample sinking-fund schedule</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -110,7 +115,7 @@ export default function SinkingFundsBudgetingGuidePage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: December without debt</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           Last year this household charged $1,400 of holiday spending at an illustrative 24% card
           APR and took five months to repay — interest cost roughly{" "}
@@ -161,25 +166,25 @@ export default function SinkingFundsBudgetingGuidePage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How many sinking funds should I have?</summary>
           <p className="mt-2">Five to eight covers most households (car, home, holidays, insurance, medical, pets,
             vacation, annual bills). Beyond ten, merge small ones into an &ldquo;irregular
             bills&rdquo; fund — tracking overhead should never exceed the clarity benefit.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Where should sinking funds live?</summary>
           <p className="mt-2">A high-yield savings account — liquid enough for sudden repairs, earning yield while
             waiting. Keep them separate from the emergency fund so a vacation never eats the job-loss
             cushion, using buckets or separate accounts for labeling.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What if a bill exceeds its fund?</summary>
           <p className="mt-2">Cover the gap from the emergency fund only as a deliberate loan to yourself, then
             repay it first and raise that sinking fund&apos;s monthly slice — the shortfall is data
             that your estimate was low, not failure of the method.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Do sinking funds replace the emergency fund?</summary>
           <p className="mt-2">No — they protect it. Sinking funds absorb every predictable irregular bill so the
             emergency fund faces only true surprises. Households running both report far fewer
@@ -189,14 +194,14 @@ export default function SinkingFundsBudgetingGuidePage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB budgeting explainers</a> — official worksheets for planning irregular expenses without debt</li>
           <li><a href="https://www.nerdwallet.com/article/banking" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">NerdWallet budgeting guides</a> — independent sinking-fund templates with category-by-category examples</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/pay-yourself-first-automation" className="underline underline-offset-2 text-amber-100 hover:text-white">Pay Yourself First: Automate Saving</Link></li>
@@ -228,6 +233,7 @@ export default function SinkingFundsBudgetingGuidePage() {
       />
       <BreadcrumbJsonLd slug="/sinking-funds-budgeting-guide" title="Sinking Funds: Budget for Big Bills Monthly" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

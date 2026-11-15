@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 const base = "https://save.loanpaylogic.com";
 
-const routes: { url: string; priority: number; changeFrequency: "weekly" | "monthly" }[] = [
-  { url: "/", priority: 1.0, changeFrequency: "weekly" },
+const routes: { url: string; priority: number; changeFrequency: "weekly" | "monthly"; images?: string[] }[] = [
+  { url: "/", priority: 1.0, changeFrequency: "weekly", images: [`${base}/photos/save.webp`] },
   // Accounts
   { url: "/high-yield-savings-guide-2026", priority: 0.9, changeFrequency: "monthly" },
   { url: "/money-market-vs-savings", priority: 0.8, changeFrequency: "monthly" },
@@ -51,5 +51,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
+    ...(route.images ? { images: route.images } : {}),
   }));
 }

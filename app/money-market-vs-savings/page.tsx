@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function MoneyMarketVsSavingsPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Savings accounts
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Money Market vs. Savings: Two Liquid Accounts, One Decision
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Money market accounts (MMAs) and savings accounts look nearly identical on a rate table —
         both are FDIC-insured, both pay variable interest, both keep cash liquid. The difference is
         access: money market accounts typically include check-writing privileges and a debit card,
@@ -34,6 +36,9 @@ export default function MoneyMarketVsSavingsPage() {
         compares deposit-account MMAs against high-yield savings so you can pick the right parking
         spot for each pile of cash. Illustrative rate language only — check current offers.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">What each account actually does</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -61,7 +66,7 @@ export default function MoneyMarketVsSavingsPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Head-to-head comparison</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -101,7 +106,7 @@ export default function MoneyMarketVsSavingsPage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: the tier trap in dollars</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           Suppose a branch MMA advertises an illustrative top-tier APY of 4.00% but pays only
           0.50% on balances under $10,000, while an online HYSA pays a flat illustrative 4.00%
@@ -150,27 +155,27 @@ export default function MoneyMarketVsSavingsPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Is a money market account the same as a money market fund?</summary>
           <p className="mt-2">No. A money market deposit account is a bank product with FDIC insurance. A money
             market mutual fund is an investment holding short-term securities — SIPC coverage for
             brokerage failure, but no FDIC guarantee against investment loss. The similar names
             cause constant confusion, so check which one any article or banker means.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I pay bills directly from an MMA?</summary>
           <p className="mt-2">Generally yes — that is the MMA&apos;s advantage. Checks, debit purchases, and
             electronic payments typically work, though some banks still limit certain transaction
             types per month. Confirm the transaction rules in the account disclosure before
             routing bills through it.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Which pays more on average?</summary>
           <p className="mt-2">Online high-yield savings accounts have typically edged out MMAs on raw APY in recent
             years, especially for balances under $10,000. Large-balance tiered MMAs can match or
             beat them — compare using your balance&apos;s actual tier, not headlines.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I hold both?</summary>
           <p className="mt-2">Absolutely — many savers pair an HYSA for goals with an MMA for spendable reserves at
             the same bank, moving money between them instantly. Just watch combined balances
@@ -179,14 +184,14 @@ export default function MoneyMarketVsSavingsPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.fdic.gov/resources/deposit-insurance/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">FDIC deposit insurance resources</a> — which money-market deposit accounts carry FDIC coverage and which funds do not</li>
           <li><a href="https://www.bankrate.com/banking/savings/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate savings hub</a> — independent money-market versus savings rate comparisons</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/high-yield-savings-guide-2026" className="underline underline-offset-2 text-amber-100 hover:text-white">High-Yield Savings Guide 2026</Link></li>
@@ -218,6 +223,7 @@ export default function MoneyMarketVsSavingsPage() {
       />
       <BreadcrumbJsonLd slug="/money-market-vs-savings" title="Money Market vs. Savings Account" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

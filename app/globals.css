@@ -191,3 +191,270 @@ input[type="range"]::-moz-range-thumb {
 .recharts-tooltip-wrapper {
   outline: none;
 }
+
+/* QuietGoal interior reading shell — scoped only, no global flip */
+.s-article {
+  background: #F3F5F1;
+  color: #1F2A22;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  border-radius: 20px;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.s-article-hero {
+  padding-bottom: 8px;
+}
+
+.s-article-kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #2F6B3C;
+}
+
+.s-article-title {
+  margin-top: 12px;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #1F2A22;
+}
+
+@media (min-width: 640px) {
+  .s-article-title {
+    font-size: 34px;
+  }
+}
+
+.s-article-lede {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #33413A;
+}
+
+.s-article-body {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #1F2A22;
+  min-width: 0;
+}
+
+.s-article-body h2 {
+  margin-top: 40px;
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #1F2A22;
+}
+
+.s-article-body p {
+  margin-top: 16px;
+  color: #1F2A22;
+}
+
+.s-article-body a {
+  color: #2F6B3C;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.s-article-body a:hover {
+  color: #245A30;
+}
+
+/* Scoped resets: dark-ink utilities from the previous full-dark shell */
+.s-article-hero [class*="text-slate-"],
+.s-article-body [class*="text-slate-"],
+.s-article-faq [class*="text-slate-"],
+.s-article-related [class*="text-slate-"] {
+  color: #33413A;
+}
+
+.s-article-hero [class*="text-white"],
+.s-article-body [class*="text-white"],
+.s-article-faq [class*="text-white"],
+.s-article-related [class*="text-white"] {
+  color: #1F2A22;
+}
+
+.s-article-hero [class*="text-amber-"],
+.s-article-body [class*="text-amber-"],
+.s-article-faq [class*="text-amber-"],
+.s-article-related [class*="text-amber-"] {
+  color: #6B4F0E;
+}
+
+.s-article-hero [class*="border-white/"],
+.s-article-body [class*="border-white/"],
+.s-article-faq [class*="border-white/"],
+.s-article-related [class*="border-white/"] {
+  border-color: #D8DCCF;
+}
+
+.s-article-hero [class*="bg-white/"],
+.s-article-body [class*="bg-white/"],
+.s-article-faq [class*="bg-white/"],
+.s-article-related [class*="bg-white/"] {
+  background-color: #FFFFFF;
+}
+
+/* Amber disclaimer paper reset */
+.s-article-body p[class*="text-amber-"] {
+  color: #6B4F0E;
+}
+
+.s-article-body p[class*="bg-amber-"] {
+  background-color: rgba(180, 140, 40, 0.1);
+  border-color: rgba(120, 90, 20, 0.35);
+}
+
+.s-article-faq {
+  background: #FFFFFF;
+  border: 1px solid #CBD5C6;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.s-article-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #1F2A22;
+}
+
+.s-article-faq p {
+  color: #33413A;
+}
+
+.s-article-related {
+  background: #FFFFFF;
+  border: 1px solid #CBD5C6;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.s-article-related h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1F2A22;
+}
+
+.s-article-related ul,
+.s-article-related li,
+.s-article-related p {
+  color: #33413A;
+}
+
+.s-article-related a {
+  color: #2F6B3C;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.s-article table {
+  font-variant-numeric: tabular-nums;
+}
+
+.s-article-body table {
+  width: 100%;
+  min-width: 560px;
+  text-align: left;
+  font-size: 14px;
+  background: #FFFFFF;
+}
+
+.s-article-body thead tr {
+  border-bottom: 1px solid #CBD5C6;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #33413A;
+}
+
+.s-article-body tbody {
+  color: #1F2A22;
+}
+
+.s-article-body tbody tr {
+  border-bottom: 1px solid #E4E8E0;
+}
+
+.s-table-wrap {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid #CBD5C6;
+  background: #FFFFFF;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.s-table-wrap:focus-visible {
+  outline: 2px solid #2F6B3C;
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .s-article-body table th:first-child,
+  .s-article-body table td:first-child {
+    position: sticky;
+    left: 0;
+    background: #FFFFFF;
+    z-index: 1;
+  }
+}
+
+/* Explicit dark tool island: calculator keeps contrast-tested dark surface */
+.s-article .s-tool-island {
+  background: linear-gradient(180deg, #0E2118 0%, #070F0C 100%);
+  border: 1px solid rgba(156, 199, 165, 0.25);
+  color: #F7F4EE;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.s-article .s-tool-island h3 {
+  color: #F7F4EE;
+}
+
+.s-article .s-tool-island p,
+.s-article .s-tool-island label,
+.s-article .s-tool-island span {
+  color: #C9D6CC;
+}
+
+.s-article .s-tool-island [class*="text-white"],
+.s-article .s-tool-island .font-semibold {
+  color: #F7F4EE;
+}
+
+.s-article .s-tool-island [class*="text-amber-"] {
+  color: #9CC7A5;
+}
+
+.s-article .s-tool-island table {
+  font-variant-numeric: tabular-nums;
+}
+
+.s-article :focus-visible {
+  outline: 2px solid #2F6B3C;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-article *,
+  .s-article *::before,
+  .s-article *::after {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Save ToolIsland/LedgerTable — scoped quiet-goal tokens (dark). Applies ONLY inside .s-tool/.s-ledger-block. */
+.s-tool:focus-visible,.s-ledger-wrap:focus-visible{outline:2px solid #9CC7A5;outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.s-tool *,.s-ledger-block *{transition:none!important;transform:none!important}}

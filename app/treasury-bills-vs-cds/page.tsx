@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function TreasuryBillsVsCdsPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · CDs & bonds
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Treasury Bills vs. CDs: The After-Tax Comparison Nobody Shows You
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Treasury bills and certificates of deposit compete for the same dollars: safe, fixed-term
         cash earning a known yield. T-bills are short-term US government debt (4 to 52 weeks) sold
         at a discount — you pay less than face value and collect the full amount at maturity, with
@@ -34,6 +36,9 @@ export default function TreasuryBillsVsCdsPage() {
         states. This guide compares both honestly, with the after-tax math worked line by line.
         All yields below are illustrative — check current offers and auction results.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">How T-bills work in plain English</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -62,7 +67,7 @@ export default function TreasuryBillsVsCdsPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">T-bills vs. CDs at a glance</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -102,7 +107,7 @@ export default function TreasuryBillsVsCdsPage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: when the tax break flips the winner</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           A California saver in a high bracket compares an illustrative 12-month CD at 4.80%
           against an illustrative 52-week T-bill at 4.20% on $50,000. CD gross: $50,000 × 0.048 ={" "}
@@ -152,27 +157,27 @@ export default function TreasuryBillsVsCdsPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I lose money in T-bills?</summary>
           <p className="mt-2">Held to maturity, T-bills pay face value backed by the US government — the practical
             risk is essentially zero in nominal terms. Selling early on the secondary market can
             produce small gains or losses if rates moved, and inflation can erode real purchasing
             power, but nominal loss at maturity is not a realistic outcome.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What is the minimum to buy T-bills?</summary>
           <p className="mt-2">$100 in $100 increments for TreasuryDirect and most brokerages — lower than most bank
             CDs. Non-competitive bids up to $10 million per auction are available for very large
             savers, far above FDIC caps that would otherwise force multi-bank spreading.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Are T-bills better than a high-yield savings account?</summary>
           <p className="mt-2">Different jobs: T-bills lock a fixed yield and dodge state tax but require rolling
             maturities; savings stay instantly liquid with variable rates. Many savers hold both —
             savings for the emergency core, T-bills for the deeper reserve earning a fixed,
             tax-efficient yield.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Do T-bills make sense in no-tax states?</summary>
           <p className="mt-2">Less often on yield alone, since the state-tax edge is worth zero there — compare
             headline rates directly and favor CDs or savings when they lead. T-bills can still win
@@ -181,14 +186,14 @@ export default function TreasuryBillsVsCdsPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.federalreserve.gov/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Federal Reserve monetary policy resources</a> — how short-term rate policy flows through to T-bill auctions and CD pricing</li>
           <li><a href="https://www.bankrate.com/banking/cds/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate CD hub</a> — independent T-bill versus CD yield comparisons with tax notes</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/cd-ladder-strategy" className="underline underline-offset-2 text-amber-100 hover:text-white">CD Ladder Strategy</Link></li>
@@ -220,6 +225,7 @@ export default function TreasuryBillsVsCdsPage() {
       />
       <BreadcrumbJsonLd slug="/treasury-bills-vs-cds" title="Treasury Bills vs. CDs: After-Tax Math" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 export default function WindfallBonusPlanPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Budgeting systems
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Windfall Plan: Give Every Surprise Dollar a Job Before It Arrives
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Tax refunds, work bonuses, cash gifts, and side-job payouts share a dangerous trait: money
         that was never in the budget feels free, so it evaporates into impulse spending with
         nothing to show. Research on mental accounting shows windfalls are spent far more readily
@@ -33,6 +35,9 @@ export default function WindfallBonusPlanPage() {
         and guilt-free fun. This guide offers battle-tested splits, tax notes for each windfall
         type, and the timing tricks that keep plans intact when checks land.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">Why windfalls need a pre-commitment</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -59,7 +64,7 @@ export default function WindfallBonusPlanPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Split rules for common situations</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -94,7 +99,7 @@ export default function WindfallBonusPlanPage() {
       </div>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: a $4,800 refund</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           A renter carries a $2,600 card balance at an illustrative 24% APR and holds a $1,000
           mini emergency fund. A $4,800 tax refund arrives. Applying the debt-first split: $2,880
@@ -144,26 +149,26 @@ export default function WindfallBonusPlanPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Should I invest a windfall all at once or gradually?</summary>
           <p className="mt-2">Historical data favors immediate lump-sum investing about two-thirds of the time, since
             markets rise more often than they fall. But large windfalls that would cause regret if
             markets dipped can be dollar-cost averaged over 6–12 months — the slightly lower
             expected return buys sleep, which has real value.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Is a big tax refund good or bad?</summary>
           <p className="mt-2">Comforting but inefficient — it means you over-withheld and gave an interest-free loan
             all year. Aim for a small refund ($200–$500 buffer against owing) by tuning W-4
             withholding, and redirect the monthly difference into automated savings.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What about expected inheritances?</summary>
           <p className="mt-2">Never budget against money you do not hold — estates take months or years to settle and
             amounts shift. When funds arrive, park them separately, wait out the emotional period,
             then run your normal split rule on the net proceeds after any estate taxes or debts.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How do couples handle individual bonuses?</summary>
           <p className="mt-2">Agree in advance whether bonuses are joint or individual money — ambiguity causes most
             windfall fights. A common compromise: the earner keeps the fun slice personally while
@@ -172,14 +177,14 @@ export default function WindfallBonusPlanPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB windfall guidance</a> — official priorities for deploying a lump sum across debt and savings</li>
           <li><a href="https://www.bankrate.com/banking/savings/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate savings hub</a> — independent windfall playbooks with split-across-goals examples</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/pay-yourself-first-automation" className="underline underline-offset-2 text-amber-100 hover:text-white">Pay Yourself First: Automate Saving</Link></li>
@@ -211,6 +216,7 @@ export default function WindfallBonusPlanPage() {
       />
       <BreadcrumbJsonLd slug="/windfall-bonus-plan" title="Windfall & Bonus Plan: Spend Smart, Save More" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

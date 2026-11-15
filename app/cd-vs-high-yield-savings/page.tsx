@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
+import LedgerTable from "../../components/LedgerTable";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +16,18 @@ export const metadata: Metadata = {
 
 export default function CdVsHighYieldSavingsPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · CDs & bonds
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         CD vs. High-Yield Savings: Where Should Each Dollar Go?
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Certificates of deposit and high-yield savings accounts are cousins: both are
         FDIC-insured bank products that pay interest on idle cash. The difference is the deal you
         strike with the bank. A CD locks your money for a fixed term at a fixed rate — break the
@@ -33,6 +36,9 @@ export default function CdVsHighYieldSavingsPage() {
         on when you need the money and which direction you think rates are headed. This guide
         gives you the decision framework plus the math to split cash confidently between both.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">The core tradeoff: certainty vs. flexibility</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -60,7 +66,8 @@ export default function CdVsHighYieldSavingsPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Side-by-side comparison</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <LedgerTable label="cd-vs-high-yield-savings — comparison table 1">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -98,9 +105,10 @@ export default function CdVsHighYieldSavingsPage() {
           </tbody>
         </table>
       </div>
+      </LedgerTable>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: splitting $30,000</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           Imagine you have $30,000 beyond your emergency fund earmarked for a home down payment in
           about two years. Option A puts everything in savings at an illustrative 4.00% APY that
@@ -150,25 +158,25 @@ export default function CdVsHighYieldSavingsPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I lose money in a CD or HYSA?</summary>
           <p className="mt-2">Within FDIC limits at an insured bank, no — both principal and credited interest are
             protected even if the bank fails. The realistic risks are inflation eroding purchasing
             power and penalties trimming CD returns, not loss of principal.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Which usually pays more?</summary>
           <p className="mt-2">CDs of 12 months or longer have often paid slightly more than top savings accounts in
             recent years, but the spread varies and sometimes inverts on short terms. Compare
             current offers at the same moment — week-old rankings mislead because both move.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What if rates rise right after I open a CD?</summary>
           <p className="mt-2">Run the penalty math before breaking: if the new rate exceeds your old rate by enough
             to cover the forfeited interest over the remaining term, breaking and reinvesting can
             win. Otherwise, let it ride and direct new savings to the higher rate.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I hold both at the same bank?</summary>
           <p className="mt-2">Yes, and it simplifies transfers — many savers keep HYSA and CDs at one online bank so
             maturing CDs land in savings instantly. Just confirm the combined balance stays within
@@ -177,14 +185,14 @@ export default function CdVsHighYieldSavingsPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.fdic.gov/resources/deposit-insurance/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">FDIC deposit insurance resources</a> — how insurance covers CDs and savings alike within the same limits</li>
           <li><a href="https://www.bankrate.com/banking/savings/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate savings hub</a> — independent rate comparisons between CDs and high-yield savings</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/cd-ladder-strategy" className="underline underline-offset-2 text-amber-100 hover:text-white">CD Ladder Strategy</Link></li>
@@ -216,6 +224,7 @@ export default function CdVsHighYieldSavingsPage() {
       />
       <BreadcrumbJsonLd slug="/cd-vs-high-yield-savings" title="CD vs. High-Yield Savings: Which Wins?" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

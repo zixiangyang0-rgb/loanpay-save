@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
+import LedgerTable from "../../components/LedgerTable";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -14,17 +16,18 @@ export const metadata: Metadata = {
 
 export default function WhereToKeepEmergencyFundPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · Emergency & goals
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Where to Keep Your Emergency Fund: Safe, Reachable, Growing
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Knowing your emergency-fund number is half the battle; parking it correctly is the other
         half. The ideal home is safe from market loss, reachable within days, and earning a
         competitive yield so inflation does not quietly shrink it. In practice that means a mix:
@@ -33,6 +36,9 @@ export default function WhereToKeepEmergencyFundPage() {
         assessments of each option — savings, money markets, T-bills, I bonds — and the places
         emergency money should never go.
       </p>
+      </div>
+      <div className="s-article-body">
+
 
       <h2 className="mt-10 text-2xl font-bold">The three-tier placement model</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
@@ -60,7 +66,8 @@ export default function WhereToKeepEmergencyFundPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Placement options compared</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <LedgerTable label="where-to-keep-emergency-fund — comparison table 1">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -98,9 +105,10 @@ export default function WhereToKeepEmergencyFundPage() {
           </tbody>
         </table>
       </div>
+      </LedgerTable>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: tiering a $24,000 fund</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           A household with $4,000 in monthly essentials holds a $24,000 six-month fund. Tier one:
           $4,000 stays in checking — earning little, but available instantly. Tier two: $12,000
@@ -150,27 +158,27 @@ export default function WhereToKeepEmergencyFundPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Should spouses each keep their own fund?</summary>
           <p className="mt-2">One joint fund sized to shared essentials is simplest and avoids duplicated idle cash.
             Couples who prefer autonomy can split proportionally to income — either works as long
             as the combined total hits the target and both partners know where it lives.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Can I bonds really be emergency money?</summary>
           <p className="mt-2">Only the seasoned portion. I bonds cannot be redeemed at all for 12 months, so new
             purchases are not emergency money yet. After the lockup expires, they become an
             excellent inflation-protected deep tier — redeemable in days, with only a 3-month
             interest penalty before year five.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How often should I rebalance the tiers?</summary>
           <p className="mt-2">Check twice a year or after major changes: raises, moves, new babies, or insurance
             changes all shift essentials. Refill any tier you raided as the top savings priority
             before resuming investing — an emergency fund with a hole in it is just a savings
             account.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Does keeping tier one in checking waste money?</summary>
           <p className="mt-2">Trivially. One month of essentials earning near-zero instead of 4% costs roughly 0.3%
             of annual spending — a few dozen dollars a year for most households. Instant access for
@@ -179,14 +187,14 @@ export default function WhereToKeepEmergencyFundPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.fdic.gov/resources/deposit-insurance/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">FDIC deposit insurance resources</a> — confirm every parking spot you consider carries federal insurance</li>
           <li><a href="https://www.bankrate.com/banking/savings/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate savings hub</a> — independent rankings of liquid accounts suited to emergency cash</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/emergency-fund-how-much" className="underline underline-offset-2 text-amber-100 hover:text-white">Emergency Fund: How Much Do You Need?</Link></li>
@@ -218,6 +226,7 @@ export default function WhereToKeepEmergencyFundPage() {
       />
       <BreadcrumbJsonLd slug="/where-to-keep-emergency-fund" title="Where to Keep Your Emergency Fund" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }

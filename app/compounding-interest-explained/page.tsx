@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import SaveShell from "../../components/SaveShell";
 import { ArticleJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "../../lib/schema";
 import CompoundEstimator from "./estimator";
 
@@ -15,17 +16,18 @@ export const metadata: Metadata = {
 
 export default function CompoundingInterestExplainedPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">
+    <SaveShell>
+      <div className="s-article-hero">
+      <p className="s-article-kicker">
         Updated: October 2026 · CDs & bonds
       </p>
-      <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+      <h1 className="s-article-title">
         Compounding Interest Explained: Why Time Beats Timing
       </h1>
       <p className="mt-3 text-xs text-slate-400">
         By <span className="font-semibold text-slate-200">LoanPay Save Editorial Team</span> · Updated October 2026 · General education, not financial advice.
       </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <p className="s-article-lede">
         Compounding means earning interest on your interest: each period&apos;s payout joins the
         balance and earns its own returns in every period after. Over months the effect is
         trivial; over decades it dominates everything — doubling, tripling, and eventually
@@ -35,9 +37,9 @@ export default function CompoundingInterestExplainedPage() {
         that silently break compounding. Try the interactive estimator below, then read on for the
         math behind it. All rates illustrative — check current offers.
       </p>
-
+      </div>
       <CompoundEstimator />
-
+      <div className="s-article-body">
       <h2 className="mt-10 text-2xl font-bold">Simple vs. compound: the divergence</h2>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Simple interest pays only on principal: $10,000 at 5% simple earns $500 every year,
@@ -63,7 +65,7 @@ export default function CompoundingInterestExplainedPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">The Rule of 72 and doubling math</h2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="s-table-wrap mt-4 overflow-x-auto rounded-2xl border" role="region" aria-label="Data table — scroll horizontally to see all columns" tabIndex={0}>
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
@@ -101,7 +103,7 @@ export default function CompoundingInterestExplainedPage() {
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Worked example: early vs. late starter</h2>
-      <div className="glass-card mt-4 rounded-2xl p-6">
+      <div className="s-article-related mt-4">
         <p className="text-sm leading-relaxed text-slate-300">
           Maya starts at 25, saving $300/month for 10 years then stopping ($36,000 total
           contributed). Leo starts at 35, saving $300/month for 30 years ($108,000 contributed).
@@ -153,25 +155,25 @@ export default function CompoundingInterestExplainedPage() {
 
       <h2 className="mt-10 text-2xl font-bold">Frequently asked questions</h2>
       <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">What is the difference between APR and APY?</summary>
           <p className="mt-2">APR (annual percentage rate) typically describes cost or simple-rate terms without
             compounding; APY (annual percentage yield) includes compounding — the actual yearly
             growth. For comparing savings products, APY is the number that matters.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Does compounding help with debt too?</summary>
           <p className="mt-2">Yes — in reverse. Unpaid card balances compound against you at 20%+ rates, doubling in
             under four years by the Rule of 72. Every extra debt payment earns a guaranteed
             &ldquo;return&rdquo; equal to the APR by stopping that compounding.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">How accurate is the Rule of 72?</summary>
           <p className="mt-2">Very good for rates between 2% and 12% — within months of the exact doubling time.
             Outside that range, use 69.3 for tiny rates or just run the estimator above. It assumes
             a constant rate, so treat results as ballpark illustrations.</p>
         </details>
-        <details className="glass-card rounded-2xl p-5">
+        <details className="s-article-faq">
           <summary className="cursor-pointer font-semibold text-white">Is daily compounding worth switching banks for?</summary>
           <p className="mt-2">Almost never by itself — the gap versus monthly compounding is a few dollars per
             $10,000 yearly. Switch for a meaningfully higher APY, lower fees, or better features;
@@ -180,14 +182,14 @@ export default function CompoundingInterestExplainedPage() {
       </div>
 
 
-      <section aria-label="Official resources" className="glass-card mt-10 rounded-2xl p-6">
+      <section aria-label="Official resources" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Official resources</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">CFPB Ask CFPB interest explainers</a> — official breakdowns of how interest accrues and compounds on deposits</li>
           <li><a href="https://www.bankrate.com/banking/savings/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-amber-100 hover:text-white">Bankrate savings hub</a> — independent compounding calculators and yield comparisons</li>
         </ul>
       </section>
-      <nav aria-label="Related" className="glass-card mt-10 rounded-2xl p-6">
+      <nav aria-label="Related" className="s-article-related mt-10">
         <h2 className="text-lg font-bold text-white">Keep reading</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-300">
           <li><Link href="/high-yield-savings-guide-2026" className="underline underline-offset-2 text-amber-100 hover:text-white">High-Yield Savings Guide 2026</Link></li>
@@ -219,6 +221,7 @@ export default function CompoundingInterestExplainedPage() {
       />
       <BreadcrumbJsonLd slug="/compounding-interest-explained" title="Compounding Interest Explained With Examples" />
 
-    </div>
+      </div>
+    </SaveShell>
   );
 }
